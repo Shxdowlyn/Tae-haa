@@ -6,7 +6,20 @@ const user = global.db.data.users[m.sender]
 user.lastrob = user.lastrob || 0
 if (Date.now() < user.lastrob) {
 const restante = user.lastrob - Date.now()
-return conn.reply(m.chat, `ꕥ Debes esperar *${formatTime(restante)}* para usar *${usedPrefix + command}* de nuevo.`, m)
+return conn.reply(m.chat, `╭━━━〔 TAE-HAA // COOLDOWN 〕━━━╮
+┃
+┃ Acción bloqueada.
+┃ Aún no puedes repetir este movimiento.
+┃
+┣━━━〔 TIEMPO 〕━━━┫
+┃ ✦ Espera :: ${formatTime(restante)}
+┃ ✦ Comando :: ${usedPrefix + command}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Tae-Haa observa tu impaciencia.
+┃ ✦ Regresa cuando el reloj termine.
+┃
+╰━━━〔 El tiempo decide 〕━━━╯`, m)
 }
 let mentionedJid = await m.mentionedJid
 let who = mentionedJid && mentionedJid.length ? mentionedJid[0] : m.quoted && await m.quoted.sender ? await m.quoted.sender : null
