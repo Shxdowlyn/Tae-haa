@@ -16,7 +16,17 @@ const handler = async (m, { conn, command }) => {
     delete marriages[ex]
     return conn.sendMessage(
       m.chat,
-      { text: `💔 Divorcio realizado.\n${tag(userId)} y ${tag(ex)} ya no están casados.`, mentions: [userId, ex], ...rcanal },
+      {
+  text: `💔 ╭━━━〔 DIVORCIO REGISTRADO 〕━━━╮
+┃
+┃ 👤 ${tag(userId)}
+┃    ➖ separado de
+┃ 👤 ${tag(ex)}
+┃
+┃ ✔ Estado: Matrimonio finalizado
+┃ ✔ Registro: Actualizado en el sistema
+┃
+╰━━━〔 Fin del proceso 〕━━━╯`, mentions: [userId, ex], ...rcanal },
       { quoted: m }
     )
   }
