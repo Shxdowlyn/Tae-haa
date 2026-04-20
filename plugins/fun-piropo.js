@@ -5,8 +5,9 @@ var handler = async (m, { conn, text }) => {
   conn.reply(m.chat, `☽ Buscando un piropo con Shadow Garden, espera un momento...`, m)
 
   conn.reply(
-    m.chat,
-    `*┏━͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡☽-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡☽-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡☽-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡━┓*\n\n❥ *"${pickRandom(global.piropo)}"* ✦\n\n*┗━͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡☽-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡☽-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡☽-͜͡-͜͡-͜͡-͜͡-͜͡-͜͡━┛*`,
+    `*┏━━━━━━━━━━━━━━━━━━━━━━┓*
+❥ "${pickRandom(global.piropo)}" ✦
+*┗━━━━━━━━━━━━━━━━━━━━━━┛*`
     m
   )
 
