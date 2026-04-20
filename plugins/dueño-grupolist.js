@@ -27,7 +27,18 @@ const handler = async (m, { conn }) => {
 ${isBotAdmin ? `https://chat.whatsapp.com/${await conn.groupInviteCode(jid) || '---'}` : 'No disponible'}
 ───────────────\n\n`;
     }
-    m.reply(`🎄🌌 *Shadow Garden Reporte Navideño de Grupos* 🎅\n\n❄️ *—◉ Total de dominios vigilados:* ${totalGroups}\n\n${txt}\n✨ Las sombras celebran bajo la nieve, pero nunca dejan de observar...`.trim());
+    m.reply(`╭━━━〔 SHADOW // REPORTE GLOBAL 〕━━━╮
+┃
+┃ Supervisión completada.
+┃ Los dominios siguen bajo control.
+┃
+┣━━━〔 RESUMEN 〕━━━┫
+┃ ✦ Dominios vigilados :: ${totalGroups}
+┃
+┣━━━〔 REGISTRO 〕━━━┫
+${txt}
+┃
+╰━━━〔 Nada escapa a la sombra 〕━━━╯`.trim());
   } catch {
     const groups = Object.entries(conn.chats).filter(([jid, chat]) => jid.endsWith('@g.us') && chat.isChats);
     const totalGroups = groups.length;
