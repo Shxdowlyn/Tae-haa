@@ -91,12 +91,12 @@ ${readMore}
           priceAmount1000: 0,
           retailerId: "menu"
         },
-        businessOwnerJid: "584242773183@s.whatsapp.net"
+        businessOwnerJid: "5493863447787@s.whatsapp.net"
       }
     }
   }
 
-  await m.react('🔥')
+  await m.react('🐺')
 
   await conn.sendMessage(m.chat, { 
     video: { url: videoMenu },
