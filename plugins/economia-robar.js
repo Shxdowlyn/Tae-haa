@@ -27,7 +27,20 @@ return conn.reply(m.chat, `ꕥ *${name}* no tiene suficientes *${currency}* fuer
 user.coin += rob
 target.coin -= rob
 user.lastrob = Date.now() + 7200000
-conn.reply(m.chat, `❀ Le robaste *¥${rob.toLocaleString()} ${currency}* a *${name}*`, m, { mentions: [who] })
+conn.reply(m.chat, `╭━━━〔 TAE-HAA // SHADOW RAID 〕━━━╮
+┃
+┃ Operación completada.
+┃ Fondos transferidos sin ruido.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Objetivo :: ${name}
+┃ ✦ Botín    :: ¥${rob.toLocaleString()} ${currency}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Huellas  :: Ninguna
+┃ ✦ Testigos :: Silenciados
+┃
+╰━━━〔 Tae-Haa no deja rastros 〕━━━╯`, m, { mentions: [who] })
 }
 
 handler.help = ['robar']
