@@ -31,7 +31,17 @@ const handler = async (m, {conn, isROwner, usedPrefix, command, text}) => {
 
   if (!ar1.includes(pluginName)) {
     const pluginsList = ar1.map((v) => `*◉* ${v}`).join('\n');
-    return m.reply(`*⭕ 𝙽𝙾 𝚂𝙴 𝙴𝙽𝙲𝙾𝙽𝚃𝚁𝙾 𝙽𝙸𝙽𝙶𝚄𝙽 𝙿𝙻𝚄𝙶𝙸𝙽 (𝙰𝚁𝙲𝙷𝙸𝚅𝙾) 𝙻𝙻𝙰𝙼𝙰𝙳𝙾 "${text}", 𝙸𝙽𝙶𝚁𝙴𝚂𝙰 𝙰𝙻𝙶𝚄𝙽𝙾 𝙴𝚇𝙸𝚂𝚃𝙴𝙽𝚃𝙴*\n\n*==================================*\n\n*—◉ 𝙻𝙸𝚂𝚃𝙰 𝙳𝙴 𝙿𝙻𝚄𝙶𝙸𝙽𝚂 (𝙰𝚁𝙲𝙷𝙸𝚅𝙾𝚂) 𝙴𝚇𝙸𝚂𝚃𝙴𝙽𝚃𝙴𝚂:*\n${pluginsList}`);
+    return m.reply(
+`╭━━━〔 TAE-HAA // ERROR 〕━━━╮
+┃
+┃ El archivo no existe.
+┃ No se encontró ningún plugin con el nombre:
+┃ "${text}"
+┃
+┣━━━〔 DISPONIBLES 〕━━━┫
+┃ ${pluginsList}
+┃
+╰━━━〔 Verificá antes de intentar 〕━━━╯`);
   }
 
   let fileContent;
