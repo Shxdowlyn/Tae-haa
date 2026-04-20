@@ -27,7 +27,20 @@ user.lastweekly = now + gap
 let nextReward = Math.min(40000 + user.weeklyStreak * 5000, 185000).toLocaleString()
 let msg = `> Semana *${user.weeklyStreak + 1}* » *+¥${nextReward}*`
 if (lost) msg += `\n> ☆ ¡Has perdido tu racha de semanas!`
-conn.reply(m.chat, `「❁」 Has reclamado tu recompensa semanal de *¥${coins.toLocaleString()} ${currency}* (Semana *${user.weeklyStreak}*)\n${msg}`, m)
+conn.reply(
+  m.chat,
+  `✿┏━━━━━━━━━━━━━━┓✿
+┃ 🎁 𝐑𝐄𝐂𝐎𝐌𝐏𝐄𝐍𝐒𝐀 𝐒𝐄𝐌𝐀𝐍𝐀𝐋
+┣━━━━━━━━━━━━━━┫
+┃ ❁ Has reclamado:
+┃ 💰 ¥${coins.toLocaleString()} ${currency}
+┃
+┃ 📅 Semana: *${user.weeklyStreak}*
+┣━━━━━━━━━━━━━━┫
+┃ ${msg}
+✿┗━━━━━━━━━━━━━━┛✿`,
+  m
+)
 }
 
 handler.help = ['weekly', 'semanal']
