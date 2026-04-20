@@ -1,4 +1,9 @@
-import { database } from '../lib/database.js'
+import fetch from 'node-fetch'
+import { xpRange } from '../lib/levelling.js'
+import fs from 'fs'
+import PhoneNumber from 'awesome-phonenumber'
+import moment from 'moment-timezone'
+
 
 const getCtx = (conn) => {
     if (conn._subbotContext) return conn._subbotContext
