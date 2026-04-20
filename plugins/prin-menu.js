@@ -7,7 +7,7 @@ import moment from 'moment-timezone'
 const botname = global.botname || "Tae-haa bot"
 const dev = global.dev || "Cid Kagenou"
 const videoMenu = "https://files.catbox.moe/1jgxen.mp4"
-const thumbMenu = "https://files.catbox.moe/gbp5x3.jpg" 
+const thumbMenu = "https://files.catbox.moe/qj9tpo.jpg" 
 const channelRD = global.channelRD || { id: "0@newsletter", name: "Tae-haa" }
 
 let handler = async (m, { conn, usedPrefix, dirname, participants }) => {
