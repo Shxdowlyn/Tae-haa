@@ -43,19 +43,26 @@ const handler = async (m, { conn, text, command }) => {
       }
     }
 
-    const caption = `
-✧━───『 𝙸𝚗𝚏𝚘 𝚍𝚎𝚕 𝙳𝚘𝚌𝚞𝚖𝚎𝚗𝚝𝚘 』───━✧
-
-🎼 𝑻𝒊́𝒕𝒖𝒍𝒐: ${title}
-📺 𝑪𝒂𝒏𝒂𝒍: ${authorName}
-👁️ 𝑽𝒊𝒔𝒕𝒂𝒔: ${vistas}
-⏳ 𝑫𝒖𝒓𝒂ᶜ𝒊𝒐́𝒏: ${durationTimestamp}
-📦 𝑻𝒊𝒑𝒐: ${type.toUpperCase()} DOC
-🌐 𝑬𝒏𝒍𝒂𝒄𝒆: ${url}
-
-✧━───『 𝑺𝒉𝒂𝚍𝒐𝒘 𝑩𝒐𝒕 』───━✧
-⚡ 𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 𝒀𝒐𝒔𝒖𝒆 ⚡
-`
+    const caption = `╭━━━〔 DOCUMENTO // REGISTRO 〕━━━╮
+┃
+┃ El archivo fue identificado.
+┃ No todo está hecho para ser abierto.
+┃
+┣━━━〔 INFORMACIÓN 〕━━━┫
+┃ ✦ Título     :: ${title}
+┃ ✦ Canal      :: ${authorName}
+┃ ✦ Vistas     :: ${vistas}
+┃ ✦ Duración   :: ${durationTimestamp}
+┃ ✦ Tipo       :: ${type.toUpperCase()} DOC
+┃
+┣━━━〔 ACCESO 〕━━━┫
+┃ ${url}
+┃
+┣━━━〔 SISTEMA 〕━━━┫
+┃ Núcleo   :: Tae-haa Bot
+┃ Control  :: Adara
+┃
+╰━━━〔 Apertura bajo responsabilidad 〕━━━╯`
 
     const thumb = (await conn.getFile(thumbnail)).data
 
