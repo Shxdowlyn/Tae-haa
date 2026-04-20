@@ -1,5 +1,21 @@
 let handler = async (m, { args, text, usedPrefix, command }) => {
-  if (!text) return m.reply(`🌑❄️ *Sombras Festivas del Destino* ❄️🌑\n\nUsa el comando así:\n${usedPrefix}${command} ¿seré millonario?\n\nHaz tu pregunta y las sombras responderán con un sí o un no...`)
+ if (!text) return m.reply(
+`╭━━━〔  ORÁCULO FESTIVO DEL DESTINO  〕━━━╮
+┃
+┃ Los vientos del destino no han sido invocados...
+┃ Falta tu pregunta para abrir el ritual.
+┃
+┣━━━〔 🜂 USO DEL CONJURO 🜂 〕━━━┫
+┃
+┃ ✦ ${usedPrefix}${command} ¿seré millonario?
+┃
+┣━━━〔 🔮 MENSAJE DEL ORÁCULO 〕━━━┫
+┃
+┃ ✦ Pronuncia tu duda al vacío digital
+┃ Y el destino responderá con verdad
+┃
+╰━━━〔  El juicio aún no ha comenzado  〕━━━╯`
+)
 
   const pregunta = text.toLowerCase()
   let respuesta = Math.random() < 0.5 ? '🎄✨ Sí, bajo el manto de las sombras...' : '🌑⛄ No, el destino se oculta en la nieve...'
