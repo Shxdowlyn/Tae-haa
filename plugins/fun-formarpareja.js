@@ -5,7 +5,20 @@ function handler(m, {groupMetadata}) {
   let b;
   do b = ps.getRandom();
   while (b === a);
-  m.reply(`*${toM(a)}, Deberías casarte 💍 con ${toM(b)}, hacen una bonita pareja 💓*`, null, {
+  m.reply(
+  `╭━━━〔 💓 MATCH SYSTEM 〕━━━╮
+┃
+┃ ${toM(a)}
+┃
+┃ 💍  ⇄  💍
+┃
+┃ ${toM(b)}
+┃
+┣━━━━━━━━━━━━━━━━━━━━━━┫
+┃ ✨ Pareja recomendada
+┃ 💓 Compatibilidad: Alta
+┃
+╰━━━〔 Sistema de emparejamiento 〕━━━╯`, null, {
     mentions: [a, b],
   });
 }
