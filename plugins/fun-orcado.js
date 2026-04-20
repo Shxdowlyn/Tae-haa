@@ -124,7 +124,16 @@ let handler = async (m, { command, text }) => {
 )
         delete partidas[chatId]
       } else {
-        m.reply(`✅ Bien hecho, ${jugador}. La palabra ahora es:\n${oculto}`)
+        m.reply(
+`╭━━━〔 🎮 AHORCADO 〕━━━╮
+┃
+┃ ✅ Bien hecho, ${jugador}
+┃
+┃ 🔤 Palabra actual:
+┃ ${oculto}
+┃
+╰━━━〔 Continúa jugando 〕━━━╯`
+)
       }
     } else {
       partida.errores++
