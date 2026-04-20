@@ -17,10 +17,13 @@ function handler(m, { groupMetadata, command, conn, text, usedPrefix }) {
     const emojis = ['🌌','👑','✨','🔥','🌙','🕯️']
     const x = pickRandom(emojis)
 
-    let topMessage = `╔══✦🌌✦══╗
-   𝐒𝐇𝐀𝐃𝐎𝐖 𝐆𝐀𝐑𝐃𝐄𝐍
-   𝐓𝐎𝐏 ${topUsers.length} ${text}
-╚══✦🌌✦══╝\n`
+    let topMessage = `
+╔═══    TAE-HAA SYSTEM   ═══╗
+┃
+┃ 📊 TOP ${topUsers.length} ${text}
+┃
+╚═══✦════════════════✦═══╝
+`.trim()
 
     topUsers.forEach((id, i) => {
         topMessage += `\n${x} *${i + 1}. ${user(id)}*`
