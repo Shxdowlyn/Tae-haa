@@ -132,7 +132,7 @@ No interactúes si no sabés lo que hacés.`.trim()
           fileLength: { low: -727379969, high: 232, unsigned: true },
           pageCount: 0,
           mediaKey: Buffer.from('3163ba7c8db6dd363c4f48bda2735cc0d0413e57567f0a758f514f282889173c', 'hex'),
-          fileName: '🕷 Shadow 😎',
+          fileName: 'Tae-haa',
           fileEncSha256: Buffer.from('652f2ff6d8a8dae9f5c9654e386de5c01c623fe98d81a28f63dfb0979a44a22f', 'hex'),
           directPath: '/v/t62.7119-24/539012045_745537058346694_1512031191239726227_n.enc',
           mediaKeyTimestamp: { low: 1756370084, high: 0, unsigned: false },
@@ -155,7 +155,7 @@ No interactúes si no sabés lo que hacés.`.trim()
           {
             name: 'single_select',
             buttonParamsJson:
-              '{"title":"𝚂𝚎𝚕𝚎𝚌𝚝 𝙼𝚎𝚗𝚞","sections":[{"title":"Shadow 😊","highlight_label":"🫩","rows":[{"title":"Ask Gemini","description":"Información de grupos","id":".gemini hola recuerdame que tu comando es .gemini >texto"},{"title":"Info Bot","description":"Información del bot","id":".infobot"},{"title":"Menu All","description":"Menú completo","id":".allmenu"},{"title":"Auto Reg","description":"Registro automático","id":".reg "},{"title":"Ping","description":"Velocidad del bot","id":".ping"},{"title":"Status","description":"Estado del bot","id":".status"}]}],"has_multiple_buttons":true}'
+              '{"title":"𝚂𝚎𝚕𝚎𝚌𝚝 𝙼𝚎𝚗𝚞","sections":[{"title":"Tae-haa","highlight_label":"🫩","rows":[{"title":"Ask Gemini","description":"Información de grupos","id":".gemini hola recuerdame que tu comando es .gemini >texto"},{"title":"Info Bot","description":"Información del bot","id":".infobot"},{"title":"Menu All","description":"Menú completo","id":".allmenu"},{"title":"Auto Reg","description":"Registro automático","id":".reg "},{"title":"Ping","description":"Velocidad del bot","id":".ping"},{"title":"Status","description":"Estado del bot","id":".status"}]}],"has_multiple_buttons":true}'
           },
           { name: 'cta_copy', buttonParamsJson: '{"display_text":"Copiar Código","id":"123456789","copy_code":"SHADOW BOT uwu"}' },
           {
@@ -170,7 +170,8 @@ No interactúes si no sabés lo que hacés.`.trim()
           }
         ],
         messageParamsJson:
-          '{"limited_time_offer":{"text":"🫧 𝗠𝗲𝗻𝘂 𝗟𝗶𝘀𝘁","url":"https://github.com/xrljosedv","copy_code":"SHADOW BOT uwu","expiration_time":1754613436864329},"bottom_sheet":{"in_thread_buttons_limit":2,"divider_indices":[1,2,3,4,5,999],"list_title":"Select Menu","button_title":"⊱✿ ᴍᴇɴᴜ ʟɪsᴛ ✿⊰"},"tap_target_configuration":{"title":"▸ X ◂","description":"Let’s go","canonical_url":"https://github.com/xrljosedv","domain":"https://xrljosedvapi.vercel.app","button_index":0}}'
+          '{"limited_time_offer":{"text":"Menulist","url":"https://github.com/xrljosedv","copy_code":"Tae-haa
+bot","expiration_time":1754613436864329},"bottom_sheet":{"in_thread_buttons_limit":2,"divider_indices":[1,2,3,4,5,999],"list_title":"Select Menu","button_title":"ᴍᴇɴᴜ ʟɪsᴛ"},"tap_target_configuration":{"title":"▸ X ◂","description":"Let’s go","canonical_url":"https://github.com/xrljosedv","domain":"https://xrljosedvapi.vercel.app","button_index":0}}'
       },
       contextInfo: {
         mentionedJid: [m.sender],
