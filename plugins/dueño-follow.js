@@ -4,17 +4,18 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
   try {
     if (!text) {
       return m.reply(
-`╭─「 👻 𝐒𝐇𝐀𝐃𝐎𝐖 𝐆𝐀𝐑𝐃𝐄𝐍: 𝐅𝐎𝐋𝐋𝐎𝐖 」─╮
-
-Invoca correctamente el comando...
-
-✍️ Uso:
-*${usedPrefix + command}* <link del canal>
-
-Ejemplo:
-*${usedPrefix + command}* https://whatsapp.com/channel/XXXXXXXX
-
-╰─「 🌌 𝐄𝐑𝐑𝐎𝐑 」─╯`)
+`╭━━━〔 TAE-HAA // FOLLOW 〕━━━╮
+┃
+┃ Comando inválido.
+┃ La ejecución fue rechazada.
+┃
+┣━━━〔 USO CORRECTO 〕━━━┫
+┃ ✦ ${usedPrefix + command} <link del canal>
+┃
+┣━━━〔 EJEMPLO 〕━━━┫
+┃ ${usedPrefix + command} https://whatsapp.com/channel/XXXXXXXX
+┃
+╰━━━〔 No repitas el error 〕━━━╯`)
     }
 
     const bots = [
