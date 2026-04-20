@@ -18,7 +18,19 @@ if (typeof recipient.bank !== 'number') recipient.bank = 0
 recipient.bank += count   
 if (isNaN(user.bank)) user.bank = 0
 let name = await (async () => global.db.data.users[who].name || (async () => { try { const n = await conn.getName(who); return typeof n === 'string' && n.trim() ? n : who.split('@')[0] } catch { return who.split('@')[0] } })())()
-m.reply(`❀ Transferiste *¥${count.toLocaleString()} ${currency}* a *${name}*\n> Ahora tienes *¥${user.bank.toLocaleString()} ${currency}* en total en el banco.`, null, { mentions: [who] })
+m.reply(`╭━━━〔 SHADOW // TRANSFERENCIA 〕━━━╮
+┃
+┃ Movimiento ejecutado.
+┃ Fondos redirigidos.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Destino :: ${name}
+┃ ✦ Monto   :: ¥${count.toLocaleString()} ${currency}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Balance :: ¥${user.bank.toLocaleString()} ${currency}
+┃
+╰━━━〔 Sin errores 〕━━━╯`, null, { mentions: [who] })
 }
 
 handler.help = ['pay']
