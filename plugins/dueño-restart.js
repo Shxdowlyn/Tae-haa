@@ -2,7 +2,19 @@ let handler = async (m, { conn, usedPrefix, command, isROwner }) => {
   if (!isROwner) return
   try {
     await m.react('🎭') // reacción teatral inicial
-    m.reply(`🌌 *Discípulo de las Sombras* 🎄\nEl ritual de reinicio ha comenzado...\n○ Invocando a *${botname}* જ⁀➴\n> ► Espera mientras el *Socket* renace en las sombras.`)
+    m.reply(`╭━━━〔 SHADOW // REINICIO 〕━━━╮
+┃
+┃ Proceso iniciado.
+┃ El sistema se reestructura.
+┃
+┣━━━〔 NÚCLEO 〕━━━┫
+┃ ✦ Instancia :: ${botname}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ Reiniciando conexión…
+┃ Esperá.
+┃
+╰━━━〔 No interrumpas 〕━━━╯`)
     await m.react('✔️')
     setTimeout(() => {
       if (process.send) {
