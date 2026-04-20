@@ -3,22 +3,20 @@ const handler = async (m, {conn, isOwner}) => {
   const users = Object.entries(global.db.data.users).filter((user) => user[1].banned);
 
   const caption = `
-╔══✦🌌🎄✦══╗
-   𝐒𝐇𝐀𝐃𝐎𝐖 𝐆𝐀𝐑𝐃𝐄𝐍 ❄️
-   𝐋𝐈𝐒𝐓𝐀 𝐃𝐄 𝐁𝐀𝐍𝐄𝐀𝐃𝐎𝐒
-╚══✦🌌🎄✦══╝
-
-👤 *Almas selladas por las sombras*:
-├ Total : ${users.length} ${users ? '\n' + users.map(([jid], i) => `
-├ ${isOwner ? '@' + jid.split`@`[0] : jid}`.trim()).join('\n') : '├'}
-└────
-
-💬 *Dominios prohibidos bajo la nieve*:
-├ Total : ${chats.length} ${chats ? '\n' + chats.map(([jid], i) => `
-├ ${isOwner ? '@' + jid.split`@`[0] : jid}`.trim()).join('\n') : '├'}
-└────
-
-✨ En esta navidad sombría, el Shadow Garden vigila en silencio...
+╭━━━〔 TAE-HAA // CONTROL 〕━━━╮
+┃
+┃ Lista de bloqueos activa.
+┃ Sin excepciones.
+┃
+┣━━━〔 USUARIOS 〕━━━┫
+┃ Total :: ${users.length}
+${users ? users.map(([jid], i) => `┃ ├ ${isOwner ? '@' + jid.split`@`[0] : jid}`).join('\n') : '┃ ├ —'}
+┃
+┣━━━〔 DOMINIOS 〕━━━┫
+┃ Total :: ${chats.length}
+${chats ? chats.map(([jid], i) => `┃ ├ ${isOwner ? '@' + jid.split`@`[0] : jid}`).join('\n') : '┃ ├ —'}
+┃
+╰━━━〔 Sin intervención externa 〕━━━╯
 `.trim();
 
   m.reply(caption, null, {mentions: conn.parseMention(caption)});
