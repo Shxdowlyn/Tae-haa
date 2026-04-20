@@ -30,7 +30,19 @@ conn.reply(
 )
 } else {
 users.coin -= coin
-conn.reply(m.chat, `「✿」La ruleta salió en *${resultColor}* y has perdido *¥${coin.toLocaleString()} ${currency}*!`, m)
+conn.reply(
+  m.chat,
+  `✿┏━━━━━━━━━━━━━━┓✿
+┃ 🎰 𝐑𝐔𝐋𝐄𝐓𝐀 𝐃𝐄𝐋 𝐃𝐄𝐒𝐓𝐈𝐍𝐎
+┣━━━━━━━━━━━━━━┫
+┃ ✦ Resultado :: *${resultColor}*
+┃ ✦ Pérdida   :: *¥${coin.toLocaleString()} ${currency}*
+┣━━━━━━━━━━━━━━┫
+┃ 💔 Mala suerte esta vez...
+┃ Intenta de nuevo.
+✿┗━━━━━━━━━━━━━━┛✿`,
+  m
+)
 }}
 
 handler.tags = ['economia']
