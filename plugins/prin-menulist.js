@@ -91,36 +91,37 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     const headerGreet = `${limaGreetingText()}`
     const tagUser = '@' + m.sender.split('@')[0]
 
-    const menu = `hello *${tagUser}!* ${headerGreet}
-bienvenido uwu *${meName || 'MyBot'}*, soy Shadow-BOT-MD estoy aquí para ayudarte 🌌
+    const menu = `…${tagUser}
 
-╭──┈➤ *\`𝗜𝗡𝗙𝗢 𝗨𝗦𝗘𝗥\`*
-│ 𔓕 *Nombre*  : ${name}
-│ 𔓕 *Tag*     : ${tagUser}
-│ 𔓕 *Rol*     : ${role}
-│ 𔓕 *Nivel*   : ${level} (${(exp - (min || 0))}/${xp || 100})
-│ 𔓕 *Límite*  : ${limit}
-│ 𔓕 *Money*   : S/.${money.toLocaleString('es-PE')}
-│ 𔓕 *Premium* : ${prem ? '✅' : '❌'}
-╰────────────────┈➤
+No es una bienvenida. Solo acceso concedido.
 
-╭──┈➤ *\`𝗜𝗡𝗙𝗢 𝗕𝗢𝗧\`*
-│ 𔓕 *Nombre*     : ${meName || 'Bot'}
-│ 𔓕 *Owner*      : ${_package?.author?.name || 'dev'}
-│ 𔓕 *Powered*    : WhatsApp Business
-│ 𔓕 *Prefix*     : ${_p}
-│ 𔓕 *Mode*       : ${global.opts?.['self'] ? 'Privado' : 'Público'}
-│ 𔓕 *Total Fitur*: ${totalFitur}+
-│ 𔓕 *Version*    : ${_package?.version || '1.0.0'}
-│ 𔓕 *Language*   : Javascript
-│ 𔓕 *Type*       : NodeJs/Case
-│ 𔓕 *Library*    : Baileys-MD
-│ 𔓕 *Uptime*     : ${uptime}
-│ 𔓕 *Users*      : ${totalreg} (${rtotalreg} reg.)
-│ 𔓕 *Hora*       : ${time} WIB
-│ 𔓕 *Día*        : ${week}
-│ 𔓕 *Fecha*      : ${date}
-╰────────────────┈➤`.trim()
+╭─ 𝗗𝗔𝗧𝗢𝗦 𝗗𝗘𝗟 𝗨𝗦𝗨𝗔𝗥𝗜𝗢
+│ Nombre: ${name}
+│ Identidad: ${tagUser}
+│ Rol: ${role}
+│ Nivel: ${level} (${(exp - (min || 0))}/${xp || 100})
+│ Límite: ${limit}
+│ Fondos: S/.${money.toLocaleString('es-PE')}
+│ Estado: ${prem ? 'Autorizado' : 'Restringido'}
+╰──────────────
+
+╭─ 𝗦𝗜𝗦𝗧𝗘𝗠𝗔
+│ Núcleo: ${meName || 'System'}
+│ Control: ${_package?.author?.name || 'Unknown'}
+│ Prefijo: ${_p}
+│ Modo: ${global.opts?.['self'] ? 'Cerrado' : 'Abierto'}
+│ Funciones: ${totalFitur}+
+│ Versión: ${_package?.version || '1.0.0'}
+│ Motor: NodeJS
+│ Librería: Baileys
+│ Actividad: ${uptime}
+│ Registros: ${totalreg} (${rtotalreg})
+│ Tiempo: ${time}
+│ Ciclo: ${week}
+│ Fecha: ${date}
+╰──────────────
+
+No interactúes si no sabés lo que hacés.`.trim()
 
     const nativeFlowPayload = {
       header: {
