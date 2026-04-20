@@ -8,7 +8,7 @@ const botname = global.botname || "Tae-haa bot"
 const dev = global.dev || "Cid Kagenou"
 const videoMenu = "https://files.catbox.moe/1jgxen.mp4"
 const thumbMenu = "https://files.catbox.moe/qj9tpo.jpg" 
-const channelRD = global.channelRD || { id: "0@newsletter", name: "Tae-haa" }
+const channelRD = global.channelRD || { id: "120363406529946290@newsletter", name: "Tae-haa" }
 
 let handler = async (m, { conn, usedPrefix, dirname, participants }) => {
   try {
@@ -74,10 +74,10 @@ ${comandos}
 > Tiempo: ${uptime}
 > pais: ${pais}
 > : ${totalreg}
-> Canal: https://whatsapp.com/channel/0029VbArz9fAO7RGy2915k3O
+> Canal: https://whatsapp.com/channel/0029VbBvrmwC1Fu5SYpbBE2A
 
 ${readMore}
-  乂 *ᴘʀᴏᴛᴏᴄᴏʟᴏ ᴅᴇ ᴄᴏᴍᴀɴᴅᴏꜱ ᴅᴇ ʟᴀ ꜱᴏᴍʙʀᴀ* 乂\n`.trim()
+  tae-haa protocolos\n`.trim()
 
   const fkontak = {
     key: { fromMe: false, participant: "0@s.whatsapp.net", remoteJid: "status@broadcast" },
@@ -85,8 +85,8 @@ ${readMore}
       productMessage: {
         product: {
           productImage: { mimetype: "image/jpeg", jpegThumbnail: await (await fetch(thumbMenu)).buffer() },
-          title: `⌗ֶㅤ𝐌𝐞𝐧𝐮 𝐝𝐞 𝐥𝐚 𝐒𝐨𝐦𝐛𝐫𝐚`,
-          description: "« Soy quien actúa en las sombras »",
+          title: `Menu`,
+          description: "Hola, Soy Tae-haa.",
           currencyCode: "USD",
           priceAmount1000: 0,
           retailerId: "menu"
