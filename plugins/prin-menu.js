@@ -22,30 +22,28 @@ let handler = async (m, { conn, usedPrefix, dirname, participants }) => {
 
     let userIdNum = m.sender.split('@')[0]
     let phone = PhoneNumber('+' + userIdNum)
-    let pais = phone.getRegionCode() || 'Dominio Desconocido 🌑'
+    let pais = phone.getRegionCode() || 'Número desconocido…¿Deberia importarme?'
 
     let tags = {
-      'info': '𝐈𝐍𝐅𝐎 𝐃𝐄 𝐋𝐀 𝐒𝐎𝐌𝐁𝐑𝐀',
-      'main': '𝐄𝐒𝐓𝐀𝐃𝐎 𝐃𝐄𝐋 𝐂𝐎𝐑𝐓𝐈𝐆𝐎',
-      'anime': '𝐀𝐍𝐈𝐌𝐄 𝐀𝐑𝐂𝐀𝐍𝐎',
-      'menu': '𝐌𝐄𝐍𝐔𝐒 𝐎𝐂𝐔𝐋𝐓𝐎𝐒',
-      'search': '𝐁𝐔𝐒𝐐𝐔𝐄𝐃𝐀𝐒 𝐄𝐒𝐎𝐓𝐄𝐑𝐈𝐂𝐀𝐒',
-      'descargas': '𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐒 𝐃𝐄 𝐋𝐀 𝐒𝐎𝐌𝐁𝐑𝐀',
-      'socket': '𝐂𝐎𝐍𝐄𝐗𝐈𝐎𝐍𝐄𝐒 𝐎𝐂𝐔𝐋𝐓𝐀𝐒',
-      'rg': '𝐏𝐄𝐑𝐅𝐈𝐋 𝐃𝐄𝐋 𝐂𝐎𝐍𝐓𝐑𝐀𝐓𝐈𝐒𝐓𝐀',
-      'fun': '𝐉𝐔𝐄𝐆𝐎𝐒 𝐃𝐄 𝐒𝐎𝐌𝐁𝐑𝐀',
-      'rpg': '𝐄𝐂𝐎𝐍𝐎𝐌𝐈𝐀 𝐎𝐂𝐔𝐋𝐓𝐀',
-      'gacha': '𝐈𝐕𝐄𝐍𝐓𝐎𝐒 𝐆𝐀𝐂𝐇𝐀',
-      'game': '𝐉𝐔𝐄𝐆𝐎𝐒 𝐀𝐑𝐂𝐀𝐍𝐎𝐒',
-      'grupos': '𝐂𝐈𝐑𝐂𝐔𝐋𝐎𝐒 𝐃𝐄 𝐒𝐎𝐌𝐁𝐑𝐀',
-      'nable': '𝐌𝐎𝐃𝐎 𝐎𝐍 / 𝐎𝐅𝐅',
-      'ia': '𝐈𝐍𝐓𝐄𝐋𝐈𝐆𝐄𝐍𝐂𝐈𝐀 𝐀𝐑𝐂𝐀𝐍𝐀',
-      'stalk': '𝐎𝐁𝐒𝐄𝐑𝐕𝐀𝐂𝐈𝐎𝐍 𝐒𝐈𝐋𝐄𝐍𝐂𝐈𝐎𝐒𝐀',
-      'maker': '𝐀𝐋𝐐𝐔𝐈𝐌𝐈𝐀 𝐕𝐈𝐒𝐔𝐀𝐋',
-      'tools': '𝐇𝐄𝐑𝐑𝐀𝐌𝐈𝐄𝐍𝐓𝐀𝐒 𝐃𝐄 𝐋𝐀 𝐒𝐎𝐌𝐁𝐑𝐀',
-      'sticker': '𝐒𝐄𝐋𝐋𝐎𝐒 𝐀𝐑𝐂𝐀𝐍𝐎𝐒',
-      'owner': '𝐌𝐀𝐄𝐒𝐓𝐑𝐎 𝐃𝐄 𝐋𝐀 𝐎𝐑𝐆𝐀𝐍𝐈𝐙𝐀𝐂𝐈𝐎𝐍',
-      'nsfw': '𝐙𝐎𝐍𝐀 𝐑𝐄𝐒𝐓𝐑𝐈𝐍𝐆𝐈𝐃𝐀 (+18)'
+      'info': '𝗜𝗡𝗙𝗢 𝗧𝗔𝗘',
+      'main': '𝗘𝗦𝗧𝗔𝗗𝗢',
+      'anime': '𝗥𝗘𝗔𝗖𝗖𝗜𝗢𝗡𝗘𝗦',
+      'search': '𝗕𝗨𝗦𝗤𝗨𝗘𝗗𝗔𝗦',
+      'descargas': '𝗗𝗘𝗦𝗖𝗔𝗥𝗚𝗔𝗦',
+      'socket': '𝗖𝗢𝗡𝗘𝗫𝗜𝗢𝗡𝗘𝗦',
+      'rg': '𝗣𝗘𝗥𝗙𝗜𝗟',
+      'fun': '𝗝𝗨𝗘𝗚𝗢𝗦',
+      'rpg': '𝗘𝗖𝗢𝗡𝗢𝗠𝗜́𝗔',
+      'gacha': '𝗘𝗩𝗘𝗡𝗧𝗢𝗦',
+      'game': '𝗝𝗨𝗘𝗚𝗢𝗦',
+      'grupos': '𝗖𝗜𝗥𝗖𝗨𝗟𝗢𝗦',
+      'nable': '𝗠𝗢𝗗𝗢 𝗢𝗡/𝗢𝗙𝗙',
+      'ia': '𝗜𝗡𝗧𝗘𝗟𝗜𝗚𝗘𝗡𝗖𝗜𝗔',
+      'stalk': '𝗢𝗕𝗦𝗘𝗥𝗩𝗔𝗖𝗜𝗢𝗡',
+      'maker': '𝗜𝗥𝗥𝗘𝗟𝗘𝗩𝗔𝗡𝗧𝗘',
+      'tools': '𝗛𝗘𝗥𝗥𝗔𝗠𝗜𝗘𝗡𝗧𝗔𝗦',
+      'sticker': '𝗦𝗧𝗜𝗖𝗞𝗘𝗥𝗦',
+      'owner': '𝗖𝗥𝗘𝗔𝗗𝗢𝗥𝗔',
     }
 
     let commands = Object.values(global.plugins)
