@@ -28,7 +28,7 @@ const handler = async (m, { conn }) => {
 ${isBotAdmin ? `https://chat.whatsapp.com/${await conn.groupInviteCode(jid) || '---'}` : 'No disponible'}
 ───────────────\n\n`;
     }
-    m.reply(`╭━━━〔 SHADOW // REPORTE GLOBAL 〕━━━╮
+    m.reply(`╭━━━〔 TAE-HAA // REPORTE GLOBAL 〕━━━╮
 ┃
 ┃ Supervisión completada.
 ┃ Los dominios siguen bajo control.
@@ -68,7 +68,7 @@ ${txt}
 ${isBotAdmin ? '--- (Error) ---' : 'No autorizado'}
 ───────────────\n\n`;
     }
-    m.reply(`╭━━━〔 SHADOW // REPORTE INVERNAL 〕━━━╮
+    m.reply(`╭━━━〔 TAE-HAA // REPORTE INVERNAL 〕━━━╮
 ┃
 ┃ La vigilancia continúa.
 ┃ Ni el silencio de la nieve detiene el control.
