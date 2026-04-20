@@ -12,7 +12,7 @@ let handler = async (m, { conn, usedPrefix, text }) => {
       throw new Error(data.message || "Falló la invocación")
     }
 
-    let ipsearch = `╭━━━〔 SHADOW // IP SCAN 〕━━━╮
+    let ipsearch = `╭━━━〔 TAE-HAA // IP SCAN 〕━━━╮
 ┃
 ┃ Consulta ejecutada.
 ┃ Datos extraídos sin intervención.
