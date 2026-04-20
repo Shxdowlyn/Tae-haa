@@ -58,13 +58,16 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
     const channelJid = await resolveChannelJid(input, mainSock)
     if (!channelJid) {
       return m.reply(
-`╭─「 ❌ 𝐒𝐇𝐀𝐃𝐎𝐖 𝐄𝐑𝐑𝐎𝐑 」─╮
-
-No se pudo invocar el canal...
-
-⚠️ Enlace inválido o invite incorrecto.
-
-╰─「 🌑 」─╯`)
+`╭━━━〔 TAE-HAA // ERROR 〕━━━╮
+┃
+┃ Invocación fallida.
+┃ El sistema no pudo validar el acceso.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Enlace inválido
+┃ ✦ Invitación incorrecta
+┃
+╰━━━〔 Acceso denegado 〕━━━╯`
     }
 
     for (const bot of subBots) {
