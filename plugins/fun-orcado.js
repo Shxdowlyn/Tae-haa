@@ -154,7 +154,20 @@ let handler = async (m, { command, text }) => {
 )
         delete partidas[chatId]
       } else {
-        m.reply(`${ahorcadoStages[partida.errores]}\n⚠️ ${jugador}, la letra "${letra}" no está. Te quedan ${ahorcadoStages.length - 1 - partida.errores} intentos.`)
+        m.reply(
+`${ahorcadoStages[partida.errores]}
+
+╭━━━〔 🎮 AHORCADO 〕━━━╮
+┃
+┃ ⚠️ ${jugador}
+┃
+┃ La letra "${letra}" no está en la palabra
+┃
+┃ 🎯 Intentos restantes:
+┃ ${ahorcadoStages.length - 1 - partida.errores}
+┃
+╰━━━〔 Sigue intentando 〕━━━╯`
+)
       }
     }
   }
