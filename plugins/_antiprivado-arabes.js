@@ -46,17 +46,24 @@ export async function before(m, { conn, isOwner, isROwner}) {
         delete global.advertenciasArabes[numero];
 } else {
         await m.reply(`
-⚠️ *[PRIMERA ALERTA DE SOMBRA ${advertencias}/2]* ⚠️
-══════════════════════
-🕸️ Sistema de defensa activado.
-📄 Comunicación sospechosa interceptada.
-
-📌 Solo comandos autorizados permitidos:
-Ej: */menu*, */help*, */code*,!info
-
-🧬 Próxima infracción ejecutará *protocolo de eliminación*.
-══════════════════════`);
-        console.log(`[⚠️ ALERTA SOMBRA ${advertencias}/2] ${numero}`);
+╭━━━〔 ⚠️ 𝐓𝐀𝐄 𝐇𝐀𝐀 - 𝐀𝐋𝐄𝐑𝐓𝐀 〕━━━⬣
+┃  
+┃  🚨 *ALERTA ${advertencias}/2*
+┃  ─────────────────────
+┃  📄 Actividad no autorizada detectada
+┃  🧠 Sistema de seguridad en línea
+┃  
+┃  📌 Comandos permitidos:
+┃  ➤ /menu
+┃  ➤ /help
+┃  ➤ /code
+┃  ➤ !info
+┃  
+┃  ⚡ Próxima infracción = bloqueo automático
+┃  
+╰━━━〔 🤖 𝐓𝐀𝐄 𝐇𝐀𝐀 𝐒𝐘𝐒𝐓𝐄𝐌 〕━━━⬣
+`);
+console.log(`[⚠️ TAEHAA ALERTA ${advertencias}/2] ${numero}`);
 }
 
       return false;
