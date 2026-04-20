@@ -110,7 +110,18 @@ let handler = async (m, { command, text }) => {
     if (partida.palabra.includes(letra)) {
       const oculto = ocultarPalabra(partida.palabra, partida.letras)
       if (!oculto.includes('_')) {
-        m.reply(`🎉✨ ¡Victoria, ${jugador}! Has descubierto la palabra "${partida.palabra}" antes de que las sombras te atraparan 🎄🌑`)
+        m.reply(
+`╭━━━〔 🎮 VICTORIA 〕━━━╮
+┃
+┃ 🎉 ¡Felicidades, ${jugador}!
+┃
+┃ ✔ Has descubierto la palabra:
+┃ "${partida.palabra}"
+┃
+┃ ⏱ Resultado: Victoria antes del límite
+┃
+╰━━━〔 Juego finalizado 〕━━━╯`
+)
         delete partidas[chatId]
       } else {
         m.reply(`✅ Bien hecho, ${jugador}. La palabra ahora es:\n${oculto}`)
