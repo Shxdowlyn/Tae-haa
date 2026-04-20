@@ -51,13 +51,20 @@ ${txt}
       const isParticipant = participants.some((u) => conn.decodeJid(u.id) === conn.user.jid);
       const participantStatus = isParticipant ? '👤 Participante' : '❌ Ex participante';
       const totalParticipants = participants.length;    
-      txt += `*◉ Grupo ${i + 1}*
-      *➤ Nombre:* ${await conn.getName(jid)}
-      *➤ ID:* ${jid}
-      *➤ Admin:* ${isBotAdmin ? '✔ Sí' : '❌ No'}
-      *➤ Estado:* ${participantStatus}
-      *➤ Total de Participantes:* ${totalParticipants}
-      *➤ Link:* ${isBotAdmin ? '--- (Error) ---' : '--- (No admin) ---'}\n\n`;
+      txt += `╔══════════════════════════════╗
+║         GRUPO ${i + 1}         ║
+╚══════════════════════════════╝
+
+✦ Nombre        :: ${await conn.getName(jid)}
+✦ Identificador :: ${jid}
+✦ Control       :: ${isBotAdmin ? 'Disponible' : 'Denegado'}
+✦ Estado        :: ${participantStatus}
+✦ Miembros      :: ${totalParticipants}
+
+───────────────
+✦ Acceso
+${isBotAdmin ? '--- (Error) ---' : 'No autorizado'}
+───────────────\n\n`;
     }
     m.reply(`🎄👾 *Shadow Garden Reporte Navideño de Grupos* 🌌\n\n❄️ *—◉ Total de dominios vigilados:* ${totalGroups}\n\n${txt}\n✨ Incluso en navidad, las sombras nunca descansan...`.trim());
   }    
