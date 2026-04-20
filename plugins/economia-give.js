@@ -18,7 +18,7 @@ if (typeof recipient.bank !== 'number') recipient.bank = 0
 recipient.bank += count   
 if (isNaN(user.bank)) user.bank = 0
 let name = await (async () => global.db.data.users[who].name || (async () => { try { const n = await conn.getName(who); return typeof n === 'string' && n.trim() ? n : who.split('@')[0] } catch { return who.split('@')[0] } })())()
-m.reply(`╭━━━〔 TAE-HAA // TRANSFERENCIA 〕━━━╮
+m.reply(`╭━━━〔  TRANSFERENCIA 〕━━━╮
 ┃
 ┃ Movimiento ejecutado.
 ┃ Fondos redirigidos.
