@@ -19,15 +19,15 @@ handler.all = async function (m) {
   global.año = d.toLocaleDateString('es', { year: 'numeric' })
   global.tiempo = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
 
-  var canal = 'https://whatsapp.com/channel/0029VbArz9fAO7RGy2915k3O'  
-  var comunidad = 'https://chat.whatsapp.com/I0dMp2fEle7L6RaWBmwlAa'
+  var canal = 'https://whatsapp.com/channel/0029VbBvrmwC1Fu5SYpbBE2A'  
+  var comunidad = 'https://whatsapp.com/channel/0029VbBvrmwC1Fu5SYpbBE2A'
   var git = 'https://github.com/'
   var github = 'https://github.com/' 
   var correo = 'minexdt@gmail.com'
   global.redes = pickRandom([canal, comunidad, git, github, correo])
 
   global.nombre = m.pushName || 'Anónimo'
-  global.packsticker = `〄 𝗦𝗧𝗜𝗖𝗞𝗘𝗥𝗦\n✩ᩚ Usuario » ${nombre}\n✦ Bot » ${botname}`
+  global.packsticker = `𝗦𝗧𝗜𝗖𝗞𝗘𝗥𝗦\n Usuario  ${nombre}\n Bot  ${botname}`
   global.packsticker2 = `\n\n${dev}`
 
   global.fkontak = { 
