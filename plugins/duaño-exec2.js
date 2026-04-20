@@ -1,5 +1,4 @@
 import db from '../lib/database.js'
-import config from '../config.js'
 import util from 'util'
 
 const handler = async (m, { conn, text }) => {
