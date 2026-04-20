@@ -9,9 +9,9 @@ export async function before(m, { conn, isAdmin, isBotAdmin, isOwner, isROwner }
   const palabrasClave = ['PIEDRA', 'PAPEL', 'TIJERA', 'serbot', 'jadibot'];
 
   if (palabrasClave.some((palabra) => m.text.includes(palabra))) return true;
-  if (m.chat === '120363416409380841@newsletter') return true;
+  if (m.chat === '120363406529946290@newsletter') return true;
 
-  const creador = '+5804242773183';
+  const creador = '+543863447787';
   if (m.sender.includes(creador.replace('+', ''))) return true;
 
   if (bot.antiPrivate && !isOwner && !isROwner) {
