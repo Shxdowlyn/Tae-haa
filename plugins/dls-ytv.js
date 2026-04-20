@@ -41,7 +41,17 @@ const handler = async (m, { conn, text, command, usedPrefix }) => {
 
         cards.push({
           body: proto.Message.InteractiveMessage.Body.fromObject({ 
-            text: `✨ *Título:* ${video.title}\n🔔 *Canal:* ${video.author.name}\n🎬 *Duración:* ${video.timestamp}\n👁️ *Vistas:* ${video.views.toLocaleString()}` 
+            text: `╭━━━〔 VIDEO // DETALLE 〕━━━╮
+┃
+┃ Registro identificado.
+┃
+┣━━━〔 INFORMACIÓN 〕━━━┫
+┃ ✦ Título    :: ${video.title}
+┃ ✦ Canal     :: ${video.author.name}
+┃ ✦ Duración  :: ${video.timestamp}
+┃ ✦ Vistas    :: ${video.views.toLocaleString()}
+┃
+╰━━━〔 Visualización disponible 〕━━━╯`
           }),
           footer: proto.Message.InteractiveMessage.Footer.fromObject({ text: "Shadow Garden — YouTube" }),
           header: proto.Message.InteractiveMessage.Header.fromObject({ 
