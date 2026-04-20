@@ -27,7 +27,20 @@ user.lastmonthly = now + gap
 let next = Math.min(60000 + user.monthlyStreak * 5000, 95000).toLocaleString()
 let msg = `> Mes *${user.monthlyStreak + 1}* » *+${next}*`
 if (lost) msg += `\n> ☆ ¡Has perdido tu racha de meses!`
-conn.reply(m.chat, `「❁」 Has reclamado tu recompensa mensual de *+${coins.toLocaleString()} ${currency}* (Mes *${user.monthlyStreak}*)\n${msg}`, m)
+conn.reply(m.chat, `╭━━━〔 TAE-HAA // MENSUAL 〕━━━╮
+┃
+┃ Recompensa reclamada.
+┃ Fondos acreditados con éxito.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Ganancia :: +${coins.toLocaleString()} ${currency}
+┃ ✦ Mes      :: ${user.monthlyStreak}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Registro :: Mensual completado
+┃ ✦ Nota     :: ${msg}
+┃
+╰━━━〔 Tae-Haa aprueba 〕━━━╯`, m)
 }
 
 handler.help = ['monthly', 'mensual']
