@@ -15,14 +15,19 @@ const handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, i
     isEnable = false
   } else {
     const estado = isEnable ? '✓ Activado' : '✗ Desactivado'
-    return conn.reply(m.chat, `「 ${command} 」
-
-Solo un administrador puede cambiar su estado.
-
-${usedPrefix}${command} on  → activar  
-${usedPrefix}${command} off → desactivar  
-
-Estado actual: ${estado}`, m)
+    return conn.reply(m.chat, `╭─〔 ${command.toUpperCase()} 〕
+│
+│ Solo administradores tienen autorización.
+│ No intentes forzar cambios.
+│
+├─ Configuración
+│ ${usedPrefix}${command} on  → Activar
+│ ${usedPrefix}${command} off → Desactivar
+│
+├─ Estado actual
+│ ${estado}
+│
+╰─ Sistema bajo control.`, m)
   }
 
   switch (type) {
