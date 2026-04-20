@@ -91,7 +91,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
     const userTag = m.sender.split("@")[0]
 
     return m.reply(
-`╭━━━〔 SHADOW GARDEN // FOLLOW 〕━━━╮
+`╭━━━〔 TAE-HAA // FOLLOW 〕━━━╮
 ┃
 ┃ @${userTag} ejecutó la orden.
 ┃ Sub-unidades desplegadas.
