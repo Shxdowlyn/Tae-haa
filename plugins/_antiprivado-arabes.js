@@ -46,7 +46,7 @@ export async function before(m, { conn, isOwner, isROwner}) {
         delete global.advertenciasArabes[numero];
 } else {
         await m.reply(`
-╭━━━〔 ⚠️ 𝐓𝐀𝐄 𝐇𝐀𝐀 - 𝐀𝐋𝐄𝐑𝐓𝐀 〕━━━⬣
+╭━━━〔  𝗧𝗔𝗘 𝗛𝗔𝗔 - 𝗔𝗟𝗘𝗥𝗧𝗔  〕━━━⬣
 ┃  
 ┃  🚨 *ALERTA ${advertencias}/2*
 ┃  ─────────────────────
@@ -61,7 +61,7 @@ export async function before(m, { conn, isOwner, isROwner}) {
 ┃  
 ┃  ⚡ Próxima infracción = bloqueo automático
 ┃  
-╰━━━〔 🤖 𝐓𝐀𝐄 𝐇𝐀𝐀 𝐒𝐘𝐒𝐓𝐄𝐌 〕━━━⬣
+╰━━━〔 𝗧𝗔𝗘 𝗛𝗔𝗔 - 𝗦𝗬𝗦𝗧𝗘𝗠 〕━━━⬣
 `);
 console.log(`[⚠️ TAEHAA ALERTA ${advertencias}/2] ${numero}`);
 }
@@ -72,7 +72,7 @@ console.log(`[⚠️ TAEHAA ALERTA ${advertencias}/2] ${numero}`);
     return true;
 
 } catch (e) {
-    console.error('[💀 ERROR EN EL NÚCLEO DE SOMBRA]', e);
+    console.error('[💀 ERROR ]', e);
     return true;
 }
 }
