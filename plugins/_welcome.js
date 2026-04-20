@@ -117,21 +117,18 @@ ${groupDesc}`
     const goodbyeImg = `https://api.popcat.xyz/welcomecard?background=${encodeURIComponent('https://files.catbox.moe/gbp5x3.jpg')}&text1=${encodeURIComponent(userName)}&text2=Se+fue+de+${encodeURIComponent(groupName)}&text3=Adiós+Sombra&avatar=${encodeURIComponent(pp)}`
 
     const caption = 
-`╭─「 🌌 𝐒𝐇𝐀𝐃𝐎𝐖 𝐆𝐀𝐑𝐃𝐄𝐍: 𝐑𝐄𝐓𝐈𝐑𝐀𝐃𝐀 」─╮
+`╭─「 𝗧𝗔𝗘-𝗛𝗔𝗔 𝗚𝗢𝗢𝗗𝗕𝗬𝗘 」─╮
 
-${userName} ha abandonado el círculo de las sombras.
-Su presencia se desvanece... como todo lo que no deja huella.
+${userName} salió de ${groupName}.
 
-Grupo: ${groupName}
+Su actividad aquí ha terminado.
+El grupo sigue en marcha.
 
-Que su memoria permanezca en silencio.
-Las sombras no olvidan, pero tampoco lloran.
+╰─「 𝗘𝗦𝗧𝗔𝗗𝗢 」─╯
+Miembros: ${groupSize}
+Fecha: ${fecha}
 
-╰─「 🌌 𝐄𝐒𝐓𝐀𝐃𝐎 𝐀𝐂𝐓𝐔𝐀𝐋 」─╯
-📉 Miembros: ${groupSize}
-📅 Fecha: ${fecha}
-
-📜 Descripción:
+Descripción:
 ${groupDesc}`
 
     await conn.sendMessage(m.chat, {
@@ -139,14 +136,14 @@ ${groupDesc}`
       caption,
       footer: `© ${packname} · Goodbye`,
       buttons: [
-        { buttonId: '#reg', buttonText: { displayText: '👤 Registrarme' }, type: 1 },
-        { buttonId: '#menu', buttonText: { displayText: '🌌 Menú' }, type: 1 }
+        { buttonId: '#reg', buttonText: { displayText: 'Registrarme' }, type: 1 },
+        { buttonId: '#menu', buttonText: { displayText: 'Menú' }, type: 1 }
       ],
       mentions: [userJid],
       viewOnce: true,
       contextInfo: {
         externalAdReply: {
-          title: '─Ａ Ｄ Ｉ Ō S─👋🏻',
+          title: '─𝗔 𝗗 𝗜 𝗢 𝗦─',
           body: `Se fue de ${groupName}`,
           thumbnailUrl: pp,
           mediaType: 1,
