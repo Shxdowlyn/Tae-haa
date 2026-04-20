@@ -103,7 +103,7 @@ ${groupDesc}`
           thumbnailUrl: pp,
           mediaType: 1,
           showAdAttribution: true,
-          sourceUrl: 'https://wa.me/584'
+          sourceUrl: 'https://wa.me/5493863447787'
         }
       }
     })
@@ -148,7 +148,7 @@ ${groupDesc}`
           thumbnailUrl: pp,
           mediaType: 1,
           showAdAttribution: true,
-          sourceUrl: 'https://wa.me/584242773183'
+          sourceUrl: 'https://wa.me/5493863447787'
         }
       }
     })
