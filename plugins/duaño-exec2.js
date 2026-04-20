@@ -61,12 +61,21 @@ const handler = async (m, { conn, text }) => {
   const status = isError ? '❌ Error' : '✅ Success'
   const type = isError ? result?.name || 'Error' : typeof result
 
-  const resultText = `⚙️ *ᴇᴠᴀʟ ʀᴇsᴜʟᴛ*\n\n` +
-    `╭┈┈⬡「 📋 *ɪɴғᴏ* 」\n` +
-    `┃ ${status}\n` +
-    `┃ Type: ${type}\n` +
-    `╰┈┈┈┈┈┈┈┈⬡\n\n` +
-    `\`\`\`${output}\`\`\``
+  const resultText = `╭━━━〔 EVAL // RESULTADO 〕━━━╮
+┃
+┃ Ejecución finalizada.
+┃ El sistema no comete errores.
+┃
+┣━━━〔 INFORMACIÓN 〕━━━┫
+┃ ✦ Estado :: ${status}
+┃ ✦ Tipo   :: ${type}
+┃
+┣━━━〔 SALIDA 〕━━━┫
+┃ \`\`\`
+${output}
+\`\`\`
+┃
+╰━━━〔 Interpretación: tu responsabilidad 〕━━━╯`
 
   await m.reply(resultText)
 }
