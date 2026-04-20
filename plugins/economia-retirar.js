@@ -13,11 +13,21 @@ let handler = async (m, { args, usedPrefix, command }) => {
 
     if (!args[0]) {
         return m.reply(
-            `❀ Ingresa la cantidad de ${currency} que deseas retirar.\n\n` +
-            `Ejemplo:\n` +
-            `» ${usedPrefix + command} 25000\n` +
-            `» ${usedPrefix + command} all`
-        )
+`╭━━━〔 TAE-HAA // RETIRO 〕━━━╮
+┃
+┃ Orden incompleta.
+┃ Indica cuánto deseas retirar.
+┃
+┣━━━〔 FORMATO 〕━━━┫
+┃ ✦ Cantidad :: ${currency} número
+┃ ✦ Total    :: all
+┃
+┣━━━〔 EJEMPLOS 〕━━━┫
+┃ ✦ ${usedPrefix + command} 25000
+┃ ✦ ${usedPrefix + command} all
+┃
+╰━━━〔 Tae-Haa espera tu decisión 〕━━━╯`
+)
     }
 
     if (args[0].toLowerCase() === 'all') {
