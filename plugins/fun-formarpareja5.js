@@ -32,7 +32,7 @@ function handler(m, {groupMetadata}) {
   do j = ps[Fl(R() * ps.length)];
   while (b === a);
   m.reply(
-`╭━━━〔 😍 TOP 5 PAREJAS DEL GRUPO 😍 〕━━━╮
+`╭━━━〔  TOP 5 PAREJAS DEL GRUPO  〕━━━╮
 ┃
 ┃ 1. ${toM(a)}  💙  ${toM(b)}
 ┃    ✦ Destinados a estar juntos
