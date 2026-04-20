@@ -12,23 +12,30 @@ let handler = async (m, { conn, usedPrefix, text }) => {
       throw new Error(data.message || "Falló la invocación")
     }
 
-    let ipsearch = `🌌 *Oráculo de las Sombras – Edición Navideña* 🎅
-
-❖ IP: ${data.query}
-❖ País: ${data.country}
-❖ Código de País: ${data.countryCode}
-❖ Provincia: ${data.regionName}
-❖ Código de Provincia: ${data.region}
-❖ Ciudad: ${data.city}
-❖ Distrito: ${data.district}
-❖ Código Postal: ${data.zip}
-❖ Zona Horaria: ${data.timezone}
-❖ ISP: ${data.isp}
-❖ Organización: ${data.org}
-❖ AS: ${data.as}
-❖ Mobile: ${data.mobile ? "Sí" : "No"}
-❖ Hosting: ${data.hosting ? "Sí" : "No"}`.trim()
-
+    let ipsearch = `╭━━━〔 SHADOW // IP SCAN 〕━━━╮
+┃
+┃ Consulta ejecutada.
+┃ Datos extraídos sin intervención.
+┃
+┣━━━〔 INFORMACIÓN 〕━━━┫
+┃ ✦ IP            :: ${data.query}
+┃ ✦ País          :: ${data.country} (${data.countryCode})
+┃ ✦ Región        :: ${data.regionName} (${data.region})
+┃ ✦ Ciudad        :: ${data.city}
+┃ ✦ Distrito      :: ${data.district}
+┃ ✦ Código Postal :: ${data.zip}
+┃ ✦ Zona Horaria  :: ${data.timezone}
+┃
+┣━━━〔 RED 〕━━━┫
+┃ ✦ ISP           :: ${data.isp}
+┃ ✦ Organización  :: ${data.org}
+┃ ✦ AS            :: ${data.as}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Mobile        :: ${data.mobile ? "Sí" : "No"}
+┃ ✦ Hosting       :: ${data.hosting ? "Sí" : "No"}
+┃
+╰━━━〔 Rastreo completo 〕━━━╯`.trim()
     conn.reply(m.chat, ipsearch, m)
     await m.react('✔️')
   } catch (error) {
