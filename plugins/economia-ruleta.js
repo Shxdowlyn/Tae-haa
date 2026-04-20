@@ -15,7 +15,19 @@ const resultColor = Math.random() < 0.5 ? 'black' : 'red'
 const win = color === resultColor
 if (win) {
 users.coin += coin
-conn.reply(m.chat, `「✿」La ruleta salió en *${resultColor}* y has ganado *¥${coin.toLocaleString()} ${currency}*!`, m)
+conn.reply(
+  m.chat,
+  `✿┏━━━━━━━━━━━━━━┓✿
+┃ 🎰 𝐑𝐔𝐋𝐄𝐓𝐀 𝐃𝐄𝐋 𝐃𝐄𝐒𝐓𝐈𝐍𝐎
+┣━━━━━━━━━━━━━━┫
+┃ ✦ Resultado :: *${resultColor}*
+┃ ✦ Ganancia  :: *¥${coin.toLocaleString()} ${currency}*
+┣━━━━━━━━━━━━━━┫
+┃ 🍀 ¡Felicidades!
+┃ Tu suerte habló hoy.
+✿┗━━━━━━━━━━━━━━┛✿`,
+  m
+)
 } else {
 users.coin -= coin
 conn.reply(m.chat, `「✿」La ruleta salió en *${resultColor}* y has perdido *¥${coin.toLocaleString()} ${currency}*!`, m)
