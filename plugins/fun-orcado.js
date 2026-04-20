@@ -79,13 +79,19 @@ let handler = async (m, { command, text }) => {
     partidas[chatId] = { jugador, palabra, letras: [], errores: 0 }
 
     await m.reply(
-`🌑🎄 *Juego del Ahorcado del Shadow Garden* 🎄🌑
-👤 Jugador: ${jugador}
-
-Palabra oculta: ${ocultarPalabra(partidas[chatId].palabra, [])}
-
-✨ Usa el comando .letra <letra> para adivinar antes de que las sombras festivas te ahorquen...`
-    )
+`╭━━━〔 🎮 JUEGO DEL AHORCADO 〕━━━╮
+┃
+┃ 👤 Jugador: ${jugador}
+┃
+┃ 🔤 Palabra oculta:
+┃ ${ocultarPalabra(partidas[chatId].palabra, [])}
+┃
+┣━━━〔 INSTRUCCIONES 〕━━━┫
+┃ ✦ Usa: .letra <letra>
+┃ ✦ Adivina antes de que se acaben los intentos
+┃
+╰━━━〔 Sistema activo 〕━━━╯`
+)
   }
 
   if (command === 'letra') {
