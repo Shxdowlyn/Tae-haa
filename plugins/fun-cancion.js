@@ -28,20 +28,44 @@ const handler = async (m, { conn, usedPrefix }) => {
   const json = res[Math.floor(Math.random() * res.length)]
 
   const caption = `
-┏━━━━━━━━━━━━━━━━━━━┓
-🌑 *REINO DE LAS SOMBRAS* 🌑
-┗━━━━━━━━━━━━━━━━━━━┛
+╔═══════════════════════════════╗
+║ ⚔️  ║  𝗧𝗔𝗘-𝗛𝗔𝗔 𝗦𝗬𝗦𝗧𝗘𝗠 𝗖𝗢𝗥𝗘  ║  ⚔️ ║
+╚═══════════════════════════════╝
 
-🎵 *ADIVINA EL TÍTULO DE LA CANCIÓN* 🎵
-Las sombras susurran melodías ocultas...
+🎵          𝗠𝗜𝗦𝗜𝗢́𝗡 𝗔𝗖𝗧𝗜𝗩𝗔𝗗𝗔          🎵
+─ ──────────────────────────
 
-⏰ Tiempo límite: ${(timeout / 1000).toFixed(0)} segundos
-💡 Usa *${usedPrefix || '.'}pista* para invocar una pista de las sombras
-🏆 Recompensa: ${poin} XP sombríos
+📡 ESTADO: SINCRONIZACIÓN MUSICAL
+🎧 ESCANEO: FRECUENCIAS EN CURSO
+🧠 ANÁLISIS: RECONOCIMIENTO ACTIVO
+⚙️ MOTOR: TAE-HAA AUDIO ENGINE
 
-> Responde a este mensaje para que tu destino sea detectado.
+───────────────────────────
 
-✨ Escucha la canción... deja que la oscuridad guíe tu respuesta ✨
+⏰ TIEMPO LÍMITE:
+⟦ ${(timeout / 1000).toFixed(0)} SEGUNDOS ⟧
+
+💡 ASISTENCIA DEL SISTEMA:
+⟦ ${usedPrefix || '.'}pista ⟧
+
+🏆 RECOMPENSA ASIGNADA:
+⟦ ${poin} XP ⟧
+
+───────────────────────────
+
+📥 INSTRUCCIÓN:
+➤ Responde a este mensaje
+➤ El sistema validará coincidencia exacta
+➤ Precisión + velocidad = resultado
+
+───────────────────────────
+
+⚠️ ALERTA:
+El sistema no acepta respuestas ambiguas.
+
+╔══════════════════════════════╗
+║ ⚡ 𝗧𝗔𝗘-𝗛𝗔𝗔 :: PROCESANDO DATOS ⚡ ║
+╚══════════════════════════════╝
 `.trim()
 
   conn.tebaklagu[id] = [
