@@ -10,12 +10,21 @@ const handler = async (m, { conn, text }) => {
 
   if (!code) {
     return m.reply(
-      `⚙️ *ᴇᴠᴀʟ – sʜᴀᴅᴏᴡ ɢᴀʀᴅᴇɴ*\n\n` +
-      `> Ejecuta código JavaScript en las sombras.\n\n` +
-      `*¿Acaso tengo que enseñarte todo? (Дурак). Ejemplo:*\n` +
-      `> => 1 + 1\n` +
-      `> => m.chat\n` +
-      `> => db.getUser(m.sender)`
+     `╭━━━〔 EVAL BEOM TAE-HAA  〕━━━╮
+┃
+┃ Ejecución habilitada.
+┃ El sistema responde… si sabés qué hacer.
+┃
+┣━━━〔 FUNCIÓN 〕━━━┫
+┃ Ejecuta código JavaScript.
+┃ Sin errores. Sin explicaciones.
+┃
+┣━━━〔 EJEMPLOS 〕━━━┫
+┃ ➤ => 1 + 1
+┃ ➤ => m.chat
+┃ ➤ => db.getUser(m.sender)
+┃
+╰━━━〔 No improvises 〕━━━╯`
     )
   }
 
