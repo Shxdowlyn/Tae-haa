@@ -11,11 +11,23 @@ let handler = async (m, { args, text, usedPrefix, command }) => {
   }
 
   await m.reply(
-`🎭 *Pregunta ritual:* ${text}
-🎄🔮 *Respuesta de las Sombras:* ${respuesta}
-
-🌌✨ *El Jardín de las Sombras observa...*`
-  )
+`╭━━━〔 🎭 ORÁCULO DE TAE-HAA 〕━━━╮
+┃
+┃ 🌌 Consulta registrada...
+┃ La energía ha sido interpretada.
+┃
+┣━━━〔 PREGUNTA 〕━━━┫
+┃ ✦ ${text}
+┃
+┣━━━〔 RESPUESTA 〕━━━┫
+┃ 🔮 ${respuesta}
+┃
+┣━━━〔 MENSAJE 〕━━━┫
+┃ Las sombras susurran en silencio...
+┃ Tae-haa esta observando tu destino.
+┃
+╰━━━〔 Fin de la lectura 〕━━━╯`
+)
 }
 
 handler.help = ['8ball <pregunta>']
