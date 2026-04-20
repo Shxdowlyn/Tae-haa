@@ -37,7 +37,7 @@ export async function before(m, { conn }) {
         },
         externalAdReply: {
           title: nombreBot,
-          body: "✎⍴᥆ᥕᥱrᥱძ ᑲᥡ 𝙮𝙤𝙨𝙪𝙚,𝙖𝙙𝙤",
+          body: "Powered by Adara",
           thumbnailUrl: bannerFinal,
           sourceUrl: "api-adonix.ultraplus.click",
           mediaType: 1,
