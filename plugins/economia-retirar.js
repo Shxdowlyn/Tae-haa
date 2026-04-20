@@ -57,10 +57,20 @@ let handler = async (m, { args, usedPrefix, command }) => {
 
     if (isNaN(args[0])) {
         return m.reply(
-            `ꕥ Debes retirar una cantidad válida.\n\n` +
-            `Ejemplo:\n` +
-            `» ${usedPrefix + command} 25000\n` +
-            `» ${usedPrefix + command} all`
+            `╭━━━〔 TAE-HAA // RETIRO 〕━━━╮
+┃
+┃ Orden rechazada.
+┃ Debes indicar una cantidad válida.
+┃
+┣━━━〔 FORMATO 〕━━━┫
+┃ ✦ Cantidad :: número
+┃ ✦ Total    :: all
+┃
+┣━━━〔 EJEMPLOS 〕━━━┫
+┃ ✦ ${usedPrefix + command} 25000
+┃ ✦ ${usedPrefix + command} all
+┃
+╰━━━〔 Tae-Haa exige precisión 〕━━━╯`
         )
     }
 
