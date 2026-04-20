@@ -96,27 +96,29 @@ ${readMore}
     }
   }
 
-  await m.react('🐺')
-
-await conn.sendMessage(m.chat, { 
-  video: { url: videoMenu },
-  caption: infoUser + menuTexto,
-  gifPlayback: true,
-  contextInfo: {
-    isForwarded: true,
-    forwardedNewsletterMessageInfo: {
-      newsletterJid: channelRD.id,
-      newsletterName: channelRD.name
-    },
-    externalAdReply: {
-      title: `${botname} organizacional`,
-      body: `By ${dev}`,
-      mediaType: 1,
-      thumbnailUrl: thumbMenu,
-      renderLargerThumbnail: true
+  await conn.sendMessage(
+  m.chat,
+  { 
+    video: { url: videoMenu },
+    caption: infoUser + menuTexto,
+    gifPlayback: true,
+    contextInfo: {
+      isForwarded: true,
+      forwardedNewsletterMessageInfo: {
+        newsletterJid: channelRD.id,
+        newsletterName: channelRD.name
+      },
+      externalAdReply: {
+        title: `${botname} organizacional`,
+        body: `By ${dev}`,
+        mediaType: 1,
+        thumbnailUrl: thumbMenu,
+        renderLargerThumbnail: true
+      }
     }
-  }
-}) , { quoted: fkontak })
+  },
+  { quoted: fkontak }
+)
 
 } catch (e) {
    console.error(e)
