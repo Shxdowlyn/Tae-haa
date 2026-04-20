@@ -29,17 +29,18 @@ export async function before(m, { conn, isOwner, isROwner}) {
 
       if (advertencias>= 2) {
         await m.reply(`
-🌌 *[PROCEDIMIENTO SOMBRA: BLOQUEO FINAL]* 💀
-══════════════════════
-🔍 *Unidad de rastreo: Shadow Protocol v2.0*
-📛 Entidad detectada: ${numero}
-📄 Infracción: Comunicación no autorizada (2/2)
-
-☠️ Activando [BLACKOUT-OMEGA]...
-🔒 Estado: *Entidad neutralizada*
-
-🧩 Registro sellado. Acceso denegado.
-══════════════════════`);
+╭━━━〔   𝗧𝗔𝗘-𝗛𝗔𝗔 𝗣𝗥𝗢𝗧𝗢𝗖𝗢𝗟𝗢  〕━━━⬣
+┃  
+┃  🧪 *PROCEDIMIENTO: BLOQUEO FINAL*
+┃  ─────────────────────
+┃  🔍 Unidad: Beom Protocol v3.0
+┃  📛 Objetivo: ${numero}
+┃  📄 Infracción: Comunicación no autorizada (2/2)
+┃  
+┃  🚫 Acceso: DENEGADO
+┃  
+╰━━━〔  𝐒𝐘𝐒𝐓𝐄𝐌 𝐂𝐎𝐍𝐓𝐑𝐎𝐋𝐋𝐄𝐃 〕━━━⬣
+`);
         await conn.updateBlockStatus(m.chat, 'block');
         console.log(`[☠️ ENTIDAD BLOQUEADA] ${numero}`);
         delete global.advertenciasArabes[numero];
