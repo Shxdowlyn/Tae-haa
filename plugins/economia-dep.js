@@ -18,7 +18,15 @@ if (!user.coin) return m.reply(`ꕥ No tienes suficientes *${currency}* la Carte
 if (user.coin < count) return m.reply(`✧ Solo tienes *¥${user.coin.toLocaleString()} ${currency}* en la Cartera.`)
 user.coin -= count * 1
 user.bank += count * 1
-await m.reply(`❀ Depositaste *¥${count.toLocaleString()} ${currency}* en el banco, ya no podran robartelo.`)}
+await m.reply(`╭━━━〔 TAE-HAA // DEPÓSITO 〕━━━╮
+┃
+┃ Transacción completada.
+┃ Fondos asegurados.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Monto :: ¥${count.toLocaleString()} ${currency}
+┃
+╰━━━〔 Ahora está fuera de alcance 〕━━━╯`)}
 
 handler.help = ['depositar']
 handler.tags = ['economia']
