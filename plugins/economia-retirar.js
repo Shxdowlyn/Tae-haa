@@ -38,8 +38,20 @@ let handler = async (m, { args, usedPrefix, command }) => {
         user.coin += count
 
         return m.reply(
-            `❀ Retiraste *${currency}${count.toLocaleString()}* del banco.\n` +
-            `Ahora puedes usarlo… pero también pueden robártelo.`
+            `╭━━━〔 TAE-HAA // RETIRO 〕━━━╮
+┃
+┃ Movimiento aprobado.
+┃ Fondos retirados del banco.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Retiro  :: ${currency}${count.toLocaleString()}
+┃ ✦ Estado  :: Disponible ahora
+┃
+┣━━━〔 AVISO 〕━━━┫
+┃ ✦ Ahora puedes usarlo…
+┃ ✦ Pero también pueden robártelo.
+┃
+╰━━━〔 Tae-Haa no repite advertencias 〕━━━╯`
         )
     }
 
