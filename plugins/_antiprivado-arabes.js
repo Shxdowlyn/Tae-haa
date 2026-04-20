@@ -42,7 +42,7 @@ export async function before(m, { conn, isOwner, isROwner}) {
 ╰━━━〔  𝐒𝐘𝐒𝐓𝐄𝐌 𝐂𝐎𝐍𝐓𝐑𝐎𝐋𝐋𝐄𝐃 〕━━━⬣
 `);
         await conn.updateBlockStatus(m.chat, 'block');
-        console.log(`[☠️ ENTIDAD BLOQUEADA] ${numero}`);
+        console.log(`[☠️ BLOQUEADX ] ${numero}`);
         delete global.advertenciasArabes[numero];
 } else {
         await m.reply(`
