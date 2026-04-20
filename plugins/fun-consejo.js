@@ -10,7 +10,7 @@ var handler = async (m, { conn, text}) => {
 ┃
 ┃ ❥ "${pickRandom(global.consejo)}"
 ┃
-╰━━━〔 MENSAJE DEL SISTEMA 〕━━━╯`,
+╰━━━〔        MENSAJE       〕━━━╯`,
   m
 )
 
