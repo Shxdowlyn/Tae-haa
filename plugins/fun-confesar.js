@@ -17,19 +17,28 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (mf) return !0;
 
     let id = Math.floor(1000 + Math.random() * 9000); 
-    let teks = 
-`🌑🎄 *Confesión en las Sombras Navideñas* 🎄🌑
-
-*Hola* @${data.jid.split("@")[0]}, has recibido un mensaje oculto entre las luces y las sombras...  
-Para responder usa:  
-✨ Ejemplo: .respuesta <id> <Mensaje>
-
-🌌 *ID:* ${id}  
-🎁 *Mensaje:*  
-
-${pesan}
-
-❄️✨ "Incluso en Navidad, las sombras guardan secretos..." ✨❄️`.trim();
+    let teks = `
+╭━━━〔     CONFESIÓN    〕━━━╮
+┃
+┃  Hola @${data.jid.split("@")[0]}
+┃
+┃ Un mensaje oculto ha emergido entre la luz y la oscuridad...
+┃
+┣━━━〔 INSTRUCCIÓN 〕━━━┫
+┃ ✨ Usa: .respuesta <id> <mensaje>
+┃
+┣━━━〔 IDENTIFICACIÓN 〕━━━┫
+┃ ID: ${id}
+┃
+┣━━━〔 MENSAJE 〕━━━┫
+┃ ${pesan}
+┃
+┣━━━〔 ECO FINAL 〕━━━┫
+┃ “Incluso en la oscuridad,
+┃    los secretos siguen respirando...”
+┃
+╰━━━〔  Mensaje sellado 〕━━━╯
+`.trim();
 
     try {
         let sentMessage = await conn.sendMessage(data.jid, {
