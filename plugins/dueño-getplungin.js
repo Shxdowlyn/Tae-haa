@@ -7,7 +7,22 @@ const handler = async (m, {conn, isROwner, usedPrefix, command, text}) => {
 
   if (!text) {
     const pluginsList = ar1.map((v) => `*◉* ${v}`).join('\n');
-    return m.reply(`*✍️ 𝙸𝙽𝙶𝚁𝙴𝚂𝙰 𝙴𝙻 𝙽𝙾𝙼𝙱𝚁𝙴 𝙳𝙴 𝙰𝙻𝙶𝚄𝙽 𝙿𝙻𝚄𝙶𝙸𝙽 (𝙰𝚁𝙲𝙷𝙸𝚅𝙾) 𝙴𝚇𝙸𝚂𝚃𝙴𝙽𝚃𝙴*\n\n*—◉ 𝙴𝙹𝙴𝙼𝙿𝙻𝙾*\n*◉ ${usedPrefix + command}* info-infobot\n\n*—◉ 𝙻𝙸𝚂𝚃𝙰 𝙳𝙴 𝙿𝙻𝗨𝙶𝙸𝙽𝚂 (𝙰𝚁𝙲𝙷𝙸𝚅𝙾𝚂) 𝙴𝚇𝙸𝚂𝚃𝙴𝙽𝚃𝙴𝚂:*\n${pluginsList}`);
+    return m.reply(
+`╭━━━〔 TAE-HAA // PLUGINS 〕━━━╮
+┃
+┃ Entrada requerida.
+┃ No se detectó un archivo válido.
+┃
+┣━━━〔 USO 〕━━━┫
+┃ ✦ ${usedPrefix + command} <nombre del plugin>
+┃
+┣━━━〔 EJEMPLO 〕━━━┫
+┃ ${usedPrefix + command} info-infobot
+┃
+┣━━━〔 DISPONIBLES 〕━━━┫
+┃ ${pluginsList}
+┃
+╰━━━〔 Seleccioná correctamente 〕━━━╯`);
   }
 
   const pluginName = text.replace(/.js$/i, '');
