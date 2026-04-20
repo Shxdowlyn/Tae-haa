@@ -74,19 +74,25 @@ const handler = async (m, { conn, text }) => {
     }
 
 
-const caption = `
-✧━───『 𝙸𝚗𝚏𝚘 𝚍𝚎𝚕 𝚅𝚒𝚍𝚎𝚘 』───━✧
-
-🎼 𝑻𝒊́𝒕𝒖𝒍𝒐: ${title}
-📺 𝑪𝒂𝒏𝒂𝒍: ${authorName}
-👁️ 𝑽𝒊𝒔𝒕𝒂𝒔: ${vistas}
-⏳ 𝑫𝒖𝒓𝒂𝒄𝒊𝒐́𝒏: ${durationTimestamp}
-🌐 𝑬𝒏𝒍𝒂𝒄𝒆: ${url}
-🐉 _Api:_ https://api-gohan.onrender.com
-
-✧━───『 𝑺𝒉𝒂𝒅𝒐𝒘 𝑩𝒐𝒕 』───━✧
-⚡ 𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝒃𝒚 𝒀𝒐𝒔𝒖𝒆 ⚡
-`
+const caption = `╭━━━〔 VIDEO // REGISTRO DETECTADO 〕━━━╮
+┃
+┃ El contenido fue analizado.
+┃ No todo debería verse… pero igual lo pediste.
+┃
+┣━━━〔 INFORMACIÓN 〕━━━┫
+┃ ✦ Título     :: ${title}
+┃ ✦ Canal      :: ${authorName}
+┃ ✦ Vistas     :: ${vistas}
+┃ ✦ Duración   :: ${durationTimestamp}
+┃
+┣━━━〔 ACCESO 〕━━━┫
+┃ ${url}
+┃
+┣━━━〔 SISTEMA 〕━━━┫
+┃ Núcleo  ::Tae-Haa Bot
+┃ Control :: Adara
+┃
+╰━━━〔 Ejecutado sin restricciones 〕━━━╯`
 
     let thumb = fallbackThumb
 
