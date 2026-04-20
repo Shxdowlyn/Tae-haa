@@ -60,21 +60,21 @@ let handler = async (m, { conn, usedPrefix, dirname, participants }) => {
         .map(cmd => cmd.help.map(e => `*│ׄꤥㅤׅ* ${usedPrefix}${e}`).join('\n'))
         .join('\n')
       if (comandos) {
-        menuTexto += `\n*╭──･ ̸̷∵* \`${tags[tag]}\`  *݁ ⚜︎*
+        menuTexto += `\n*╭──･ ̸̷∵* \`${tags[tag]}\`  
 ${comandos}
 *╰─────────────֙╯*\n`
       }
     }
 
     let infoUser = `
-> . ݁  🌑՞ *ʙɪᴇɴᴠᴇɴɪᴅᴏ ᴀ ʟᴀ ꜱᴏᴍʙʀᴀ,* ${name}.
+>> Ya estás dentro, ${name}. No hay vuelta atrás.
 
-> ﹙⚜︎﹚੭੭ ─ \`ɪ ɴ ғ ᴏ - ꜱʜᴀᴅᴏᴡ ʙᴏᴛ\`
-> ര ׄ 𓏸𓈒 ׅ *ᴄᴏᴍᴀɴᴅᴏꜱ ›* ${totalCommands}
-> ര ׄ 𓏸𓈒 ׅ *ᴛɪᴇᴍᴘᴏ ›* ${uptime}
-> ര ׄ 𓏸𓈒 ׅ *ᴅᴏᴍɪɴɪᴏ ›* ${pais}
-> ര ׄ 𓏸𓈒 ׅ *ᴀʟᴍᴀꜱ ›* ${totalreg}
-> ര ׄ 𓏸𓈒 ׅ *ᴄᴀɴᴀʟ ›* https://whatsapp.com/channel/0029VbArz9fAO7RGy2915k3O
+> ─ Sistema
+> Comandos: ${totalCommands}
+> Tiempo: ${uptime}
+> pais: ${pais}
+> : ${totalreg}
+> Canal: https://whatsapp.com/channel/0029VbArz9fAO7RGy2915k3O
 
 ${readMore}
   乂 *ᴘʀᴏᴛᴏᴄᴏʟᴏ ᴅᴇ ᴄᴏᴍᴀɴᴅᴏꜱ ᴅᴇ ʟᴀ ꜱᴏᴍʙʀᴀ* 乂\n`.trim()
