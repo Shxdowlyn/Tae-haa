@@ -2,7 +2,7 @@ let handler = async (m, { conn, usedPrefix, command, isROwner }) => {
   if (!isROwner) return
   try {
     await m.react('🎭') // reacción teatral inicial
-    m.reply(`╭━━━〔 SHADOW // REINICIO 〕━━━╮
+    m.reply(`╭━━━〔 TAE-HAA // REINICIO 〕━━━╮
 ┃
 ┃ Proceso iniciado.
 ┃ El sistema se reestructura.
