@@ -19,7 +19,19 @@ export async function before(m, { conn, isAdmin, isBotAdmin, isOwner, isROwner }
     if (prefixRegex.test(m.text)) {
       const grupoURL = 'https://chat.whatsapp.com/ETHW7aP7kOICrR2RBrfE6N'; 
       const nombreUsuario = await conn.getName(m.sender);
-      const mensajeBloqueo = `⚠️ *Hola ${nombreUsuario}*, mi creador ha desactivado los comandos en chats privados.\n\nPor lo tanto, serás bloqueado automáticamente.\n\n🌌 *Únete al grupo oficial para usar el bot:*\n${grupoURL}`;
+      const mensajeBloqueo = `Hola ${nombreUsuario}.
+
+Este lugar no es para eso.
+
+Los comandos están deshabilitados en privado,
+y forzar su uso solo termina en un bloqueo automático.
+
+Si sabes cómo funcionan las cosas,
+entonces ya sabes dónde ir:
+
+${grupoURL}
+
+No insistas.`;
       const imagenURL = 'https://files.catbox.moe/y6hfiv.jpg';
 
       await conn.sendFile(m.chat, imagenURL, 'antiprivado.jpg', mensajeBloqueo, m, false, { mentions: [m.sender]});
