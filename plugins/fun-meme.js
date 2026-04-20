@@ -20,10 +20,14 @@ let handler = async (m, { command, conn }) => {
       participant: '0@s.whatsapp.net'
     };
 
-    let caption = `☽ 『 Shadow Garden Memes 』 ☽
-
-🧠 Aquí tienes un meme en español invocado desde las sombras...
-✦ Que la risa ilumine tu noche oscura.`;
+    let caption = `╭━━━〔 🎭 MEME SYSTEM 〕━━━╮
+┃
+┃ 🧠 Meme en español generado
+┃
+┃ ✦ Listo para entretenerte
+┃ ✦ Disfruta el contenido
+┃
+╰━━━〔 Fin del mensaje 〕━━━╯`;
 
     await conn.sendButton(
       m.chat,
