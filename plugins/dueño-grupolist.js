@@ -68,7 +68,18 @@ ${txt}
 ${isBotAdmin ? '--- (Error) ---' : 'No autorizado'}
 ───────────────\n\n`;
     }
-    m.reply(`🎄👾 *Shadow Garden Reporte Navideño de Grupos* 🌌\n\n❄️ *—◉ Total de dominios vigilados:* ${totalGroups}\n\n${txt}\n✨ Incluso en navidad, las sombras nunca descansan...`.trim());
+    m.reply(`╭━━━〔 SHADOW // REPORTE INVERNAL 〕━━━╮
+┃
+┃ La vigilancia continúa.
+┃ Ni el silencio de la nieve detiene el control.
+┃
+┣━━━〔 RESUMEN 〕━━━┫
+┃ ✦ Dominios activos :: ${totalGroups}
+┃
+┣━━━〔 REGISTRO 〕━━━┫
+${txt}
+┃
+╰━━━〔 La sombra no celebra… observa 〕━━━╯`.trim());
   }    
 };
 handler.help = ['groups', 'grouplist'];
