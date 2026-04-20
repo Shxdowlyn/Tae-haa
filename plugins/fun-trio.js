@@ -22,12 +22,20 @@ let handler = async (m, { conn }) => {
 
         const pp = 'https://files.catbox.moe/r15z6m.jpg'; // URL pública de la imagen
 
-        const trio = `\t\t*TRÍO VIOLENTOOOOO!*
-        
-${name1} y ${name2} tienen un *${Math.floor(Math.random() * 100)}%* de compatibilidad como pareja.
-Mientras que ${name1} y ${name3} tienen un *${Math.floor(Math.random() * 100)}%* de compatibilidad.
-Y ${name2} y ${name3} tienen un *${Math.floor(Math.random() * 100)}%* de compatibilidad.
-¿Qué opinas de un trío? 😏`;
+        const trio = `
+╭━━━〔 💥 TRÍO SYSTEM 〕━━━╮
+┃
+┃ 👥 ${name1}
+┃ 👥 ${name2}
+┃ 👥 ${name3}
+┃
+┣━━━〔 COMPATIBILIDAD 〕━━━┫
+┃ ✦ ${name1} ⇄ ${name2} : ${Math.floor(Math.random() * 100)}%
+┃ ✦ ${name1} ⇄ ${name3} : ${Math.floor(Math.random() * 100)}%
+┃ ✦ ${name2} ⇄ ${name3} : ${Math.floor(Math.random() * 100)}%
+┃
+╰━━━〔 RESULTADO GENERADO 〕━━━╯
+`.trim();
 
         await conn.sendMessage(m.chat, {
             image: { url: pp },
