@@ -35,7 +35,7 @@ return conn.reply(m.chat, `ꕥ Solo puedes robarle *${currency}* a un usuario si
 }
 const rob = Math.floor(Math.random() * 1001) + 2000
 if (target.coin < rob) {
-return conn.reply(m.chat, `╭━━━〔 TAE-HAA // SHADOW RAID 〕━━━╮
+return conn.reply(m.chat, `╭━━━〔 TAE-HAA //  RAID 〕━━━╮
 ┃
 ┃ Operación cancelada.
 ┃ El objetivo no vale el riesgo.
@@ -53,7 +53,7 @@ return conn.reply(m.chat, `╭━━━〔 TAE-HAA // SHADOW RAID 〕━━━�
 user.coin += rob
 target.coin -= rob
 user.lastrob = Date.now() + 7200000
-conn.reply(m.chat, `╭━━━〔 TAE-HAA // SHADOW RAID 〕━━━╮
+conn.reply(m.chat, `╭━━━〔 TAE-HAA //  RAID 〕━━━╮
 ┃
 ┃ Operación completada.
 ┃ Fondos transferidos sin ruido.
