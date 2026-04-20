@@ -58,7 +58,17 @@ const handler = async (m, { conn, command }) => {
 
     return conn.sendMessage(
       m.chat,
-      { text: `💒 『☽』 Las sombras han sellado el pacto.\n${tag(userId)} y ${tag(partnerId)} ahora están oficialmente casados.`, mentions: [userId, partnerId], ...rcanal },
+      {
+  text: `💒 ╭━━━〔 MATRIMONIO REGISTRADO 〕━━━╮
+┃
+┃ 👤 ${tag(userId)}
+┃    💍  unido con
+┃ 👤 ${tag(partnerId)}
+┃
+┃ ✔ Estado: Casados oficialmente
+┃ ✔ Registro: Confirmado por el sistema
+┃
+╰━━━〔 Fin del registro 〕━━━╯`, mentions: [userId, partnerId], ...rcanal },
       { quoted: m }
     )
   }
