@@ -26,12 +26,20 @@ let handler = async (m, { conn, text, usedPrefix }) => {
       lookup(filename.split('.').pop().toLowerCase()) ||
       'application/octet-stream'
 
-    const caption = `乂 MEDIAFIRE - DESCARGA 乂
-
-✩ Nombre » ${filename}
-✩ Peso » ${filesize}
-✩ MimeType » ${mimetype}
-✩ Enlace » ${text}`
+    const caption = `╭─〔 MEDIAFIRE 〕
+│
+│ Solicitud procesada.
+│ Resultado entregado.
+│
+├─ Archivo
+│ Nombre   : ${filename}
+│ Tamaño   : ${filesize}
+│ Formato  : ${mimetype}
+│
+├─ Acceso
+│ ${text}
+│
+╰─ Una vez que lo abras… ya es tu problema.`
 
     await conn.sendMessage(
       m.chat,
