@@ -144,7 +144,15 @@ const downloadMedia = async (conn, m, url, title, thumbnail, type) => {
     }
 
     await conn.sendMessage(m.chat, {
-      text: `🎶 *Shadow — Operación completada*\n\n✨ *Título:* ${fileTitle}\n🌌 Entregada completa uwu.`,
+      text: `╭━━━〔 SHADOW // OPERACIÓN 〕━━━╮
+┃
+┃ Ejecución completada.
+┃ No hubo errores.
+┃
+┣━━━〔 RESULTADO 〕━━━┫
+┃ ✦ Título :: ${fileTitle}
+┃
+╰━━━〔 Entrega confirmada 〕━━━╯`
       edit: sent.key
     })
     await m.react("✅")
