@@ -70,21 +70,20 @@ handler.before = async function (m, { conn, groupMetadata }) {
     const welcomeImg = `https://api.popcat.xyz/welcomecard?background=${encodeURIComponent('https://files.catbox.moe/gbp5x3.jpg')}&text1=${encodeURIComponent(userName)}&text2=Bienvenido+a+${encodeURIComponent(groupName)}&text3=Miembro+${groupSize}&avatar=${encodeURIComponent(pp)}`
 
     const caption = 
-`╭─「 👻 𝐒𝐇𝐀𝐃𝐎𝐖 𝐆𝐀𝐑𝐃𝐄𝐍: 𝐈𝐍𝐈𝐂𝐈𝐎 」─╮
+`╭─「 𝗧𝗔𝗘 𝗛𝗔𝗔 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 」─╮
 
-${userName} ha sido convocado por las sombras...
-Bienvenid@ al dominio secreto de ${groupName}.
+${userName}, bienvenido a ${groupName}.
 
-Tu llegada no es casual. Cada paso será observado.
-Tu poder será forjado en silencio. Tu lealtad, puesta a prueba.
+Tu llegada quedó registrada.
+Mantén el orden y respeta el entorno.
 
-⚠️ Lee las reglas para no ser expulsado por las sombras, @${userTag}
+Antes de interactuar, revisa las reglas, @${userTag}.
 
-╰─「 🌌 𝐈𝐍𝐅𝐎 𝐃𝐄𝐋 𝐆𝐑𝐔𝐏𝐎 」─╯
-🧿 Miembros: ${groupSize}
-📅 Fecha: ${fecha}
+╰─「 𝗜𝗡𝗙𝗢 𝗚𝗥𝗢𝗨𝗣 」─╯
+Miembros: ${groupSize}
+Fecha: ${fecha}
 
-📜 Descripción:
+Descripción:
 ${groupDesc}`
 
     await conn.sendMessage(m.chat, {
@@ -92,19 +91,19 @@ ${groupDesc}`
       caption,
       footer: `© ${packname} · Welcome`,
       buttons: [
-        { buttonId: '#reg', buttonText: { displayText: '👤 Registrarme' }, type: 1 },
-        { buttonId: '#menu', buttonText: { displayText: '🌌 Menú' }, type: 1 }
+        { buttonId: '#reg', buttonText: { displayText: 'Registrarme' }, type: 1 },
+        { buttonId: '#menu', buttonText: { displayText: 'Menú' }, type: 1 }
       ],
       mentions: [userJid],
       viewOnce: true,
       contextInfo: {
         externalAdReply: {
-          title: '─ W E L C O M E ─🥷🏻',
+          title: '─ 𝗪 𝗘 𝗟 𝗖 𝗢 𝗠 𝗘',
           body: `Bienvenido a ${groupName}`,
           thumbnailUrl: pp,
           mediaType: 1,
           showAdAttribution: true,
-          sourceUrl: 'https://wa.me/584242773183'
+          sourceUrl: 'https://wa.me/584'
         }
       }
     })
