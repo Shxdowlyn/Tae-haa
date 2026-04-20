@@ -170,8 +170,7 @@ No interactúes si no sabés lo que hacés.`.trim()
           }
         ],
         messageParamsJson:
-          '{"limited_time_offer":{"text":"Menulist","url":"https://github.com/xrljosedv","copy_code":"Tae-haa
-bot","expiration_time":1754613436864329},"bottom_sheet":{"in_thread_buttons_limit":2,"divider_indices":[1,2,3,4,5,999],"list_title":"Select Menu","button_title":"ᴍᴇɴᴜ ʟɪsᴛ"},"tap_target_configuration":{"title":"▸ X ◂","description":"Let’s go","canonical_url":"https://github.com/xrljosedv","domain":"https://xrljosedvapi.vercel.app","button_index":0}}'
+          '{"limited_time_offer":{"text":"Menulist","url":"https://github.com/xrljosedv","copy_code":"Tae-haabot","expiration_time":1754613436864329},"bottom_sheet":{"in_thread_buttons_limit":2,"divider_indices":[1,2,3,4,5,999],"list_title":"Select Menu","button_title":"ᴍᴇɴᴜ ʟɪsᴛ"},"tap_target_configuration":{"title":"▸ X ◂","description":"Let’s go","canonical_url":"https://github.com/xrljosedv","domain":"https://xrljosedvapi.vercel.app","button_index":0}}'
       },
       contextInfo: {
         mentionedJid: [m.sender],
