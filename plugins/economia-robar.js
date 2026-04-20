@@ -35,7 +35,20 @@ return conn.reply(m.chat, `ꕥ Solo puedes robarle *${currency}* a un usuario si
 }
 const rob = Math.floor(Math.random() * 1001) + 2000
 if (target.coin < rob) {
-return conn.reply(m.chat, `ꕥ *${name}* no tiene suficientes *${currency}* fuera del banco como para que valga la pena intentar robar.`, m, { mentions: [who] })
+return conn.reply(m.chat, `╭━━━〔 TAE-HAA // SHADOW RAID 〕━━━╮
+┃
+┃ Operación cancelada.
+┃ El objetivo no vale el riesgo.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Objetivo :: ${name}
+┃ ✦ Fondos   :: Insuficientes fuera del banco
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Recompensa :: Demasiado baja
+┃ ✦ Decisión   :: Retirada estratégica
+┃
+╰━━━〔 Tae-Haa no pierde el tiempo 〕━━━╯`, m, { mentions: [who] })
 }
 user.coin += rob
 target.coin -= rob
