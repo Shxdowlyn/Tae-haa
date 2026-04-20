@@ -7,22 +7,20 @@ import moment from 'moment-timezone'
 const botname = global.botname || "Tae-haa bot"
 const dev = global.dev || "Cid Kagenou"
 const videoMenu = "https://files.catbox.moe/1jgxen.mp4"
-const thumbMenu = "https://files.catbox.moe/qj9tpo.jpg" 
+const thumbMenu = "https://files.catbox.moe/qj9tpo.jpg"
 const channelRD = global.channelRD || { id: "120363406529946290@newsletter", name: "Tae-haa" }
 
-let handler = async (m, { conn, usedPrefix, dirname, participants }) => {
+let handler = async (m, { conn, usedPrefix }) => {
   try {
-    let mentionedJid = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
     let name = await conn.getName(m.sender)
-    let totalreg = Object.keys(global.db.data.users).length
-    let groupsCount = Object.values(conn.chats).filter(v => v.id.endsWith('@g.us')).length
+    let totalreg = Object.keys(global.db.data.users || {}).length
     let uptime = clockString(process.uptime() * 1000)
-    let totalCommands = Object.keys(global.plugins).length
+    let totalCommands = Object.keys(global.plugins || {}).length
     let readMore = String.fromCharCode(8206).repeat(4001)
 
     let userIdNum = m.sender.split('@')[0]
     let phone = PhoneNumber('+' + userIdNum)
-    let pais = phone.getRegionCode() || 'Número desconocido…¿Deberia importarme?'
+    let pais = phone.getRegionCode() || 'Desconocido'
 
     let tags = {
       'info': '𝗜𝗡𝗙𝗢 𝗧𝗔𝗘',
@@ -46,7 +44,7 @@ let handler = async (m, { conn, usedPrefix, dirname, participants }) => {
       'owner': '𝗖𝗥𝗘𝗔𝗗𝗢𝗥𝗔',
     }
 
-    let commands = Object.values(global.plugins)
+    let commands = Object.values(global.plugins || {})
       .filter(v => v.help && v.tags)
       .map(v => ({
         help: Array.isArray(v.help) ? v.help : [v.help],
@@ -60,9 +58,7 @@ let handler = async (m, { conn, usedPrefix, dirname, participants }) => {
         .map(cmd => cmd.help.map(e => `*│ׄꤥㅤׅ* ${usedPrefix}${e}`).join('\n'))
         .join('\n')
       if (comandos) {
-        menuTexto += `\n*╭──･ ̸̷∵* \`${tags[tag]}\`  
-${comandos}
-*╰─────────────֙╯*\n`
+        menuTexto += `\n*╭──･ ̸̷∵* \`${tags[tag]}\`\n${comandos}\n*╰─────────────֙╯*\n`
       }
     }
 
@@ -72,65 +68,46 @@ ${comandos}
 > ─ Sistema
 > Comandos: ${totalCommands}
 > Tiempo: ${uptime}
-> pais: ${pais}
-> : ${totalreg}
-> Canal: https://whatsapp.com/channel/0029VbBvrmwC1Fu5SYpbBE2A
+> País: ${pais}
+> Usuarios: ${totalreg}
 
 ${readMore}
-  tae-haa protocolos\n`.trim()
+tae-haa protocolos
+`.trim()
 
-  const fkontak = {
-    key: { fromMe: false, participant: "0@s.whatsapp.net", remoteJid: "status@broadcast" },
-    message: {
-      productMessage: {
-        product: {
-          productImage: { mimetype: "image/jpeg", jpegThumbnail: await (await fetch(thumbMenu)).buffer() },
-          title: `Menu`,
-          description: "Hola, Soy Tae-haa.",
-          currencyCode: "USD",
-          priceAmount1000: 0,
-          retailerId: "menu"
+    await m.react('🐺')
+
+    await conn.sendMessage(m.chat, {
+      video: { url: videoMenu },
+      caption: infoUser + '\n' + menuTexto,
+      gifPlayback: true,
+      contextInfo: {
+        isForwarded: true,
+        forwardedNewsletterMessageInfo: {
+          newsletterJid: channelRD.id,
+          newsletterName: channelRD.name
         },
-        businessOwnerJid: "5493863447787@s.whatsapp.net"
+        externalAdReply: {
+          title: botname,
+          body: `By ${dev}`,
+          mediaType: 1,
+          thumbnailUrl: thumbMenu,
+          renderLargerThumbnail: true
+        }
       }
-    }
+    })
+
+  } catch (e) {
+    console.error(e)
+    await conn.sendMessage(m.chat, { text: `✘ Error: ${e.message}` })
   }
-
-  await m.react('🐺')
-
-  await conn.sendMessage(m.chat, { 
-    video: { url: videoMenu },
-    caption: infoUser + menuTexto,
-    gifPlayback: true,
-    contextInfo: {
-      isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: channelRD.id,
-        serverMessageId: '',
-        newsletterName: channelRD.name
-      },
-      externalAdReply: {
-        title: `${botname}  organizacional`,
-        body: `By ${dev}`,
-        mediaType: 1,
-        sourceUrl: null,
-        thumbnailUrl: thumbMenu, 
-        renderLargerThumbnail: true,
-        showAdAttribution: false
-      }
-    }
-  }, { quoted: fkontak })
-
-} catch (e) {
-   console.error(e)
-   await conn.sendMessage(m.chat, { text: `✘ Error: ${e.message}` })
- }
 }
 
 handler.help = ['menu']
 handler.tags = ['main']
-handler.command = ['menu','help','menú', 'allmenu']
-handler.register = true
+handler.command = ['menu','help','menú','allmenu']
+handler.register = false
+
 export default handler
 
 function clockString(ms) {
@@ -138,4 +115,4 @@ function clockString(ms) {
   const m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
   const s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
   return [h, m, s].map(v => v.toString().padStart(2, '0')).join(':')
-  }
+}
