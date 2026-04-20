@@ -138,7 +138,20 @@ let handler = async (m, { command, text }) => {
     } else {
       partida.errores++
       if (partida.errores >= ahorcadoStages.length - 1) {
-        m.reply(`${ahorcadoStages[partida.errores]}\n❌ ${jugador}, has sido consumido por las sombras... La palabra era "${partida.palabra}".`)
+        m.reply(
+`${ahorcadoStages[partida.errores]}
+
+╭━━━〔 🎮 AHORCADO 〕━━━╮
+┃
+┃ ❌ ${jugador}
+┃
+┃ El juego ha terminado
+┃
+┃ 🔤 Palabra correcta:
+┃ "${partida.palabra}"
+┃
+╰━━━〔 Fin de la partida 〕━━━╯`
+)
         delete partidas[chatId]
       } else {
         m.reply(`${ahorcadoStages[partida.errores]}\n⚠️ ${jugador}, la letra "${letra}" no está. Te quedan ${ahorcadoStages.length - 1 - partida.errores} intentos.`)
