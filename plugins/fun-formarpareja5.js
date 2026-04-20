@@ -32,22 +32,24 @@ function handler(m, {groupMetadata}) {
   do j = ps[Fl(R() * ps.length)];
   while (b === a);
   m.reply(
-    `*_😍Las 5 mejores parejas del grupo😍_*
-    
-*_1.- ${toM(a)} y ${toM(b)}_*
-- Esta pareja esta destinada a estar junta 💙
-
-*_2.- ${toM(c)} y ${toM(d)}_*
-- Esta pareja son dos pequeños tortolitos enamorados ✨
-
-*_3.- ${toM(e)} y ${toM(f)}_*
-- Ufff y que decir de esta pareja, ya hasta familia deberian tener 🤱🧑‍🍼
-
-*_4.- ${toM(g)} y ${toM(h)}_*
-- Estos ya se casaron en secreto 💍
-
-*_5.- ${toM(i)} y ${toM(j)}_*
-- Esta pareja se esta de luna de miel ✨🥵😍❤️*`,
+`╭━━━〔 😍 TOP 5 PAREJAS DEL GRUPO 😍 〕━━━╮
+┃
+┃ 1. ${toM(a)}  💙  ${toM(b)}
+┃    ✦ Destinados a estar juntos
+┃
+┃ 2. ${toM(c)}  ✨  ${toM(d)}
+┃    ✦ Tortolitos enamorados
+┃
+┃ 3. ${toM(e)}  🤱  ${toM(f)}
+┃    ✦ Ya parecen familia
+┃
+┃ 4. ${toM(g)}  💍  ${toM(h)}
+┃    ✦ Matrimonio secreto confirmado
+┃
+┃ 5. ${toM(i)}  💕  ${toM(j)}
+┃    ✦ Luna de miel activa
+┃
+╰━━━〔 Sistema de parejas activado 〕━━━╯`,
     null,
     {
       mentions: [a, b, c, d, e, f, g, h, i, j],
