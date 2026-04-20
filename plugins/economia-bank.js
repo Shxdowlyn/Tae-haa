@@ -10,14 +10,19 @@ let user = global.db.data.users[who]
 let coin = user.coin || 0
 let bank = user.bank || 0
 let total = (user.coin || 0) + (user.bank || 0)
-const texto = `> ✿ » Economia -  Balance « ✿
- 
-ᰔᩚ Usuario » *${name}*   
-⛀ Cartera » *¥${coin.toLocaleString()} ${currency}*
-⚿ Banco » *¥${bank.toLocaleString()} ${currency}*
-⛁ Total » *¥${total.toLocaleString()} ${currency}*
-
-> *Para proteger tu dinero, ¡depósitalo en el banco usando #deposit!*`
+const texto = `╭━━━〔 ECONOMÍA // BALANCE 〕━━━╮
+┃
+┃ Registro financiero actualizado.
+┃
+┣━━━〔 USUARIO 〕━━━┫
+┃ ✦ ${name}
+┃
+┣━━━〔 FONDOS 〕━━━┫
+┃ ✦ Cartera :: ¥${coin.toLocaleString()} ${currency}
+┃ ✦ Banco   :: ¥${bank.toLocaleString()} ${currency}
+┃ ✦ Total   :: ¥${total.toLocaleString()} ${currency}
+┃
+╰━━━〔 Protegé lo que es tuyo 〕━━━╯`
 await conn.reply(m.chat, texto, m)
 }
 
