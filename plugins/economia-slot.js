@@ -27,12 +27,15 @@ let { key } = await conn.sendMessage(m.chat, { text: initialText }, { quoted: m 
 const animateSlots = async () => {
 for (let i = 0; i < 5; i++) {
 const { x, y, z } = getRandomEmojis()
-const animationText = `「✿」| *SLOTS* 
-────────
-${x[0]} : ${y[0]} : ${z[0]}
-${x[1]} : ${y[1]} : ${z[1]}
-${x[2]} : ${y[2]} : ${z[2]}
-────────`
+const animationText = `✿┏━━━━━━━━━━━━━━┓✿
+┃ 🎰 𝐒𝐋𝐎𝐓𝐒 𝐌𝐀𝐂𝐇𝐈𝐍𝐄
+┣━━━━━━━━━━━━━━┫
+┃ ${x[0]} : ${y[0]} : ${z[0]}
+┃ ${x[1]} : ${y[1]} : ${z[1]}
+┃ ${x[2]} : ${y[2]} : ${z[2]}
+┣━━━━━━━━━━━━━━┫
+┃ ✦ Girando resultados...
+✿┗━━━━━━━━━━━━━━┛✿`
 await conn.sendMessage(m.chat, { text: animationText, edit: key }, { quoted: m })
 await delay(300)
 }}
