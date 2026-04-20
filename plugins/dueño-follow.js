@@ -91,23 +91,24 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
     const userTag = m.sender.split("@")[0]
 
     return m.reply(
-`╭─「 👻 𝐒𝐇𝐀𝐃𝐎𝐖 𝐆𝐀𝐑𝐃𝐄𝐍: 𝐅𝐎𝐋𝐋𝐎𝐖 」─╮
-
-@${userTag} ha invocado a los sub-bots...
-
-El canal ha sido marcado como objetivo.
-
-╰─「 🌌 𝐑𝐄𝐒𝐔𝐋𝐓𝐀𝐃𝐎 」─╯
-📡 Canal: ${channelJid}
-🤖 Sub-Bots: ${subBots.length}
-
-✅ Éxitos: ${ok}
-❌ Fallos: ${fail}
-
-📜 Registro:
-${results.join("\n")}
-
-╰─「 🌑 𝐅𝐈𝐍 」─╯`,
+`╭━━━〔 SHADOW GARDEN // FOLLOW 〕━━━╮
+┃
+┃ @${userTag} ejecutó la orden.
+┃ Sub-unidades desplegadas.
+┃ Objetivo fijado.
+┃
+┣━━━〔 RESULTADO 〕━━━┫
+┃ ✦ Canal     :: ${channelJid}
+┃ ✦ Sub-Bots  :: ${subBots.length}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✔ Éxitos    :: ${ok}
+┃ ✖ Fallos    :: ${fail}
+┃
+┣━━━〔 REGISTRO 〕━━━┫
+┃ ${results.join("\n")}
+┃
+╰━━━〔 Operación finalizada 〕━━━╯`,
       null,
       { mentions: [m.sender] }
     )
