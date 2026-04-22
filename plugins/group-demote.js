@@ -7,11 +7,7 @@ let user = mentionedJid && mentionedJid.length
     : null
 
 if (!user) 
-  return conn.reply(m.chat, `╭─〔 ERROR 〕
-│
-│ No señalaste a nadie.
-│
-╰─ Mencioná al objetivo.`, m)
+  return conn.reply(m.chat, '《✧》 Debes mencionar al usuario que deseas degradar de administrador.', m)
 
 try {
 const groupInfo = await conn.groupMetadata(m.chat)
@@ -23,55 +19,20 @@ const participant = groupInfo.participants.find(p =>
 )
 
 if (!participant?.admin)
-  return conn.reply(m.chat, `╭━━━〔 TAE-HA // RESTRICCIÓN 〕━━━╮
-┃
-┃ Acción bloqueada.
-┃ El objetivo posee prioridad absoluta.
-┃
-┣━━━〔 DETALLE 〕━━━┫
-┃ No podés degradar al creador del grupo.
-┃
-╰━━━〔 Límite establecido 〕━━━╯`, m, { mentions: [user] })
+  return conn.reply(m.chat, `《✧》 *@${user.split('@')[0]}* no es administrador del grupo!`, m, { mentions: [user] })
 
 const ownerGroup = groupInfo.owner || m.chat.split('-')[0] + '@s.whatsapp.net'
 if (user === ownerGroup)
-  return conn.reply(m.chat, `╭─〔 DENEGADO 〕
-│
-│ Estás apuntando demasiado alto.
-│
-╰─ No podés tocarlo.`, m)
+  return conn.reply(m.chat, '《✧》 No puedes degradar al creador del grupo.', m)
 
 if (user === conn.user.jid)
   return conn.reply(m.chat, '《✧》 No puedes degradar al bot de administrador.', m)
 
 await conn.groupParticipantsUpdate(m.chat, [user], 'demote')
-await conn.reply(m.chat, `
-╭━━━〔 TAE-HAA CONTROL 〕━━━╮
-┃
-┃ Permisos modificados.
-┃ Jerarquía actualizada.
-┃
-┣━━━〔 USUARIO 〕━━━┫
-┃ ✦ @${user.split('@')[0]}
-┃
-┣━━━〔 ESTADO 〕━━━┫
-┃ Rol: Administrador → Usuario
-┃
-╰━━━〔 Cambio aplicado 〕━━━╯`, m, { mentions: [user] })
+await conn.reply(m.chat, `✿ *@${user.split('@')[0]}* ha sido degradado de administrador del grupo!`, m, { mentions: [user] })
 
 } catch (e) {
-conn.reply(m.chat, `╭━━━〔 TAE-HA // ERROR 〕━━━╮
-┃
-┃ Ejecución interrumpida.
-┃ El comando no se completó.
-┃
-┣━━━〔 COMANDO 〕━━━┫
-┃ ✦ ${usedPrefix + command}
-┃
-┣━━━〔 DETALLE 〕━━━┫
-┃ ${e.message}
-┃
-╰━━━〔 Reintentá correctamente 〕━━━╯`, m)
+conn.reply(m.chat, `> Ocurrió un error inesperado al ejecutar *${usedPrefix + command}*.\n> [Error: *${e.message}*]`, m)
 }}
 
 handler.help = ['demote']
