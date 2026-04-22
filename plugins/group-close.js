@@ -42,7 +42,15 @@ let handler = async (m, { conn, command, isAdmin, isGroupAdmins }) => {
   if (action === 'close') {
     await conn.groupSettingUpdate(chatId, 'announcement')
     await conn.sendMessage(chatId, {
-      text: '🌑⚔️ *El Shadow Garden ha sellado el grupo...*\n🕷️ Solo los administradores pueden hablar ahora.'
+      text: `╭━━━〔 SHADOW // RESTRICCIÓN 〕━━━╮
+┃
+┃ Cerrado bajo control.
+┃ Interacción limitada.
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ Solo administradores pueden hablar.
+┃
+╰━━━〔 Orden mantenido 〕━━━╯`
     }, { quoted: businessHeader })
   }
 
