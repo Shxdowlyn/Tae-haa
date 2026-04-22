@@ -17,7 +17,18 @@ const handler = async (m, { conn, text, command, usedPrefix }) => {
       itemCount: 1,
       status: 1,
       surface: 1,
-      message: `🕸️ *ACCESO DENEGADO*\n\nHola @${m.sender.split('@')[0]}, debes estar registrado.\n\n🔐 Usa: *${usedPrefix}reg shadow.18*`,
+      message: `╭━━━〔 TTE-HAA // ACCESO 〕━━━╮
+┃
+┃ Acceso denegado.
+┃ Registro no encontrado.
+┃
+┣━━━〔 USUARIO 〕━━━┫
+┃ ✦ @${m.sender.split('@')[0]}
+┃
+┣━━━〔 ACCIÓN REQUERIDA 〕━━━┫
+┃ ✦ ${usedPrefix}reg taehaa.18
+┃
+╰━━━〔 Sin registro, no hay entrada 〕━━━╯`,
       orderTitle: 'Registro Requerido',
       totalAmount1000: '0',
       totalCurrencyCode: 'GTQ',
