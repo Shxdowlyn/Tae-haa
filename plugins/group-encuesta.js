@@ -36,9 +36,16 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
   }
 
   // Título de la encuesta con estilo Shadow + Navidad
-  let titulo = `🌑 Encuesta de las Sombras ${emojiChristmas}\n\n` +
-               `👾 *The Eminence in Shadow* se mezcla con la magia navideña...\n` +
-               `✨ Elige con cuidado, cada opción refleja tu destino.`
+  let titulo = `╭━━━〔 TAE-HA // ENCUESTA 〕━━━╮
+┃
+┃ Decisión requerida.
+┃ Las opciones ya están definidas.
+┃
+┣━━━〔 DIRECTIVA 〕━━━┫
+┃ Elegí con criterio.
+┃ Cada elección tiene consecuencias.
+┃
+╰━━━〔 Ejecutá tu decisión 〕━━━╯`
 
   // Enviar encuesta
   return conn.sendPoll(m.chat, titulo, opciones, m)
