@@ -16,25 +16,38 @@ const handler = async (m, { conn, participants, groupMetadata }) => {
   const botprimary = rawPrimary.endsWith('@s.whatsapp.net') ? `@${rawPrimary.split('@')[0]}` : 'Aleatorio';
   const totalreg = Object.keys(global.db.data.users).length;
 
-  const text = `❀ Información del grupo ❀
-⌦ Nombre: *${groupMetadata.subject}*
-⌦ Creador: *${creador}*
-⌦ Miembros: *${participants.length}*
-⌦ Administradores: *${groupAdmins.length}*
-⌦ Registrados globales: *${totalreg.toLocaleString()}*
-⌦ Bot principal: *${botprimary}*
-
-♡ Opciones activas:
-» *${botname}*: ${isBanned ? 'Desactivado ✗' : 'Activado ✓'}
-» Welcome: ${welcome ? 'Activado ✓' : 'Desactivado ✗'}
-» Alertas: ${detect ? 'Activado ✓' : 'Desactivado ✗'}
-» Anti-Link: ${antiLink ? 'Activado ✓' : 'Desactivado ✗'}
-» Solo Admins: ${modoadmin ? 'Activado ✓' : 'Desactivado ✗'}
-» NSFW: ${nsfw ? 'Activado ✓' : 'Desactivado ✗'}
-
-♡ Mensajes configurados:
-» Welcome: ${(sWelcome || 'Sin mensaje').replace(/{usuario}/g, `@${m.sender.split('@')[0]}`).replace(/{grupo}/g, `*${groupMetadata.subject}*`).replace(/{desc}/g, `*${groupMetadata.desc || 'Sin descripción'}*`)}
-» Bye: ${(sBye || 'Sin mensaje').replace(/{usuario}/g, `@${m.sender.split('@')[0]}`).replace(/{grupo}/g, `*${groupMetadata.subject}*`).replace(/{desc}/g, `*${groupMetadata.desc || 'Sin descripción'}*`)}`;
+  const text = `╭━━━〔 SHADOW // GRUPO 〕━━━╮
+┃
+┣━━━〔 INFORMACIÓN 〕━━━┫
+┃ ✦ Nombre :: ${groupMetadata.subject}
+┃ ✦ Creador :: ${creador}
+┃ ✦ Miembros :: ${participants.length}
+┃ ✦ Admins :: ${groupAdmins.length}
+┃ ✦ Registros :: ${totalreg.toLocaleString()}
+┃ ✦ Bot :: ${botprimary}
+┃
+┣━━━〔 CONFIGURACIÓN 〕━━━┫
+┃ ✦ ${botname} :: ${isBanned ? 'OFF' : 'ON'}
+┃ ✦ Welcome :: ${welcome ? 'ON' : 'OFF'}
+┃ ✦ Alertas :: ${detect ? 'ON' : 'OFF'}
+┃ ✦ Anti-Link :: ${antiLink ? 'ON' : 'OFF'}
+┃ ✦ Solo Admin :: ${modoadmin ? 'ON' : 'OFF'}
+┃ ✦ NSFW :: ${nsfw ? 'ON' : 'OFF'}
+┃
+┣━━━〔 MENSAJES 〕━━━┫
+┃ ✦ Welcome ::
+┃ ${ (sWelcome || 'Sin mensaje')
+      .replace(/{usuario}/g, `@${m.sender.split('@')[0]}`)
+      .replace(/{grupo}/g, `*${groupMetadata.subject}*`)
+      .replace(/{desc}/g, `*${groupMetadata.desc || 'Sin descripción'}*`) }
+┃
+┃ ✦ Bye ::
+┃ ${ (sBye || 'Sin mensaje')
+      .replace(/{usuario}/g, `@${m.sender.split('@')[0]}`)
+      .replace(/{grupo}/g, `*${groupMetadata.subject}*`)
+      .replace(/{desc}/g, `*${groupMetadata.desc || 'Sin descripción'}*`) }
+┃
+╰━━━〔 Estado bajo control 〕━━━╯`;
 
   conn.sendFile(m.chat, pp, 'img.jpg', text, m, false, {
     mentions: [owner, rawPrimary, m.sender]
