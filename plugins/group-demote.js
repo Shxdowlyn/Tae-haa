@@ -29,7 +29,19 @@ if (user === conn.user.jid)
   return conn.reply(m.chat, '《✧》 No puedes degradar al bot de administrador.', m)
 
 await conn.groupParticipantsUpdate(m.chat, [user], 'demote')
-await conn.reply(m.chat, `✿ *@${user.split('@')[0]}* ha sido degradado de administrador del grupo!`, m, { mentions: [user] })
+await conn.reply(m.chat, `
+╭━━━〔 TAE-HAA CONTROL 〕━━━╮
+┃
+┃ Permisos modificados.
+┃ Jerarquía actualizada.
+┃
+┣━━━〔 USUARIO 〕━━━┫
+┃ ✦ @${user.split('@')[0]}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ Rol: Administrador → Usuario
+┃
+╰━━━〔 Cambio aplicado 〕━━━╯`, m, { mentions: [user] })
 
 } catch (e) {
 conn.reply(m.chat, `> Ocurrió un error inesperado al ejecutar *${usedPrefix + command}*.\n> [Error: *${e.message}*]`, m)
