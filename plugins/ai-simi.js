@@ -11,14 +11,14 @@ let handler = async (m, { conn, text }) => {
     if (mathExpression) {
       const result = eval(mathExpression)
       if (result === 13 || text.includes('13')) {
-        extraPrefix = "si mmvg y yo nací ayer 🤨🖕, "
+        extraPrefix = "sí, claro… y yo nací ayer. Intentá algo más creíble, "
       }
     } else if (text.includes('13')) {
-      extraPrefix = "si mmvg y yo nací ayer 🤨🖕, "
+      extraPrefix = "sí, claro… y yo nací ayer. Intentá algo más creíble, "
     }
   } catch (e) {
     if (text.includes('13')) {
-      extraPrefix = "si mmvg y yo nací ayer 🤨🖕, "
+      extraPrefix = "sí, claro… y yo nací ayer. Intentá algo más creíble, "
     }
   }
 
