@@ -7,7 +7,11 @@ let user = mentionedJid && mentionedJid.length
     : null
 
 if (!user) 
-  return conn.reply(m.chat, '《✧》 Debes mencionar al usuario que deseas degradar de administrador.', m)
+  return conn.reply(m.chat, `╭─〔 ERROR 〕
+│
+│ No señalaste a nadie.
+│
+╰─ Mencioná al objetivo.`, m)
 
 try {
 const groupInfo = await conn.groupMetadata(m.chat)
