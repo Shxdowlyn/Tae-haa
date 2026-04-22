@@ -63,7 +63,7 @@ Ahora, respondé lo siguiente:`
       headers: { "User-Agent": "Mozilla/5.0" }
     })
 
-    const respuesta = data?.result?.text || "No sé qué decirte, pedazo de animal."
+    const respuesta = data?.result?.text || "Eso no merece una respuesta seria."
 
     await conn.reply(m.chat, `${extraPrefix}${respuesta}`, m)
 
