@@ -15,7 +15,18 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 ┃ ✦ ${usedPrefix + command} Pizza|Hamburguesa|Tacos
 ┃
 ╰━━━〔 Definí antes de ejecutar 〕━━━╯`
-  if (!text.includes('|')) throw `${emojiChristmas} Divide las opciones con *|* para que el poder de las sombras las revele.\n\n📌 Ejemplo:\n*${usedPrefix + command}* Nieve|Regalos|Sombras`
+  if (!text.includes('|')) throw `╭━━━〔 TAE-HA // FORMATO 〕━━━╮
+┃
+┃ Estructura inválida.
+┃ Separador no detectado.
+┃
+┣━━━〔 REQUISITO 〕━━━┫
+┃ Usá “|” para dividir las opciones.
+┃
+┣━━━〔 EJEMPLO 〕━━━┫
+┃ ✦ ${usedPrefix + command} perros|conejos|gatos
+┃
+╰━━━〔 Sin formato no hay ejecución 〕━━━╯`
 
   // Procesar opciones
   let opciones = []
