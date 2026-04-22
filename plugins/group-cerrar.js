@@ -79,7 +79,12 @@ let handler = async (m, { conn, text, args, isAdmin, isBotAdmin }) => {
   await delay(tiempoMs)
 
   await conn.groupSettingUpdate(m.chat, 'not_announcement')
-  await conn.sendMessage(m.chat, { text: '✨ *El sello se ha disipado. El dominio vuelve a abrirse bajo la mirada de la sombra.*' })
+  await conn.sendMessage(m.chat, { text: `╭━━━〔 TAE-HAA // APERTURA 〕━━━╮
+┃
+┃ Restricción finalizada.
+┃ El acceso fue restaurado.
+┃
+╰━━━〔 El control permanece 〕━━━╯` })
 }
 
 handler.help = ['cerrar <número> segundos/minutos/horas']
