@@ -20,7 +20,19 @@ const handler = async (m, { conn, usedPrefix }) => {
   } catch (e) {
     conn.reply(
       m.chat, 
-      `⚠︎ Ocurrió un problema al intentar eliminar el Bot primario.\n> Usa *${usedPrefix}report* para informarlo.\n\n${e.message}`, 
+     `
+╭━━━〔 TAE-HAA  ERROR CRÍTICO 〕━━━╮
+┃
+┃ Fallo en la operación.
+┃ No se pudo eliminar el núcleo primario.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ${e.message}
+┃
+┣━━━〔 ACCIÓN 〕━━━┫
+┃ ✦ ${usedPrefix}report
+┃
+╰━━━〔 Intervención requerida 〕━━━╯`, 
       m
     )
   }
