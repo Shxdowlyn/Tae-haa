@@ -3,7 +3,18 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
   const emojiChristmas = "🎄"
 
   // Validaciones
-  if (!args[0]) throw `${emojiShadow} En las sombras no hay nada...\n${emojiChristmas} Ingresa un texto para iniciar la *Encuesta Navideña del Shadow*.\n\n📌 Ejemplo:\n*${usedPrefix + command}* Pizza|Hamburguesa|Tacos`
+  if (!args[0]) throw `╭━━━〔 TAE-HA // INPUT 〕━━━╮
+┃
+┃ Sin contenido.
+┃ No hay nada que procesar.
+┃
+┣━━━〔 REQUISITO 〕━━━┫
+┃ Ingresá opciones para la encuesta.
+┃
+┣━━━〔 FORMATO 〕━━━┫
+┃ ✦ ${usedPrefix + command} Pizza|Hamburguesa|Tacos
+┃
+╰━━━〔 Definí antes de ejecutar 〕━━━╯`
   if (!text.includes('|')) throw `${emojiChristmas} Divide las opciones con *|* para que el poder de las sombras las revele.\n\n📌 Ejemplo:\n*${usedPrefix + command}* Nieve|Regalos|Sombras`
 
   // Procesar opciones
