@@ -42,7 +42,8 @@ let handler = async (m, { conn, command, isAdmin, isGroupAdmins }) => {
   if (action === 'close') {
     await conn.groupSettingUpdate(chatId, 'announcement')
     await conn.sendMessage(chatId, {
-      text: `╭━━━〔 SHADOW // RESTRICCIÓN 〕━━━╮
+      text: `
+╭━━━〔 // RESTRICCIÓN 〕━━━╮
 ┃
 ┃ Cerrado bajo control.
 ┃ Interacción limitada.
