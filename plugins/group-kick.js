@@ -6,7 +6,15 @@ var handler = async (m, { conn, participants, usedPrefix, command }) => {
       ? await m.quoted.sender
       : null
 
-  if (!user) return conn.reply(m.chat, `☽ Debes mencionar a un usuario para poder expulsarlo del grupo.`, m)
+  if (!user) return conn.reply(m.chat, `╭━━━〔 TAE-HA // REQUISITO 〕━━━╮
+┃
+┃ Acción incompleta.
+┃ No se definió el objetivo.
+┃
+┣━━━〔 NECESARIO 〕━━━┫
+┃ Mencioná al usuario a expulsar.
+┃
+╰━━━〔 Sin objetivo no hay acción 〕━━━╯`, m)
 
   try {
     const groupInfo = await conn.groupMetadata(m.chat)
