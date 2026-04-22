@@ -27,17 +27,22 @@ let handler = async (m, { conn, text }) => {
     const args = (text || '').trim().split(' ').slice(1)
     const extraMsg = args.join(' ')
 
-    let caption = 
-`┏━━━━━━━━━━━━━━━━━━━┓
-⚔️ Invocación Sombría ⚔️
-┗━━━━━━━━━━━━━━━━━━━┛
+    let caption = `╭━━━〔 SHADOW // INVOCACIÓN 〕━━━╮
+┃
+┣━━━〔 GRUPO 〕━━━┫
+┃ ✦ ${metadata.subject}
+┃ ✦ Miembros :: ${participants.length}
+┃`
 
-✐ Grupo: *${metadata.subject}*
-ⴵ Miembros: *${participants.length}*`
+if (extraMsg) caption += `
+┃
+┣━━━〔 MENSAJE 〕━━━┫
+┃ ${extraMsg}`
 
-    if (extraMsg) caption += `\n✰ Mensaje: *${extraMsg}*`
-
-    caption += `\n\n❒ Menciones:\n`
+caption += `
+┃
+┣━━━〔 MENCIÓN 〕━━━┫
+┃`
     caption += participants.map(p => `» @${p.id.split('@')[0]}`).join('\n')
 
     const vs = "^1.3.2"
