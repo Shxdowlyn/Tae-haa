@@ -17,7 +17,17 @@ let handler = async (m, { conn, text, args, isAdmin, isBotAdmin }) => {
   }
 
   if (!args[0]) {
-    await conn.sendMessage(m.chat, { text: '⏳ *Invoca el sello correctamente:* !cerrar 10 segundos | !cerrar 5 minutos | !cerrar 1 hora' })
+    await conn.sendMessage(m.chat, { text: `╭━━━〔 TAE-HAA // CIERRE 〕━━━╮
+┃
+┃ Parámetros inválidos.
+┃ Especificá el tiempo correctamente.
+┃
+┣━━━〔 FORMATO 〕━━━┫
+┃ ✦ !cerrar 10 segundos
+┃ ✦ !cerrar 5 minutos
+┃ ✦ !cerrar 1 hora
+┃
+╰━━━〔 No improvises 〕━━━╯` })
     return
   }
 
