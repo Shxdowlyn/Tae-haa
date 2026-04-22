@@ -10,7 +10,11 @@ let handler = async (m, { conn, text }) => {
 
     if (!isGroup) {
       await conn.sendMessage(chatId, {
-        text: `❒ Este comando solo puede ejecutarse dentro de grupos.`,
+        text: `╭─〔 ERROR 〕
+│
+│ Lugar equivocado.
+│
+╰─ Usalo en grupo.`, 
         quoted: m
       })
       return
