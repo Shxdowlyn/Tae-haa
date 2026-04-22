@@ -114,7 +114,19 @@ const handler = async (m, { conn, text, command, usedPrefix }) => {
     itemCount: 1,
     status: 1,
     surface: 1,
-    message: `🌌 *ADVERTENCIA*\n\n🕯️ *Usuario:* ${userName}\n🕯️ *Motivo:* ${dReason}\n🕯️ *Advertencias:* ${user.warn}/${maxWarn}`,
+    message: `╭━━━〔 TAE HAA // ADVERTENCIA 〕━━━╮
+┃
+┃ Registro actualizado.
+┃ Conducta observada.
+┃
+┣━━━〔 USUARIO 〕━━━┫
+┃ ✦ ${userName}
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Motivo :: ${dReason}
+┃ ✦ Advertencias :: ${user.warn}/${maxWarn}
+┃
+╰━━━〔 Ajustá tu comportamiento 〕━━━╯`,
     orderTitle: 'Ritual de Advertencia',
     totalAmount1000: '0',
     totalCurrencyCode: 'GTQ',
