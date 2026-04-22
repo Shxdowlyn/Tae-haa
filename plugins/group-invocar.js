@@ -79,7 +79,11 @@ caption += `
   } catch (error) {
     console.error('❌ Error en el comando tagall:', error)
     await conn.sendMessage(m.chat, {
-      text: `❒ Ocurrió un error al ejecutar el comando *tagall*.`,
+      text: `╭─〔 ERROR 〕
+│
+│ tagall falló.
+│
+╰─ Intentalo de nuevo.`,
       quoted: m
     })
   }
