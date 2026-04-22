@@ -35,7 +35,11 @@ if (!participant?.admin)
 
 const ownerGroup = groupInfo.owner || m.chat.split('-')[0] + '@s.whatsapp.net'
 if (user === ownerGroup)
-  return conn.reply(m.chat, '《✧》 No puedes degradar al creador del grupo.', m)
+  return conn.reply(m.chat, `╭─〔 DENEGADO 〕
+│
+│ Estás apuntando demasiado alto.
+│
+╰─ No podés tocarlo.`, m)
 
 if (user === conn.user.jid)
   return conn.reply(m.chat, '《✧》 No puedes degradar al bot de administrador.', m)
