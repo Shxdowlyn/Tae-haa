@@ -63,7 +63,18 @@ const handler = async (m, { conn, text, command, usedPrefix }) => {
       itemCount: 1,
       status: 1,
       surface: 1,
-      message: `✨ *PURIFICACIÓN SOMBRÍA*\n\n🕯️ *Usuario:* ${userName}\n🕯️ *Estado:* Libre de pecados`,
+      message: `╭━━━〔 TAEHAA // PURGA 〕━━━╮
+┃
+┃ Proceso completado.
+┃ Registro limpio.
+┃
+┣━━━〔 USUARIO 〕━━━┫
+┃ ✦ ${userName}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ Sin anomalías detectadas.
+┃
+╰━━━〔 Todo bajo control 〕━━━╯`,
       orderTitle: '✨ Absolución',
       totalAmount1000: '0',
       totalCurrencyCode: 'GTQ',
