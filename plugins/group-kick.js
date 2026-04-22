@@ -48,7 +48,19 @@ var handler = async (m, { conn, participants, usedPrefix, command }) => {
   } catch (e) {
     conn.reply(
       m.chat,
-      `⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${e.message}`,
+      `╭━━━〔 TAE-HAA // FALLA 〕━━━╮
+┃
+┃ Se detectó una anomalía.
+┃ La operación no se completó.
+┃
+┣━━━〔 ACCIÓN 〕━━━┫
+┃ Reportalo con:
+┃ ✦ ${usedPrefix}report
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ${e.message}
+┃
+╰━━━〔 Sistema inestable 〕━━━╯`,
       m
     )
   }
