@@ -29,7 +29,19 @@ var handler = async (m, { conn, participants, usedPrefix, command }) => {
 
     await conn.reply(
       m.chat,
-      `☽ 『 Shadow Garden 』 ☽\n\nLas sombras han expulsado a @${user.split('@')[0]}.\n\n✦ Así termina quien desafía las reglas del Reino.\n✦ ¿Quién más desea acompañarlo en la oscuridad eterna?`,
+      `╭━━━〔 TAE-HA // EXPULSIÓN 〕━━━╮
+┃
+┃ Objetivo removido.
+┃ La decisión ya fue ejecutada.
+┃
+┣━━━〔 USUARIO 〕━━━┫
+┃ ✦ @${user.split('@')[0]}
+┃
+┣━━━〔 RESULTADO 〕━━━┫
+┃ Fuera del dominio.
+┃ Sin retorno.
+┃
+╰━━━〔 Orden mantenido 〕━━━╯`,
       m,
       { mentions: [user] }
     )
