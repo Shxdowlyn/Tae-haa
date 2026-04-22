@@ -23,7 +23,15 @@ const participant = groupInfo.participants.find(p =>
 )
 
 if (!participant?.admin)
-  return conn.reply(m.chat, `《✧》 *@${user.split('@')[0]}* no es administrador del grupo!`, m, { mentions: [user] })
+  return conn.reply(m.chat, `╭━━━〔 TAE-HA // RESTRICCIÓN 〕━━━╮
+┃
+┃ Acción bloqueada.
+┃ El objetivo posee prioridad absoluta.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ No podés degradar al creador del grupo.
+┃
+╰━━━〔 Límite establecido 〕━━━╯`, m, { mentions: [user] })
 
 const ownerGroup = groupInfo.owner || m.chat.split('-')[0] + '@s.whatsapp.net'
 if (user === ownerGroup)
