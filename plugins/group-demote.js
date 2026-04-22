@@ -42,7 +42,15 @@ if (user === ownerGroup)
 ╰━━━〔 Autoridad absoluta 〕━━━╯`, m)
 
 if (user === conn.user.jid)
-  return conn.reply(m.chat, '《✧》 No puedes degradar al bot de administrador.', m)
+  return conn.reply(m.chat, `╭━━━〔 TAE-HA // PROTECCIÓN 〕━━━╮
+┃
+┃ Operación bloqueada.
+┃ Entidad crítica detectada.
+┃
+┣━━━〔 RESTRICCIÓN 〕━━━┫
+┃ No es posible degradar al bot administrador.
+┃
+╰━━━〔 Núcleo resguardado 〕━━━╯`, m)
 
 await conn.groupParticipantsUpdate(m.chat, [user], 'demote')
 await conn.reply(m.chat, `✿ *@${user.split('@')[0]}* ha sido degradado de administrador del grupo!`, m, { mentions: [user] })
