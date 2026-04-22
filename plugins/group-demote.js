@@ -44,7 +44,18 @@ await conn.reply(m.chat, `
 ╰━━━〔 Cambio aplicado 〕━━━╯`, m, { mentions: [user] })
 
 } catch (e) {
-conn.reply(m.chat, `> Ocurrió un error inesperado al ejecutar *${usedPrefix + command}*.\n> [Error: *${e.message}*]`, m)
+conn.reply(m.chat, `╭━━━〔 TAE-HA // ERROR 〕━━━╮
+┃
+┃ Ejecución interrumpida.
+┃ El comando no se completó.
+┃
+┣━━━〔 COMANDO 〕━━━┫
+┃ ✦ ${usedPrefix + command}
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ${e.message}
+┃
+╰━━━〔 Reintentá correctamente 〕━━━╯`, m)
 }}
 
 handler.help = ['demote']
