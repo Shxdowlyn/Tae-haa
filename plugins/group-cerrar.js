@@ -65,7 +65,15 @@ let handler = async (m, { conn, text, args, isAdmin, isBotAdmin }) => {
 
   await conn.groupSettingUpdate(m.chat, 'announcement')
   await conn.sendMessage(m.chat, {
-    text: `🔒 *El portal ha sido sellado por ${args[0]} ${tiempoTexto.includes("segundo") ? "segundo(s)" : tiempoTexto.includes("minuto") ? "minuto(s)" : "hora(s)"}.*\n\n🌑 *La sombra observa... el silencio domina el dominio.*`
+    text: `╭━━━〔 TAE-HAA // CIERRE 〕━━━╮
+┃
+┃ Acceso bloqueado.
+┃ El canal queda bajo restricción.
+┃
+┣━━━〔 DURACIÓN 〕━━━┫
+┃ ✦ ${args[0]} ${tiempoTexto.includes("segundo") ? "segundo(s)" : tiempoTexto.includes("minuto") ? "minuto(s)" : "hora(s)"}
+┃
+╰━━━〔 Silencio impuesto 〕━━━╯`
   })
 
   await delay(tiempoMs)
