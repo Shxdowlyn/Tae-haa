@@ -58,7 +58,16 @@ let handler = async (m, { conn, command, isAdmin, isGroupAdmins }) => {
   if (action === 'open') {
     await conn.groupSettingUpdate(chatId, 'not_announcement')
     await conn.sendMessage(chatId, {
-      text: '🌑✨ *El Shadow Garden ha liberado el grupo...*\n⚔️ Las voces vuelven a resonar en la oscuridad.'
+      text: `
+╭━━━〔 TAE-HA LIBERACIÓN 〕━━━╮
+┃
+┃ Restricción levantada.
+┃ Todo vuelve a la normalidad.
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ Interacción habilitada.
+┃
+╰━━━〔 Control mantenido 〕━━━╯`
     }, { quoted: businessHeader })
   }
 }
