@@ -77,7 +77,11 @@ caption += `
     }, { quoted: m })
 
   } catch (error) {
-    console.error('❌ Error en el comando tagall:', error)
+    console.error(`╭━━━〔 TAE-HA // ERROR LOG 〕━━━╮
+┃ Comando :: tagall
+┃ Estado  :: FALLIDO
+┃ Detalle :: ${error}
+╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯`)', error)
     await conn.sendMessage(m.chat, {
       text: `╭─〔 ERROR 〕
 │
