@@ -62,7 +62,15 @@ const handler = async (m, { conn, text, command, usedPrefix, args }) => {
 
         await conn.sendMessage(`${suittag}@s.whatsapp.net`, { text: sug, mentions: [m.sender, ...usertag], ...rcanal }, { quoted: m });
         await m.react('✔️');
-        await conn.sendMessage(m.chat, { text: '❒ Tu sugerencia ha sido enviada correctamente. Gracias por contribuir a mejorar el Bot.', ...rcanal }, { quoted: m });
+        await conn.sendMessage(m.chat, { text: `╭━━━〔 💡 SUGERENCIA ENVIADA 〕━━━╮
+┃
+┃ ✦ Tu sugerencia fue enviada
+┃   correctamente
+┃
+┃ ✦ Gracias por contribuir
+┃   a mejorar el bot
+┃
+╰━━━〔 Enviado 〕━━━╯`, ...rcanal }, { quoted: m });
         break;
       }
 
