@@ -12,7 +12,11 @@ let xx = m.quoted
 let imgBuffer = await xx.download()   
 if (!imgBuffer) {
 await m.react('✖️')
-return conn.reply(m.chat, `✩ No se pudo procesar el sticker.`, m)
+return conn.reply(m.chat, `╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ No se pudo procesar el sticker
+┃
+╰━━━〔 Intenta nuevamente 〕━━━╯`, m)
 }
 await conn.sendMessage(m.chat, { image: imgBuffer, caption: '✿ *Aquí tienes :D*' }, { quoted: m })
 await m.react('✔️')
