@@ -1,6 +1,11 @@
 let handler = async (m, { conn, usedPrefix, command }) => {
 if (!m.quoted) {
-return conn.reply(m.chat, `ꕤ Debes citar un sticker para convertir a imagen.`, m, rcanal)
+return conn.reply(m.chat, `╭━━━〔 ⚠︎ AVISO 〕━━━╮
+┃
+┃ ✦ Debes citar un sticker
+┃   para convertirlo a imagen
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`, m, rcanal)
 }
 await m.react('🕒')
 let xx = m.quoted
