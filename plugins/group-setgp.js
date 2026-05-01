@@ -76,7 +76,20 @@ const handler = async (m, { conn, args, text, command, usedPrefix }) => {
         await m.react('🎭')
         await conn.groupUpdateDescription(m.chat, args.join(' '))
         await m.react('✔️')
-        m.reply('🌌 *Invocación completada* 🎅\nLa descripción del grupo ha sido renovada en las Sombras.')
+        m.reply(`╭━━━〔 TAE-HAA // DESCRIPCIÓN 〕━━━╮
+┃
+┃ Proceso completado.
+┃ Descripción actualizada correctamente.
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Acción :: Renovación
+┃ ✦ Resultado :: Éxito
+┃
+┣━━━〔 SISTEMA 〕━━━┫
+┃ ✦ Registro :: Guardado
+┃ ✦ Control  :: Estable
+┃
+╰━━━〔 Tae-Haa aprueba el cambio 〕━━━╯`)
         break
       }
 
