@@ -31,11 +31,22 @@ let handler = async (m, { conn, args }) => {
     const buffer = await res.buffer()
 
     const caption =
-`🌑 𖤐 𝙎𝙃𝘼𝘿𝙊𝙒 𝙂𝘼𝙍𝘿𝙀𝙉 — 𝙍𝙀𝙈𝙊𝙑𝙀𝙍 𝘿𝙀 𝙁𝙊𝙉𝘿𝙊 𖤐
-
-🍧 Estado › Fondo eliminado
-🍓 Resultado › PNG Transparente
-🍒 Pedido por › ${m.pushName || 'Miembro anónimo'}`.trim()
+`╭━━━〔 PROCESO COMPLETADO 〕━━━╮
+┃
+┃ ┌─ RESULTADO
+┃ │
+┃ │ ✦ Estado
+┃ │   Fondo eliminado
+┃ │
+┃ │ ✦ Formato
+┃ │   PNG transparente
+┃ │
+┃ │ ✦ Usuario
+┃ │   ${m.pushName || 'Miembro anónimo'}
+┃ │
+┃ └────────────
+┃
+╰━━━〔 LISTO 〕━━━╯`.trim()
 
     await conn.sendMessage(
       m.chat,
