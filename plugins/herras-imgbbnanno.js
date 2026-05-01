@@ -36,7 +36,11 @@ async function sendCustomPedido(m, conn, texto) {
     await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id })
   } catch (err) {
     console.error(err)
-    m.reply('⚠️ Error enviando el catálogo.', m)
+    m.reply(`╭━━━〔 ⚠︎ ERROR 〕━━━╮
+┃
+┃ ✦ Error enviando el catálogo
+┃
+╰━━━〔 Intenta nuevamente 〕━━━╯`, m)
   }
 }
 
