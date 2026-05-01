@@ -17,7 +17,13 @@ let handlerUnreg = async (m, { conn }) => {
 
   // Mensaje dramático
   await conn.sendMessage(m.chat, {
-    text: `『💀』 El sello ha sido roto...\n\n🌑 La sombra se disuelve en la oscuridad.`,
+    text: `╭━━━〔 💀 ESTADO 〕━━━╮
+┃
+┃ ✦ El sello ha sido roto
+┃
+┃ ✦ El proceso ha finalizado
+┃
+╰━━━〔 Sistema inactivo 〕━━━╯`,
     contextInfo: {
       externalAdReply: {
         title: '☽ Pacto Roto de Shadow ☽',
