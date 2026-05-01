@@ -90,7 +90,12 @@ const handler = async (msg, { conn, command, wa, usedPrefix }) => {
     await conn.sendMessage(
       chatId,
       {
-        text: "Mejorando la calidad de la imagen... espera un momento 🧪"
+        text: `╭━━━〔 🧪 PROCESO 〕━━━╮
+┃
+┃ ✦ Mejorando la calidad de la imagen
+┃ ✦ Espera un momento...
+┃
+╰━━━〔 En progreso 〕━━━╯`,
       },
       { quoted: msg }
     )
