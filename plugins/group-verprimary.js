@@ -18,7 +18,20 @@ let handler = async (m, { conn }) => {
   }
 
   let botJid = chat.primaryBot
-  m.reply(`🤖 El bot principal en este grupo es:\n*${botJid}*`)
+  m.reply(`╭━━━〔 TAE-HAA // CONTROL 〕━━━╮
+┃
+┃ Identificación completada.
+┃ Bot primario localizado.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Bot :: ${botJid}
+┃ ✦ Rol :: Principal
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Control :: Activo
+┃ ✦ Sistema :: Estable
+┃
+╰━━━〔 Tae-Haa mantiene el control 〕━━━╯`)
 }
 
 handler.help = ['verprimary']
