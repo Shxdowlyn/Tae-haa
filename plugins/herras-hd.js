@@ -143,7 +143,12 @@ const handler = async (msg, { conn, command, wa, usedPrefix }) => {
     const json = await res.json()
 
     if (!json?.result_url || !json.result_url.startsWith("http")) {
-      throw new Error("No se pudo obtener la imagen mejorada desde Pixelcut.")
+      throw new Error(`╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ No se pudo obtener la imagen
+┃   mejorada desde Pixelcut
+┃
+╰━━━〔 Operación fallida 〕━━━╯`)
     }
 
     const resultBuffer = await (await fetch(json.result_url)).buffer()
