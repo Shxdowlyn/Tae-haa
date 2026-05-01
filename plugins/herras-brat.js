@@ -8,7 +8,19 @@ var handler = async (m, { conn, usedPrefix, command, text }) => {
     let [txt, color] = text.split('|')
     let textoFinal = txt || m.quoted?.text || text
 
-    if (!textoFinal) return conn.reply(m.chat, '🌑✦ *Shadow Garden* necesita un mensaje o texto.', m)
+    if (!textoFinal) return conn.reply(m.chat, `╭━━━〔 TAE-HAA // MENSAJE 〕━━━╮
+┃
+┃ Entrada incompleta.
+┃ No se ha recibido contenido.
+┃
+┣━━━〔 REQUISITO 〕━━━┫
+┃ ✦ Tipo :: Mensaje o texto
+┃ ✦ Estado :: Vacío
+┃
+┣━━━〔 NOTA 〕━━━┫
+┃ ✦ Escribe algo para continuar.
+┃
+╰━━━〔 Tae-Haa exige precisión 〕━━━╯`, m)
 
     if (!color) {
         const colores = [
