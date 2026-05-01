@@ -103,7 +103,20 @@ const handler = async (m, { conn, args }) => {
 
   } catch (error) {
     console.error(error)
-    await conn.sendMessage(m.chat, { text: `Ocurrió un error al ejecutar el comando tag.`, quoted: m })
+    await conn.sendMessage(m.chat, { text: `╭━━━〔 TAE-HAA // ERROR 〕━━━╮
+┃
+┃ Fallo detectado.
+┃ El comando no se ejecutó correctamente.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Comando :: tag
+┃ ✦ Resultado :: Error
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Registro :: Guardado
+┃ ✦ Revisión :: Pendiente
+┃
+╰━━━〔 Tae-Haa no tolera errores 〕━━━╯`, quoted: m })
   }
 }
 
