@@ -49,7 +49,7 @@ const handler = async (m, { conn, text, usedPrefix }) => {
 ┃ ✦ El enlace no es válido
 ┃   o no tiene contenido descargable
 ┃
-╰━━━〔 Intenta otro enlace 〕━━━╯`, m)
+ie╰━━━〔 Intenta otro enlace 〕━━━╯`, m)
       }
 
       const { title, duration, author, created_at, type, images, music, play } = data
@@ -109,10 +109,19 @@ const handler = async (m, { conn, text, usedPrefix }) => {
       }
 
       if (m.react) await m.react('✖️')
-      return conn.reply(m.chat, 'ꕥ No se encontró video descargable en ese enlace.', m)
+      return conn.reply(m.chat, `╭━━━〔 ❌ SIN DESCARGA 〕━━━╮
+┃
+┃ ✦ No se encontró video
+┃   descargable en el enlace
+┃
+╰━━━〔 Intenta otro enlace 〕━━━╯`, m)
     }
 
-    conn.reply(m.chat, '✧ *ENVIANDO SUS RESULTADOS..*', m)
+    conn.reply(m.chat, `╭━━━〔 PROCESANDO 〕━━━╮
+┃
+┃ ✦ Enviando resultados...
+┃
+╰━━━〔 Espere un momento 〕━━━╯`, m)
 
     const form = new URLSearchParams()
     form.append('keywords', text)
@@ -135,7 +144,12 @@ const handler = async (m, { conn, text, usedPrefix }) => {
     let results = res.data?.data?.videos?.filter(v => v.play) || []
     if (results.length < 2) {
       if (m.react) await m.react('✖️')
-      return conn.reply(m.chat, 'ꕥ Se requieren al menos 2 resultados válidos con contenido.', m)
+      return conn.reply(m.chat, `╭━━━〔 ⚠︎ RESULTADOS INSUFICIENTES 〕━━━╮
+┃
+┃ ✦ Se requieren al menos 2 resultados
+┃   válidos con contenido
+┃
+╰━━━〔 Intenta otra búsqueda 〕━━━╯`, m)
     }
 
     shuffleArray(results)
@@ -149,7 +163,18 @@ const handler = async (m, { conn, text, usedPrefix }) => {
 
       cards.push({
         body: proto.Message.InteractiveMessage.Body.fromObject({
-          text: `✐ ${title}\nⴵ Autor » ${author}\n✰ Duración » ${duration} segundos`
+          text: `╭━━━〔 🎬 RESULTADO 〕━━━╮
+┃
+┃ ✐ Título
+┃   ${title}
+┃
+┃ ⴵ Autor
+┃   ${author}
+┃
+┃ ✰ Duración
+┃   ${duration} segundos
+┃
+╰━━━〔 FIN 〕━━━╯`
         }),
         footer: proto.Message.InteractiveMessage.Footer.fromObject({
           text: 'TikTok Search'
@@ -176,7 +201,12 @@ const handler = async (m, { conn, text, usedPrefix }) => {
             },
             interactiveMessage: proto.Message.InteractiveMessage.fromObject({
               body: proto.Message.InteractiveMessage.Body.create({
-                text: `✧ RESULTADO DE: ${text}`
+                text: `╭━━━〔 RESULTADO 〕━━━╮
+┃
+┃ ✦ Búsqueda
+┃   ${text}
+┃
+╰━━━〔 FIN 〕━━━╯`
               }),
               footer: proto.Message.InteractiveMessage.Footer.create({
                 text: 'TikTok Search'
