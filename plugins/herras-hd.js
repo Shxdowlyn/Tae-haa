@@ -105,7 +105,12 @@ const handler = async (msg, { conn, command, wa, usedPrefix }) => {
       await conn.sendMessage(chatId, { react: { text: "❌", key: msg.key } })
       return conn.sendMessage(
         chatId,
-        { text: "Error interno: no se encontró el módulo de descarga." },
+        { text: `╭━━━〔 ❌ ERROR INTERNO 〕━━━╮
+┃
+┃ ✦ No se encontró el módulo
+┃   de descarga
+┃
+╰━━━〔 Proceso detenido 〕━━━╯` },
         { quoted: msg }
       )
     }
