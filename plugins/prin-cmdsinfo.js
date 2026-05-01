@@ -119,14 +119,36 @@ const handler = async (m, { conn, text, command, usedPrefix, args }) => {
 
         await conn.sendMessage(`${suittag}@s.whatsapp.net`, { text: rep, mentions: [m.sender, ...usertag], ...rcanal }, { quoted: m });
         await m.react('✔️');
-        await conn.sendMessage(m.chat, { text: '❒ El reporte ha sido enviado correctamente. Si el error es falso o malintencionado, podrían aplicarse restricciones.', ...rcanal }, { quoted: m });
+        await conn.sendMessage(m.chat, { text: `╭━━━〔 🚨 REPORTE ENVIADO 〕━━━╮
+┃
+┃ ✦ El reporte fue enviado
+┃   correctamente
+┃
+┃ ⚠︎ Nota
+┃   Si el error es falso o
+┃   malintencionado, podrían
+┃   aplicarse restricciones
+┃
+╰━━━〔 Registrado 〕━━━╯`, ...rcanal }, { quoted: m });
         break;
       }
 
       case 'invite': {
-        if (!text) return conn.sendMessage(m.chat, { text: '✐ Debes enviar un enlace válido para invitar al Bot a tu grupo.', ...rcanal }, { quoted: m });
+        if (!text) return conn.sendMessage(m.chat, { text:`╭━━━〔 ⚠︎ AVISO 〕━━━╮
+┃
+┃ ✦ Debes enviar un enlace
+┃   válido de invitación
+┃
+┃ ✦ Para agregar el bot al grupo
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`, ...rcanal }, { quoted: m });
         let [_, code] = text.match(linkRegex) || [];
-        if (!code) return conn.sendMessage(m.chat, { text: 'ꕥ El enlace de invitación no es válido.', ...rcanal }, { quoted: m });
+        if (!code) return conn.sendMessage(m.chat, { text: `╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ El enlace de invitación
+┃   no es válido
+┃
+╰━━━〔 Intenta nuevamente 〕━━━╯`, ...rcanal }, { quoted: m });
         await m.react('🕒');
 
         const invite = `╭━━━〔 📩 INVITACIÓN RECIBIDA 〕━━━╮
