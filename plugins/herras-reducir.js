@@ -42,7 +42,12 @@ let handler = async (m, { conn, text, usedPrefix }) => {
   } else if (/image|sticker/.test(m.mtype)) {
     media = await m.download()
   } else {
-    return conn.reply(m.chat, `❍ Responde a una imagen/sticker para reducirlo.`, m)
+    return conn.reply(m.chat, `╭━━━〔 ⚠︎ REQUISITO 〕━━━╮
+┃
+┃ ✦ Responde a una imagen
+┃   o sticker para reducirlo
+┃
+╰━━━〔 Acción necesaria 〕━━━╯`, m)
   }
 
   try {
