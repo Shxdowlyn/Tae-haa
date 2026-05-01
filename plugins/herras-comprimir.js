@@ -48,7 +48,13 @@ const handler = async (m, { conn, text }) => {
 
     await conn.sendMessage(m.chat, {
       image: compressed,
-      caption: `> 🌕🎄 *Imagen comprimida por las Sombras festivas* 🎄🌑\n> ✨ *Optimizada en el Reino de LoveIMG*`
+      caption: `╭━━━〔 📦 IMAGEN LISTA 〕━━━╮
+┃
+┃ ✦ Imagen comprimida correctamente
+┃ ✦ Optimización completada
+┃
+┃
+╰━━━〔 Proceso finalizado 〕━━━╯`
     }, { quoted: m });
 
     m.react('✅');
