@@ -8,7 +8,14 @@ let handler = async (m, { conn }) => {
 ┃
 ╰━━━〔 Fin de datos 〕━━━╯`);
   } catch (e) {
-    m.reply(`Error: ${e.message}`);
+    m.reply(`╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ Ocurrió un problema
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ${e.message}
+┃
+╰━━━〔 Fin del error 〕━━━╯`);
   }
 };
 
