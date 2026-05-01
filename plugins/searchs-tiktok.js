@@ -54,10 +54,21 @@ const handler = async (m, { conn, text, usedPrefix }) => {
 
       const { title, duration, author, created_at, type, images, music, play } = data
 
-      const caption = `✐ Título » ${title || 'Contenido TikTok'}
-ⴵ Autor » ${author?.nickname || author?.unique_id || 'No disponible'}
-✰ Duración » ${duration ?? 'No disponible'} segundos
-❒ Fecha » ${created_at ?? 'No disponible'}`
+      const caption = `╭━━━〔 🎬 TIKTOK INFO 〕━━━╮
+┃
+┃ ✐ Título
+┃   ${title || 'Contenido TikTok'}
+┃
+┃ ⴵ Autor
+┃   ${author?.nickname || author?.unique_id || 'No disponible'}
+┃
+┃ ✰ Duración
+┃   ${duration ?? 'No disponible'} segundos
+┃
+┃ ❒ Fecha
+┃   ${created_at ?? 'No disponible'}
+┃
+╰━━━〔 INFO COMPLETA 〕━━━╯`
 
       if (type === 'image' && Array.isArray(images) && images.length) {
         for (let i = 0; i < Math.min(images.length, 10); i++) {
