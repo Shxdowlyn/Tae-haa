@@ -10,7 +10,15 @@ const IMGBB_KEY = '60b7b57c73586b5d915df1c3c378a458'
 let handler = async (m, { conn, text, usedPrefix }) => {
 
   if (!text) {
-    return conn.reply(m.chat, `❍ Responde a una imagen/sticker y usa:\n*${usedPrefix}reducir 300×300*`, m)
+    return conn.reply(m.chat, `╭━━━〔 ⚠︎ REQUISITO 〕━━━╮
+┃
+┃ ✦ Debes responder a una
+┃   imagen o sticker
+┃
+┣━━━〔 USO 〕━━━┫
+┃ ${usedPrefix}reducir 300×300
+┃
+╰━━━〔 Acción necesaria 〕━━━╯`, m)
   }
 
   let input = text.trim().split(/[x×]/i)
