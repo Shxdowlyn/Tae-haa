@@ -38,7 +38,12 @@ const handler = async (m, { conn, text }) => {
 
     const apiURL = `https://api.siputzx.my.id/api/iloveimg/compress?image=${encodeURIComponent(urlCatbox)}`;
     const response = await fetch(apiURL);
-    if (!response.ok) throw new Error(`🌑🎄 Error sombrío navideño HTTP ${response.status}`);
+    if (!response.ok) throw new Error(`╭━━━〔 ❌ ERROR HTTP 〕━━━╮
+┃
+┃ ✦ Código :: ${response.status}
+┃ ✦ No se pudo completar la solicitud
+┃
+╰━━━〔 Fallo de conexión 〕━━━╯`);
     const compressed = await response.buffer();
 
     await conn.sendMessage(m.chat, {
