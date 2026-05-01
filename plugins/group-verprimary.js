@@ -2,7 +2,19 @@
 let handler = async (m, { conn }) => {
   let chat = global.db.data.chats[m.chat]
   if (!chat || !chat.primaryBot) {
-    return m.reply('ℹ️ No hay ningún bot principal establecido en este grupo.')
+    return m.reply(`╭━━━〔 TAE-HAA // CONTROL 〕━━━╮
+┃
+┃ Estado indefinido.
+┃ No hay un bot primario asignado.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Rol :: Bot principal
+┃ ✦ Estado :: No configurado
+┃
+┣━━━〔 NOTA 〕━━━┫
+┃ ✦ Asigna uno para habilitar el control.
+┃
+╰━━━〔 Tae-Haa no opera sin orden 〕━━━╯`)
   }
 
   let botJid = chat.primaryBot
