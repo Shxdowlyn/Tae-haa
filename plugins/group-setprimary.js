@@ -19,7 +19,19 @@ const handler = async (m, { conn, usedPrefix }) => {
   const mentionedJid = m.mentionedJid
   const who = mentionedJid && mentionedJid[0] ? mentionedJid[0] : m.quoted ? m.quoted.sender : false
 
-  if (!who) return conn.reply(m.chat, `❀ Por favor, menciona a un Socket para hacerlo Bot principal del grupo.`, m)
+  if (!who) return conn.reply(m.chat, `╭━━━〔 TAE-HAA // CONTROL 〕━━━╮
+┃
+┃ Orden incompleta.
+┃ No se ha definido un objetivo.
+┃
+┣━━━〔 REQUISITO 〕━━━┫
+┃ ✦ Acción :: Mencionar usuario
+┃ ✦ Rol    :: Bot principal
+┃
+┣━━━〔 NOTA 〕━━━┫
+┃ ✦ Indica qué Socket será asignado.
+┃
+╰━━━〔 Tae-Haa exige precisión 〕━━━╯`, m)
   if (!subBots.includes(who)) return conn.reply(m.chat, `ꕥ El usuario mencionado no es un Socket de: *${global.botname}*.`, m)
   if (chat.primaryBot === who) {
     return conn.reply(
