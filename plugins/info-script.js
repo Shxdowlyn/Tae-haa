@@ -110,7 +110,15 @@ let handler = async (m, { conn }) => {
     await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id })
 
   } catch (e) {
-    await conn.reply(m.chat, `🌑⚔️ Error en el dominio de las sombras:\n${e}`, m)
+    await conn.reply(m.chat, `╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ⚔️ Fallo en el sistema
+┃   de ejecución
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ${e}
+┃
+╰━━━〔 Proceso interrumpido 〕━━━╯`, m)
   }
 }
 
