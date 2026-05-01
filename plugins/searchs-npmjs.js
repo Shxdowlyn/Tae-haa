@@ -13,7 +13,14 @@ let handler = async (m, { text, usedPrefix, command }) => {
 
   try {
     await m.react('🎭') // reacción teatral inicial
-    conn.reply(m.chat, `🌌 *Invocando las Sombras* 🎅\nBuscando el scraper en los registros ocultos...`, m)
+    conn.reply(m.chat, `╭━━━〔 PROCESANDO 〕━━━╮
+┃
+┃ ✦ Buscando el scraper
+┃   en los registros
+┃
+┃ ✦ Estado: en proceso
+┃
+╰━━━〔 Espere un momento 〕━━━╯`, m)
 
     let res = await fetch(`http://registry.npmjs.com/-/v1/search?text=${text}`)
     let { objects } = await res.json()
