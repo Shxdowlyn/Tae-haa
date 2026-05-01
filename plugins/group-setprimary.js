@@ -49,7 +49,20 @@ const handler = async (m, { conn, usedPrefix }) => {
   if (chat.primaryBot === who) {
     return conn.reply(
       m.chat,
-      `⌗ @${who.split`@`[0]} ya está como Bot primario en este grupo.`,
+     `╭━━━〔 TAE-HAA // CONTROL 〕━━━╮
+┃
+┃ Acción innecesaria.
+┃ El objetivo ya ocupa el rol asignado.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Usuario :: @${who.split`@`[0]}
+┃ ✦ Rol     :: Bot primario activo
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Cambio :: No requerido
+┃ ✦ Resultado :: Sin modificaciones
+┃
+╰━━━〔 Tae-Haa no repite órdenes 〕━━━╯`,
       m,
       { mentions: [who] }
     )
