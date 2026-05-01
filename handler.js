@@ -229,14 +229,37 @@ export async function handler(chatUpdate) {
 
         if (chat.isBanned && !isMods && name !== "group-banchat.js") {
             if (!chat.primaryBot || chat.primaryBot === this.user.jid) {
-                await this.reply(m.chat, `ꕥ El bot *${settings.botname}* está desactivado en este grupo\n\n> ✦ Un *administrador* puede activarlo con el comando:\n> » *${usedPrefix}bot on*`, m);
+                await this.reply(m.chat, `╭━━━〔 ⚠︎ BOT DESACTIVADO 〕━━━╮
+┃
+┃ ✦ El bot ${settings.botname}
+┃   está desactivado en este grupo
+┃
+┣━━━〔 ACTIVACIÓN 〕━━━┫
+┃ ✦ Un administrador puede activarlo
+┃   con:
+┃   ${usedPrefix}bot on
+┃
+╰━━━〔 SISTEMA 〕━━━╯`, m);
                 return;
             }
         }
 
         if (user.banned && !isMods && m.text) {
             if (!chat.primaryBot || chat.primaryBot === this.user.jid) {
-                await this.reply(m.chat, `ꕥ Estas baneado/a, no puedes usar comandos en este bot!\n\n> ● *Razón ›* ${user.bannedReason}\n\n> ● Si este Bot es cuenta oficial y tienes evidencia que respalde que este mensaje es un error, puedes exponer tu caso con un moderador.`, m);
+                await this.reply(m.chat, ``╭━━━〔 ⛔ ACCESO DENEGADO 〕━━━╮
+┃
+┃ ✦ Estás baneado/a y no puedes
+┃   usar comandos en este bot
+┃
+┣━━━〔 MOTIVO 〕━━━┫
+┃ ${user.bannedReason}
+┃
+┣━━━〔 NOTA 〕━━━┫
+┃ ✦ Si crees que es un error,
+┃   contacta a un moderador con
+┃   evidencia
+┃
+╰━━━〔 RESTRICCIÓN ACTIVA 〕━━━╯`, m);
                 return;
             }
         }
@@ -284,11 +307,31 @@ export async function handler(chatUpdate) {
 
         if (plugin.coin && isNumber(plugin.coin) && plugin.coin > 0) {
             if (user.coin < plugin.coin) {
-                await this.reply(m.chat, `ꕥ No tienes suficientes *${global.currency}* para usar este comando. Necesitas ${plugin.coin} *${global.currency}*, pero tienes ${user.coin} *${global.currency}*.`, m);
+                await this.reply(m.chat, `╭━━━〔 💰 SALDO INSUFICIENTE 〕━━━╮
+┃
+┃ ✦ No tienes suficientes ${global.currency}
+┃   para usar este comando
+┃
+┣━━━〔 REQUERIDO 〕━━━┫
+┃ ${plugin.coin} ${global.currency}
+┃
+┣━━━〔 TU SALDO 〕━━━┫
+┃ ${user.coin} ${global.currency}
+┃
+╰━━━〔 SISTEMA 〕━━━╯`, m);
                 continue;
             }
             user.coin -= plugin.coin;
-            await this.reply(m.chat, `> ꕥ Se cobraran ${plugin.coin} *${global.currency}* por usar el comando *${usedPrefix}${command}*.\n> » *_Saldo actual: ${user.coin} ${global.currency}._*`, m);
+            await this.reply(m.chat, `╭━━━〔 💰 COBRO DE COMANDO 〕━━━╮
+┃
+┃ ✦ Se cobrarán ${plugin.coin} ${global.currency}
+┃   por usar el comando
+┃   ${usedPrefix}${command}
+┃
+┣━━━〔 SALDO ACTUAL 〕━━━┫
+┃ ${user.coin} ${global.currency}
+┃
+╰━━━〔 SISTEMA 〕━━━╯`, m);
         }
 
         m.isCommand = true;
@@ -362,15 +405,63 @@ export async function handler(chatUpdate) {
 
 global.dfail = (type, m, conn) => {
     const msg = {
-        rowner: `> 〄 El comando *${global.comando}* solo puede ser usado por los creadores del bot.`,
-        owner: `> 〄 El comando *${global.comando}* solo puede ser usado por los desarrolladores del bot.`,
-        mods: `> 〄 El comando *${global.comando}* solo puede ser usado por los moderadores del bot.`,
-        premium: `> 〄 El comando *${global.comando}* solo puede ser usado por los usuarios premium.`,
-        group: `> 〄 El comando *${global.comando}* solo puede ser usado en grupos.`,
-        private: `> 〄 El comando *${global.comando}* solo puede ser usado al chat privado del bot.`,
-        admin: `> 〄 El comando *${global.comando}* solo puede ser usado por los administradores del grupo.`,
-        botAdmin: `> 〄 Para ejecutar el comando *${global.comando}* debo ser administrador del grupo.`,
-        restrict: `> 〄 Esta característica está desactivada.`
+        rowner: `╭━━━〔 ⛔ ACCESO RESTRINGIDO 〕━━━╮
+┃
+┃ ✦ El comando ${global.comando}
+┃   solo puede ser usado por
+┃   los creadores del bot
+┃
+╰━━━〔 Permiso denegado 〕━━━╯`,
+        owner: `╭━━━〔 ⛔ ACCESO RESTRINGIDO 〕━━━╮
+┃
+┃ ✦ El comando ${global.comando}
+┃   solo puede ser usado por
+┃   los desarrolladores del bot
+┃
+╰━━━〔 Permiso denegado 〕━━━╯`,
+        mods: `╭━━━〔 ⛔ ACCESO RESTRINGIDO 〕━━━╮
+┃
+┃ ✦ El comando ${global.comando}
+┃   solo puede ser usado por
+┃   los moderadores del bot
+┃
+╰━━━〔 Permiso denegado 〕━━━╯`,
+        group: `╭━━━〔 ⚠︎ GRUPO 〕━━━╮
+┃
+┃ ✦ El comando ${global.comando}
+┃   solo puede ser usado en grupos
+┃
+╰━━━〔 Restricción activa 〕━━━╯`,
+
+private: `╭━━━〔 ⚠︎ PRIVADO 〕━━━╮
+┃
+┃ ✦ El comando ${global.comando}
+┃   solo puede ser usado en
+┃   chat privado del bot
+┃
+╰━━━〔 Restricción activa 〕━━━╯`,
+
+admin: `╭━━━〔 ⚠︎ ADMINISTRADORES 〕━━━╮
+┃
+┃ ✦ El comando ${global.comando}
+┃   solo puede ser usado por
+┃   administradores del grupo
+┃
+╰━━━〔 Permiso requerido 〕━━━╯`,
+
+botAdmin: `╭━━━〔 ⚠︎ BOT ADMIN 〕━━━╮
+┃
+┃ ✦ Para ejecutar ${global.comando}
+┃   debo ser administrador del grupo
+┃
+╰━━━〔 Permiso requerido 〕━━━╯`,
+
+restrict: `╭━━━〔 ⚠︎ DESACTIVADO 〕━━━╮
+┃
+┃ ✦ Esta característica está
+┃   desactivada
+┃
+╰━━━〔 Sistema 〕━━━╯`
     }[type];
     if (msg) return conn.reply(m.chat, msg, m).then(() => m.react('✖️'));
 };
