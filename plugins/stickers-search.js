@@ -102,12 +102,21 @@ async function urlToSticker(url, packname, author) {
 }
 
 let handler = async (m, { conn, text, command }) => {
-  if (!text) return m.reply(`*Ｉ ａｍ ｔｈｅ ａｌｌ-ｒａｎｇｅ ａｔｏｍｉｃ...*\n\n✐ Ingrese el nombre del pack que desea buscar.`);
+  if (!text) return m.reply(`╭━━━〔 ⚠︎ AVISO 〕━━━╮
+┃
+┃ ✦ Ingresa el nombre del pack
+┃   que deseas buscar
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`)
 
   try {
     const data = await searchStickerPacks(text, 1);
     if (!data.status || !data.result || data.result.length === 0) {
-      return m.reply(`[!] Las sombras no pudieron encontrar el objetivo.`);
+      return m.reply(`╭━━━〔 ❌ SIN RESULTADO 〕━━━╮
+┃
+┃ ✦ No se pudo encontrar el objetivo
+┃
+╰━━━〔 Intenta nuevamente 〕━━━╯`)
     }
 
     const pack = data.result[0];
@@ -115,12 +124,22 @@ let handler = async (m, { conn, text, command }) => {
     if (stickers.length === 0) return m.reply(`[!] El archivo está vacío.`);
 
     await m.reply(
-      `『 **SHADOW GARDEN - ARCHIVE** 』\n\n` +
-      `👤 **Codename:** ${pack.author}\n` +
-      `📦 **Misión:** ${pack.title}\n` +
-      `📊 **Archivos:** ${stickers.length}\n\n` +
-      `*Desplegando desde las sombras...*`
-    );
+`╭━━━〔 📦 ARCHIVO DEL PACK 〕━━━╮
+┃
+┃ ✦ Autor
+┃   ${pack.author}
+┃
+┃ ✦ Título
+┃   ${pack.title}
+┃
+┃ ✦ Stickers
+┃   ${stickers.length}
+┃
+┃ ✦ Estado
+┃   Desplegando contenido...
+┃
+╰━━━〔 FIN 〕━━━╯`
+)
 
     const limit = 6;
     for (let i = 0; i < Math.min(stickers.length, limit); i++) {
@@ -133,7 +152,11 @@ let handler = async (m, { conn, text, command }) => {
     }
   } catch (err) {
     console.error(err);
-    m.reply(`[!] Error crítico en el Garden.`);
+    m.reply(`╭━━━〔 ❌ ERROR CRÍTICO 〕━━━╮
+┃
+┃ ✦ Error crítico en el sistema
+┃
+╰━━━〔 Proceso detenido 〕━━━╯`)
   }
 };
 
