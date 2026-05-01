@@ -40,7 +40,18 @@ let handler = async (m, { conn, command, args, usedPrefix }) => {
     await m.react('✖️')
     return conn.reply(
       m.chat,
-      `⚠️ El ritual de invocación falló...\n> Usa *${usedPrefix}report* para informarlo.\n\n${error.message}`,
+      `╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ Falló la invocación
+┃
+┣━━━〔 SOLUCIÓN 〕━━━┫
+┃ Usa ${usedPrefix}report
+┃ para informarlo
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ${error.message}
+┃
+╰━━━〔 Proceso detenido 〕━━━╯`,
       m
     )
   }
