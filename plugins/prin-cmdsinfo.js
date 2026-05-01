@@ -22,14 +22,32 @@ const handler = async (m, { conn, text, command, usedPrefix, args }) => {
         if (text.length < 10) return conn.sendMessage(m.chat, { text: 'ꕥ La sugerencia debe contener al menos 10 caracteres.', ...rcanal }, { quoted: m });
         await m.react('🕒');
 
-        const sug = `「✦」SUGERENCIA RECIBIDA
-
-✐ Usuario » *${nombre}*
-✩ Tag » *${tag}*
-✿ Sugerencia » ${text}
-✰ Chat » *${chatLabel}*
-🜸 Fecha » *${horario}*
-♤ InfoBot » *${botname} / ${vs}*`;
+        const sug = `╭━━━〔 💡 SUGERENCIA RECIBIDA 〕━━━╮
+┃
+┃ ┌─ USUARIO
+┃ │ ✦ Nombre
+┃ │   ${nombre}
+┃ │
+┃ │ ✦ Tag
+┃ │   ${tag}
+┃ │
+┃ └────────────────────────
+┃
+┣━━━〔 MENSAJE 〕━━━┫
+┃ ${text}
+┃
+┣━━━〔 CONTEXTO 〕━━━┫
+┃ ✦ Chat
+┃   ${chatLabel}
+┃
+┃ ✦ Fecha
+┃   ${horario}
+┃
+┣━━━〔 SISTEMA 〕━━━┫
+┃ ✦ Bot
+┃   ${botname} / ${vs}
+┃
+╰━━━〔 SUGERENCIA REGISTRADA 〕━━━╯`;
 
         await conn.sendMessage(`${suittag}@s.whatsapp.net`, { text: sug, mentions: [m.sender, ...usertag], ...rcanal }, { quoted: m });
         await m.react('✔️');
