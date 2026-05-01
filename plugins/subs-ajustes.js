@@ -60,9 +60,19 @@ conn.reply(m.chat, `╭━━━〔 ⚙︎ CONFIGURACIÓN 〕━━━╮
 break
 }
 case 'join': {
-if (!text) return m.reply(`❀ Debes enviar un enlace de invitación para unirme a un grupo.`)
+if (!text) return m.reply(`╭━━━〔 ⚠︎ INVITACIÓN 〕━━━╮
+┃
+┃ ✦ Debes enviar un enlace
+┃   de invitación del grupo
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`)
 const [_, code] = text.match(linkRegex) || []
-if (!code) return m.reply(`ꕥ El enlace de invitación no es válido.`)
+if (!code) return m.reply(`╭━━━〔 ❌ INVITACIÓN 〕━━━╮
+┃
+┃ ✦ El enlace de invitación
+┃   no es válido
+┃
+╰━━━〔 Intenta nuevamente 〕━━━╯`)
 await m.react('🕒')
 await conn.groupAcceptInvite(code)
 await m.react('✔️')
