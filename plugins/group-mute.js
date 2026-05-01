@@ -4,7 +4,18 @@ const handler = async (m, { conn, command, text, isAdmin }) => {
   if (!isAdmin) {
     return conn.reply(
       m.chat,
-      `🎄🗡️ *SOMBRAS SIN PERMISOS SUFICIENTES*\n\n> Solo un administrador puede invocar este poder.\n🔒 Estado actual: *no admin en el Reino*`,
+      `╭━━━〔 TAE-HAA // ACCESO 〕━━━╮
+┃
+┃ Permisos insuficientes.
+┃ Jerarquía requerida no alcanzada.
+┃
+┣━━━〔 RESTRICCIÓN 〕━━━┫
+┃ Solo un administrador puede ejecutar esta orden.
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ Rango actual :: Sin administración
+┃
+╰━━━〔 Autoridad denegada 〕━━━╯`,
       m
     );
   }
