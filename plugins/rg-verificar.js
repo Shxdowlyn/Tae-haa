@@ -47,13 +47,28 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
   age = parseInt(age)
 
   if (age > 60) {
-    return m.reply("『☽』 Acaso eres un viejo? XD\n\nNo puedes registrarte con más de 60 años.")
+    return m.reply(`╭━━━〔 ⚠︎ EDAD NO VÁLIDA 〕━━━╮
+┃
+┃ ✦ No puedes registrarte
+┃   con más de 60 años
+┃
+╰━━━〔 Intenta nuevamente 〕━━━╯`)
   }
   if (age >= 1 && age <= 5) {
-    return m.reply("『☽』 Los bebés no deberían jugar con el bot.\n\nNo puedes registrarte con menos de 6 años.")
+    return m.reply(`╭━━━〔 ⚠︎ EDAD NO VÁLIDA 〕━━━╮
+┃
+┃ ✦ No puedes registrarte
+┃   con menos de 6 años
+┃
+╰━━━〔 Intenta nuevamente 〕━━━╯`)
   }
-  if (isNaN(age) || age < 6) {
-    return m.reply("『☽』 Edad inválida. Debes colocar un número mayor a 5.")
+  if (isNaN(age) || age < 10) {
+    return m.reply(`╭━━━〔 ⚠︎ EDAD INVÁLIDA 〕━━━╮
+┃
+┃ ✦ Debes ingresar una edad válida
+┃   mayor a 10
+┃
+╰━━━〔 Intenta nuevamente 〕━━━╯`)
   }
 
   user.name = `${name}⋆⟡Shadow⟡⋆`
