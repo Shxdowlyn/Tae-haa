@@ -95,7 +95,19 @@ const handler = async (m, { conn, args, text, command, usedPrefix }) => {
 
       case 'gpname': case 'groupname': {
         if (!text) 
-          return m.reply('🌌 *Discípulo de las Sombras* 🎄\nDebes entregar el nuevo nombre para el grupo.')
+          return m.reply(`╭━━━〔 TAE-HAA // NOMBRE 〕━━━╮
+┃
+┃ Orden incompleta.
+┃ No se ha definido el nuevo nombre.
+┃
+┣━━━〔 REQUISITO 〕━━━┫
+┃ ✦ Tipo :: Nombre del grupo
+┃ ✦ Estado :: Vacío
+┃
+┣━━━〔 NOTA 〕━━━┫
+┃ ✦ Proporciona el nombre que deseas asignar.
+┃
+╰━━━〔 Tae-Haa exige precisión 〕━━━╯`)
 
         await m.react('🎭')
         await conn.groupUpdateSubject(m.chat, text)
