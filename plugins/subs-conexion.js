@@ -19,19 +19,33 @@ let crm4 = "IF9hdXRvcmVzcG9uZGVyLmpzIGluZm8tYm90Lmpz"
 let drm1 = ""
 let drm2 = ""
 
-let rtx = `❐ *_Vincula via codigo qr_*
-✩ Escanea este QR para ser *Sub-Bot* temporal.  
-✦ Pasos:  
-1 » Toca ⋮ arriba a la derecha  
-2 » Ve a *Dispositivos vinculados* 3 » Escanea el QR  
+let rtx = `╭━━━〔 🔗 VINCULACIÓN QR 〕━━━╮
+┃
+┃ ✦ Escanea este QR para ser
+┃   Sub-Bot temporal
+┃
+┣━━━〔 PASOS 〕━━━┫
+┃ 1. Abre ⋮ (menú)
+┃ 2. Dispositivos vinculados
+┃ 3. Escanea el QR
+┃
+┣━━━〔 IMPORTANTE 〕━━━┫
+┃ ✦ Expira en 45s
+┃
+╰━━━〔 SISTEMA 〕━━━╯`
 
-✧ Este código expira en *45s*!`
-
-let rtx2 = `❐ *_Vincula via código de 8 digitos_*
-✩ Usa este código para ser *Sub-Bot* temporal.  
-✦ Pasos:  
-1 » Toca ⋮ arriba a la derecha  
-2 » *Dispositivos vinculados* 3 » Vincular con el *número de teléfono* 4 » Escribe el *código*`
+let rtx2 = `╭━━━〔 🔢 VINCULACIÓN CÓDIGO 〕━━━╮
+┃
+┃ ✦ Usa este código para ser
+┃   Sub-Bot temporal
+┃
+┣━━━〔 PASOS 〕━━━┫
+┃ 1. Abre ⋮ (menú)
+┃ 2. Dispositivos vinculados
+┃ 3. Vincular con número
+┃ 4. Ingresa el código
+┃
+╰━━━〔 SISTEMA 〕━━━╯`
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -45,14 +59,29 @@ function isSubBotConnected(jid) {
 }
 
 let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
-  if (!globalThis.db.data.settings[conn.user.jid].jadibotmd) return m.reply(`ꕥ El Comando *${command}* está desactivado temporalmente.`)
+  if (!globalThis.db.data.settings[conn.user.jid].jadibotmd) return m.reply(`╭━━━〔 ⚠︎ DESACTIVADO 〕━━━╮
+┃
+┃ ✦ El comando ${command}
+┃   está desactivado temporalmente
+┃
+╰━━━〔 Estado: inactivo 〕━━━╯`)
 
   let time = global.db.data.users[m.sender].Subs + 120000
-  if (new Date - global.db.data.users[m.sender].Subs < 120000) return conn.reply(m.chat, `ꕥ Debes esperar ${msToTime(time - new Date())} para volver a vincular un *Sub-Bot.*`, m)
+  if (new Date - global.db.data.users[m.sender].Subs < 120000) return conn.reply(m.chat, `╭━━━〔 ⏳ ESPERA 〕━━━╮
+┃
+┃ ✦ Debes esperar ${msToTime(time - new Date())}
+┃   para volver a vincular un Sub-Bot
+┃
+╰━━━〔 Intenta más tarde 〕━━━╯`, m)
 
   let socklimit = global.conns.filter(sock => sock?.user).length
   if (socklimit >= 50) {
-    return m.reply(`ꕥ No se han encontrado espacios para *Sockets* disponibles.`)
+    return m.reply(`╭━━━〔 ⚠︎ SIN ESPACIOS 〕━━━╮
+┃
+┃ ✦ No se encontraron espacios
+┃   disponibles para sockets
+┃
+╰━━━〔 Intenta más tarde 〕━━━╯`)
   }
 
   let mentionedJid = await m.mentionedJid
@@ -110,7 +139,12 @@ export async function MichiJadiBot(options) {
   try {
     args[0] && args[0] != undefined ? fs.writeFileSync(pathCreds, JSON.stringify(JSON.parse(Buffer.from(args[0], "base64").toString("utf-8")), null, '\t')) : ""
   } catch {
-    conn.reply(m.chat, `ꕥ Use correctamente el comando » ${usedPrefix + command}`, m)
+    conn.reply(m.chat, `╭━━━〔 ⚠︎ USO CORRECTO 〕━━━╮
+┃
+┃ ✦ Usa correctamente el comando
+┃   ${usedPrefix + command}
+┃
+╰━━━〔 Requiere formato válido 〕━━━╯`, m)
     return
   }
 
@@ -166,7 +200,14 @@ export async function MichiJadiBot(options) {
           if (codeBot?.key) setTimeout(() => { conn.sendMessage(m.sender, { delete: codeBot.key }) }, 30000)
         } catch (e) {
           console.error('Error generando pairing code:', e)
-          await m.reply('⚠︎ No fue posible generar el código en este momento. Intenta nuevamente.')
+          await m.reply(`╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ No fue posible generar
+┃   el código en este momento
+┃
+┃ ✦ Intenta nuevamente
+┃
+╰━━━〔 Proceso fallido 〕━━━╯`)
         }
         return
       }
@@ -209,23 +250,69 @@ export async function MichiJadiBot(options) {
         if (reason === 440) {
           console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ La conexión (+${path.basename(pathMichiJadiBot)}) fue reemplazada por otra sesión activa.\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
           try {
-            if (options.fromCommand) m?.chat ? await conn.sendMessage(`${path.basename(pathMichiJadiBot)}@s.whatsapp.net`, {text : '⚠︎ Hemos detectado una nueva sesión, borre la antigua sesión para continuar.\n\n> ☁︎ Si Hay algún problema vuelva a conectarse.' }, { quoted: m || null }) : ""
+            if (options.fromCommand) m?.chat ? await conn.sendMessage(`${path.basename(pathMichiJadiBot)}@s.whatsapp.net`, { text: `╭━━━〔 ⚠︎ SESIÓN DETECTADA 〕━━━╮
+┃
+┃ ✦ Se detectó una nueva sesión
+┃
+┃ ✦ Elimina la sesión anterior
+┃   para continuar
+┃
+┃ ✦ Si hay problemas, vuelve a
+┃   conectarte
+┃
+╰━━━〔 Requerido 〕━━━╯` }, { quoted: m || null }) : ""
           } catch (error) {
-            console.error(chalk.bold.yellow(`⚠︎ Error 440 no se pudo enviar mensaje a: +${path.basename(pathMichiJadiBot)}`))
+            console.error(
+  chalk.bold.yellow(
+    `╭━━━〔 ⚠︎ ERROR 440 〕━━━╮
+┃
+┃ ✦ No se pudo enviar el mensaje
+┃   al destino
+┃
+┃ ✦ ID: +${path.basename(pathMichiJadiBot)}
+┃
+╰━━━〔 LOG REGISTRADO 〕━━━╯`
+  )
+)
           }
         }
         if (reason == 405 || reason == 401) {
           console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ La sesión (+${path.basename(pathMichiJadiBot)}) fue cerrada. Credenciales no válidas o dispositivo desconectado manualmente.\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
           try {
-            if (options.fromCommand) m?.chat ? await conn.sendMessage(`${path.basename(pathMichiJadiBot)}@s.whatsapp.net`, {text : '⚠︎ Sesión pendiente.\n\n> ☁︎ Vuelva a intentar nuevamente volver a ser *SUB-BOT*.' }, { quoted: m || null }) : ""
+            if (options.fromCommand) m?.chat ? await conn.sendMessage(`${path.basename(pathMichiJadiBot)}@s.whatsapp.net`, { text: `╭━━━〔 ⚠︎ SESIÓN PENDIENTE 〕━━━╮
+┃
+┃ ✦ La sesión aún está pendiente
+┃
+┃ ✦ Intenta nuevamente para volver
+┃   a ser SUB-BOT
+┃
+╰━━━〔 Estado: en espera 〕━━━╯` }, { quoted: m || null }) : ""
           } catch (error) {
-            console.error(chalk.bold.yellow(`⚠︎ Error 405 no se pudo enviar mensaje a: +${path.basename(pathMichiJadiBot)}`))
+            console.error(
+  chalk.bold.yellow(
+    `╭━━━〔 ⚠︎ ERROR 405 〕━━━╮
+┃
+┃ ✦ No se pudo enviar el mensaje
+┃   al destino
+┃
+┃ ✦ ID: +${path.basename(pathMichiJadiBot)}
+┃
+╰━━━〔 LOG DE ERROR 〕━━━╯`
+  )
+)
           }
           fs.rmSync(pathMichiJadiBot, { recursive: true, force: true })
         }
         if (reason === 500) {
           console.log(chalk.bold.magentaBright(`\n╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡\n┆ Conexión perdida en la sesión (+${path.basename(pathMichiJadiBot)}). Borrando datos...\n╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄ • • • ┄┄┄┄┄┄┄┄┄┄┄┄┄┄⟡`))
-          if (options.fromCommand) m?.chat ? await conn.sendMessage(`${path.basename(pathMichiJadiBot)}@s.whatsapp.net`, {text : '⚠︎ Conexión perdida.\n\n> ☁︎ Intenté conectarse manualmente para volver a ser *SUB-BOT*' }, { quoted: m || null }) : ""
+          if (options.fromCommand) m?.chat ? await conn.sendMessage(`${path.basename(pathMichiJadiBot)}@s.whatsapp.net`, { text: `╭━━━〔 ⚠︎ CONEXIÓN PERDIDA 〕━━━╮
+┃
+┃ ✦ Se perdió la conexión
+┃
+┃ ✦ Intentando reconexión manual
+┃   para volver a ser SUB-BOT
+┃
+╰━━━〔 Estado: reconectando 〕━━━╯` }, { quoted: m || null }) : ""
           return creloadHandler(true).catch(console.error)
         }
         if (reason === 515) {
@@ -251,7 +338,13 @@ export async function MichiJadiBot(options) {
         sock.isInit = true
         global.conns.push(sock)
 
-        m?.chat ? await conn.sendMessage(m.chat, { text: isSubBotConnected(m.sender) ? `> @${m.sender.split('@')[0]}, ❐ Has registrado un nuevo _shadow_ *Sub-Bot* 👻` : `> ❀ Has registrado un nuevo *Sub-Bot!* [@${m.sender.split('@')[0]}]`, mentions: [m.sender] }, { quoted: m }) : ''
+        m?.chat ? await conn.sendMessage(m.chat, { text: isSubBotConnected(m.sender) ? `╭━━━〔 👻 SUB-BOT REGISTRADO 〕━━━╮
+┃
+┃ ✦ Usuario: @${m.sender.split('@')[0]}
+┃
+┃ ✦ Nuevo shadow Sub-Bot creado
+┃
+╰━━━〔 Sistema activo 〕━━━╯` mentions: [m.sender] }, { quoted: m }) : ''
       }
     }
 
