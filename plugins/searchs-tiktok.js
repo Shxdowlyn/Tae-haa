@@ -8,7 +8,12 @@ const {
 
 const handler = async (m, { conn, text, usedPrefix }) => {
   if (!text) {
-    return conn.reply(m.chat, '✐ Por favor, ingresa un término de búsqueda o un enlace de TikTok.', m)
+    return conn.reply(m.chat, `╭━━━〔 ⚠︎ TIKTOK 〕━━━╮
+┃
+┃ ✦ Ingresa un término de búsqueda
+┃   o un enlace válido
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`, m)
   }
 
   const isUrl = /(?:https?:\/\/)?(?:www\.|vm\.|vt\.|t\.)?tiktok\.com\/[^\s&]+/i.test(text)
