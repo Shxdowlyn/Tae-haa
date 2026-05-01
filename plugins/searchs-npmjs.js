@@ -25,7 +25,12 @@ let handler = async (m, { text, usedPrefix, command }) => {
     let res = await fetch(`http://registry.npmjs.com/-/v1/search?text=${text}`)
     let { objects } = await res.json()
 
-    if (!objects.length) return conn.reply(m.chat, `🌌 *Discípulo de las Sombras* 🎄\nNo se encontró resultado para: *${text}*`, m)
+    if (!objects.length) return conn.reply(m.chat, `╭━━━〔 SIN RESULTADOS 〕━━━╮
+┃
+┃ ✦ No se encontró información
+┃   para: ${text}
+┃
+╰━━━〔 Intenta otro término 〕━━━╯`, m)
 
     let txt = objects.map(({ package: pkg }) => {
       return `╭━━━〔 SCRAPER INVOCADO 〕━━━╮
