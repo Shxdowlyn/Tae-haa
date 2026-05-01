@@ -78,7 +78,7 @@ var handler = async (m, { conn, args }) => {
         await conn.relayMessage(m.chat, interactive.message, { messageId: interactive.key.id })
 
     } catch (e) {
-        console.error(`╭━━━〔 SHADOW // ERROR LOG 〕━━━╮
+        console.error(`╭━━━〔 TAE-HAA // ERROR LOG 〕━━━╮
 ┃ Sistema :: Enlace interactivo
 ┃ Estado  :: FALLIDO
 ┃ Detalle :: ${e?.stack || e}
