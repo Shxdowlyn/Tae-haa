@@ -4,7 +4,12 @@ import { format } from 'util'
 let handler = async (m, { conn, usedPrefix, text }) => {
   if (m.fromMe) return
   if (!/^https?:\/\//.test(text)) 
-    return m.reply(`❄️✨ *Discípulo de las Sombras*, entrega la *URL* para invocar su contenido.`)
+    return m.reply(`╭━━━〔 ✨ AVISO 〕━━━╮
+┃
+┃ ✦ Debes enviar una URL válida
+┃   para continuar
+┃
+╰━━━〔 Acción requerida 〕━━━╯`)
 
   let url = text
   await m.react('🎭') // reacción teatral
