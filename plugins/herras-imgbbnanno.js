@@ -92,15 +92,28 @@ const handler = async (m, { conn, text, command }) => {
     if (data.status === 200 && data.success) {
       const result = data.data
 
-      const replyText = 
-`*— 🌑 Subida Exitosa en las Sombras —*
-
-🎄 *URL:* ${result.url}
-🎁 *Tipo:* ${result.mime}
-✨ *Tamaño:* ${(result.size / 1024).toFixed(2)} KB
-⛄ *Expiración:* ${result.expiration ? `${result.expiration} s` : 'Nunca'}
-
-> Att: Shadow 🎄`
+           const replyText = 
+`╭━━━〔 SUBIDA COMPLETADA 〕━━━╮
+┃
+┃ ┌─ INFORMACIÓN
+┃ │
+┃ │ ✦ URL
+┃ │   ${result.url}
+┃ │
+┃ │ ✦ Tipo
+┃ │   ${result.mime}
+┃ │
+┃ │ ✦ Tamaño
+┃ │   ${(result.size / 1024).toFixed(2)} KB
+┃ │
+┃ │ ✦ Expiración
+┃ │   ${result.expiration ? `${result.expiration} s` : 'Nunca'}
+┃ │
+┃ └────────────────────
+┃
+┃ Att: Tae-Haa
+┃
+╰━━━〔 PROCESO FINALIZADO 〕━━━╯`
 
       return sendCustomPedido(m, conn, replyText)
     } else {
