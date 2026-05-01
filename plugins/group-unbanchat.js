@@ -27,7 +27,20 @@ const handler = async (m, { conn, isAdmin, isROwner }) => {
   global.db.data.chats[m.chat].isBanned = false
 
   m.reply(
-    `˚∩ El bot ha sido desbaneado correctamente.`
+    `╭━━━〔 TAE-HAA // SISTEMA 〕━━━╮
+┃
+┃ Restricción eliminada.
+┃ Acceso restaurado correctamente.
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Acción :: Desbaneo
+┃ ✦ Resultado :: Éxito
+┃
+┣━━━〔 CONTROL 〕━━━┫
+┃ ✦ Operativo :: Activo
+┃ ✦ Sistema   :: Estable
+┃
+╰━━━〔 Tae-Haa restablece el orden 〕━━━╯`
   )
 }
 
