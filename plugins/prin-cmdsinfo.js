@@ -171,8 +171,20 @@ const handler = async (m, { conn, text, command, usedPrefix, args }) => {
 
         await m.react(count === 0 ? '✖️' : '✔️');
         await conn.sendMessage(m.chat, { text: count === 0
-          ? 'ꕥ No se encontraron archivos de sesión relacionados con tu ID.'
-          : `❒ Se eliminaron *${count}* archivos de sesión correctamente.`, ...rcanal }, { quoted: m });
+          ? `╭━━━〔 ⚠︎ AVISO 〕━━━╮
+┃
+┃ ✦ No se encontraron archivos
+┃   de sesión relacionados con tu ID
+┃
+╰━━━〔 Sin cambios 〕━━━╯`
+: `╭━━━〔 🧹 LIMPIEZA COMPLETADA 〕━━━╮
+┃
+┃ ✦ Archivos eliminados
+┃   ${count}
+┃
+╰━━━〔 Proceso finalizado 〕━━━╯`,
+...rcanal
+}, { quoted: m });
         break;
       }
     }
