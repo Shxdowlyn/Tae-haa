@@ -43,7 +43,14 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     conn.sendMessage(m.chat, { text: txt, ...rcanal }, { quoted: m });
   } else {
     conn.sendMessage(m.chat, {
-      text: `❒ Etiqueta un *audio o video corto* con el comando *${usedPrefix + command}* para identificar la música.`,
+      text: `╭━━━〔 ⚠︎ AVISO 〕━━━╮
+┃
+┃ ✦ Etiqueta un audio o video
+┃   corto para identificar la música
+┃
+┃ ✦ Uso: ${usedPrefix + command}
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`,
       ...rcanal
     }, { quoted: m });
   }
