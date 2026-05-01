@@ -53,18 +53,20 @@ var handler = async (m, { conn }) => {
 
   await conn.sendMessage(m.chat, { text: animacion, ...rcanal }, { quoted: m })
 
-  let str = `⚔️ 『 ＡＲＣＨＩＶＯ ＳＯＭＢＲＡ 』 ⚔️
+  let str = `╭━━━〔 TAE-HAA // ARCHIVO 〕━━━╮
 
-🕯 *Portador:* ${username}
-🆔 *Identificador:* @${who.replace(/@.+/, '')}
-📜 *Registrado:* ${registered ? '✅ Sí' : '❌ No'}
+┃ ✦ Portador :: ${username}
+┃ ✦ ID       :: @${who.replace(/@.+/, '')}
+┃ ✦ Registro :: ${registered ? 'Verificado' : 'No registrado'}
 
-✦ *Frase de las sombras:*
-"${fraseElegida}"
+┣━━━〔 PERFIL 〕━━━┫
+┃ "${fraseElegida}"
 
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-🌌 *Shadow-BOT-MD* — El jardín sombrío nunca duerme
-`
+┣━━━〔 SISTEMA 〕━━━┫
+┃ ✦ Estado :: Activo
+┃ ✦ Control :: Estable
+
+╰━━━〔 Tae-Haa observa en silencio 〕━━━╯`
 
   const wm = (typeof global !== 'undefined' && global.wm) ? global.wm : 'Shadow-BOT-MD ⚔️'
   const bot = 'Shadow-BOT-MD ⚔️'
