@@ -35,21 +35,47 @@ let handler = async (m, { conn}) => {
     const botType = 'Principal/Owner';
     const duenos = 'yosue y ado';
 
-    const message = `💜 Información del bot ${botname2}
-
-> Nombre Corto: ${botname2}
-> Nombre Largo: ${botname}
-> Moneda: ${monedas}
-> Prefijos: ${prefijos}
-
-> Tipo: ${botType}
-> Plataforma: ${platform}
-> NodeJS: ${nodeVersion}
-> Activo desde: ${formattedUptimeDate}
-> Sistema Activo: ${sistemaUptime}
-> Dueño(a): ${duenos}
-
-> Repositorio: ${link}`.trim();
+    const message = `╭━━━〔 💜 INFO DEL BOT 〕━━━╮
+┃
+┃ ┌─ IDENTIDAD
+┃ │ ✦ Nombre corto
+┃ │   ${botname2}
+┃ │
+┃ │ ✦ Nombre largo
+┃ │   ${botname}
+┃ │
+┃ │ ✦ Moneda
+┃ │   ${monedas}
+┃ │
+┃ │ ✦ Prefijos
+┃ │   ${prefijos}
+┃ │
+┃ └────────────────────────
+┃
+┣━━━〔 SISTEMA 〕━━━┫
+┃ ✦ Tipo
+┃   ${botType}
+┃
+┃ ✦ Plataforma
+┃   ${platform}
+┃
+┃ ✦ NodeJS
+┃   ${nodeVersion}
+┃
+┃ ✦ Activo desde
+┃   ${formattedUptimeDate}
+┃
+┃ ✦ Uptime
+┃   ${sistemaUptime}
+┃
+┣━━━〔 PROPIETARIO 〕━━━┫
+┃ ✦ Dueño(a)
+┃   ${duenos}
+┃
+┣━━━〔 REPOSITORIO 〕━━━┫
+┃ ${link}
+┃
+╰━━━〔 ESTADO: ONLINE 〕━━━╯`.trim()
 
     await conn.sendMessage(m.chat, {
       document: Buffer.alloc(1),
