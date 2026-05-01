@@ -38,11 +38,20 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       },
       businessOwnerJid: '584242773183@s.whatsapp.net',
       caption: [
-        `➤ *\`REGISTRO\`*`,
-        `𔓕 Hola ${m.pushName || 'usuario'}`,
-        `𔓕 Para usar el comando necesitas registrarte`,
-        `𔓕 Comando: \`${usedPrefix}reg nombre.edad\``,
-        `𔓕 Ejemplo: \`${usedPrefix}reg shadow.18\``
+  `╭━━━〔 📌 REGISTRO 〕━━━╮`,
+  `┃`,
+  `┃ ✦ Hola ${m.pushName || 'usuario'}`,
+  `┃`,
+  `┃ ✦ Para usar el comando`,
+  `┃   necesitas registrarte`,
+  `┃`,
+  `┣━━━〔 COMANDO 〕━━━┫`,
+  `┃ ${usedPrefix}reg nombre.edad`,
+  `┃`,
+  `┣━━━〔 EJEMPLO 〕━━━┫`,
+  `┃ ${usedPrefix}reg shadow.18`,
+  `┃`,
+  `╰━━━〔 SISTEMA 〕━━━╯`
       ].join('\n'),
       footer: '🌌 Shadow Bot',
       interactiveButtons: [
