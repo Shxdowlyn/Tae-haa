@@ -32,7 +32,20 @@ const handler = async (m, { conn, usedPrefix }) => {
 ┃ ✦ Indica qué Socket será asignado.
 ┃
 ╰━━━〔 Tae-Haa exige precisión 〕━━━╯`, m)
-  if (!subBots.includes(who)) return conn.reply(m.chat, `ꕥ El usuario mencionado no es un Socket de: *${global.botname}*.`, m)
+  if (!subBots.includes(who)) return conn.reply(m.chat, `╭━━━〔 TAE-HAA // CONTROL 〕━━━╮
+┃
+┃ Validación fallida.
+┃ El objetivo no cumple los requisitos.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Tipo :: Socket requerido
+┃ ✦ Sistema :: ${global.botname}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Resultado :: Rechazado
+┃ ✦ Motivo    :: Usuario inválido
+┃
+╰━━━〔 Tae-Haa no acepta errores 〕━━━╯`, m)
   if (chat.primaryBot === who) {
     return conn.reply(
       m.chat,
