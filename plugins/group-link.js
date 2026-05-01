@@ -82,7 +82,18 @@ var handler = async (m, { conn, args }) => {
 
         let fallbackLink = 'https://chat.whatsapp.com/' + (await conn.groupInviteCode(group).catch(() => ''))
         let fallbackPP = await conn.profilePictureUrl(group, 'image').catch((_) => 'https://files.catbox.moe/xr2m6u.jpg')
-        let fallbackMessage = `*❌ Falló al enviar el mensaje interactivo. Asegúrate que el bot sea administrador.*\n\n*➭ Aquí tienes el enlace de todas formas:*\n\n> \`Link:\` ${fallbackLink}`
+        let fallbackMessage = `╭━━━〔 TAE-HAA // FALLBACK 〕━━━╮
+┃
+┃ Transmisión interactiva fallida.
+┃ Permisos insuficientes detectados.
+┃
+┣━━━〔 REQUISITO 〕━━━┫
+┃ Verificá que el bot tenga administración.
+┃
+┣━━━〔 ENLACE DIRECTO 〕━━━┫
+┃ ✦ ${fallbackLink}
+┃
+╰━━━〔 Acceso alternativo habilitado 〕━━━╯`
 
         await conn.sendMessage(group, { image: { url: fallbackPP }, caption: fallbackMessage }, { quoted: m })
     }
