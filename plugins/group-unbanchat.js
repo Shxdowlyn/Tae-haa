@@ -7,7 +7,19 @@ const handler = async (m, { conn, isAdmin, isROwner }) => {
 
   if (!(isAdmin || isROwner || fs.existsSync(botPath))) {
     return m.reply(
-      `𖣣ֶㅤ֯⌗ No tienes permisos para usar este comando.`, 
+      `╭━━━〔 TAE-HAA // ACCESO 〕━━━╮
+┃
+┃ Acceso denegado.
+┃ No posees los permisos requeridos.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Estado :: Restringido
+┃ ✦ Acción :: Bloqueada
+┃
+┣━━━〔 NOTA 〕━━━┫
+┃ ✦ Solicita autorización para continuar.
+┃
+╰━━━〔 Tae-Haa no permite intrusos 〕━━━╯`, 
       m
     )
   }
