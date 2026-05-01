@@ -1,7 +1,18 @@
 const handler = async (m, { conn, args, participants, command }) => {
   const prefix = args[0]
   if (!prefix || !prefix.startsWith('+')) {
-    return m.reply(`⚠️ ❄️ Las sombras festivas exigen un prefijo válido.\nEjemplo: *.${command} +52*`)
+    return m.reply(`╭━━━〔 TAE-HAA // PREFIJO 〕━━━╮
+┃
+┃ Formato inválido.
+┃ La invocación fue incompleta.
+┃
+┣━━━〔 REQUISITO 〕━━━┫
+┃ Ingresá un prefijo válido.
+┃
+┣━━━〔 EJEMPLO 〕━━━┫
+┃ ✦ .${command} +54
+┃
+╰━━━〔 Sin código no hay búsqueda 〕━━━╯`)
   }
 
   const botNumber = conn.user.id.split(':')[0]
