@@ -34,17 +34,22 @@ var handler = async (m, { conn }) => {
   let hora = now.toLocaleTimeString('es-PE', opcionesHora)
 
   let texto = `
-❐ *Velocidad de Respuesta:*  
-→ ✩ *_${latency} ms_*
-
-✦ *Actividad:*  
-→ ✿ *_${muptime}_*
-
-ꕤ *Uso de RAM:*  
-→ ⌗ *_${format(totalmem() - freemem())}_* / *_${format(totalmem())}_*
-
-✎ *Uso de CPU:*  
-→ 〄 *_${cpuUsage.toFixed(2)} %_*`
+╭━━━〔 📊 ESTADO DEL SISTEMA 〕━━━╮
+┃
+┃ ✦ Velocidad de respuesta
+┃   ${latency} ms
+┃
+┃ ✦ Actividad
+┃   ${muptime}
+┃
+┣━━━〔 MEMORIA RAM 〕━━━┫
+┃ Usado: ${format(totalmem() - freemem())}
+┃ Total: ${format(totalmem())}
+┃
+┣━━━〔 CPU 〕━━━┫
+┃ Uso: ${cpuUsage.toFixed(2)} %
+┃
+╰━━━〔 SISTEMA ACTIVO 〕━━━╯`
 
   if (m.react) m.react('🍁')
   conn.reply(m.chat, texto, m)
