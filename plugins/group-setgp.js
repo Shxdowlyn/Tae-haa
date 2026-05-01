@@ -59,7 +59,19 @@ const handler = async (m, { conn, args, text, command, usedPrefix }) => {
 
       case 'gpdesc': case 'groupdesc': {
         if (!args.length) 
-          return m.reply('🌌 *Discípulo de las Sombras* 🎄\nDebes entregar la nueva descripción para el grupo.')
+          return m.reply(`╭━━━〔 TAE-HAA // DESCRIPCIÓN 〕━━━╮
+┃
+┃ Orden incompleta.
+┃ No se ha proporcionado contenido.
+┃
+┣━━━〔 REQUISITO 〕━━━┫
+┃ ✦ Tipo :: Descripción
+┃ ✦ Estado :: Vacío
+┃
+┣━━━〔 NOTA 〕━━━┫
+┃ ✦ Escribe la nueva descripción del grupo.
+┃
+╰━━━〔 Tae-Haa exige precisión 〕━━━╯`)
 
         await m.react('🎭')
         await conn.groupUpdateDescription(m.chat, args.join(' '))
