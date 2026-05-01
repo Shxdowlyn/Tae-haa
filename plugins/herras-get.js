@@ -19,7 +19,12 @@ let handler = async (m, { conn, usedPrefix, text }) => {
 
     // Protección contra archivos gigantes
     if (res.headers.get('content-length') > 100 * 1024 * 1024 * 1024) {
-      throw `📦 El archivo es demasiado grande (${res.headers.get('content-length')})`
+      throw `╭━━━〔 ❌ ARCHIVO DEMASIADO GRANDE 〕━━━╮
+┃
+┃ ✦ No se puede procesar el archivo
+┃ ✦ Tamaño detectado: ${res.headers.get('content-length')}
+┃
+╰━━━〔 Reduce el tamaño e intenta de nuevo 〕━━━╯`
     }
 
     // Si no es texto/JSON, lo manda como archivo
