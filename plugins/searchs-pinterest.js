@@ -41,17 +41,34 @@ async function pinterestScraper(query, limit = 10) {
 
 let handler = async (m, { conn, text }) => {
   if (!text) {
-    return conn.reply(m.chat, `☽ *Discípulo de las Sombras*, ingresa lo que deseas invocar desde Pinterest`, m);
+    return conn.reply(m.chat, `╭━━━〔 ⚠︎ PINTEREST 〕━━━╮
+┃
+┃ ✦ Escribe lo que deseas buscar
+┃   en Pinterest
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`, m);
   }
 
   let query = text + " hd";
   await m.react("🗡️");
-  conn.reply(m.chat, `☽ *Las Sombras buscan tus imágenes...* espera un momento bajo la luna`);
+  conn.reply(m.chat, `╭━━━〔 PROCESANDO 〕━━━╮
+┃
+┃ ✦ Buscando imágenes
+┃   en Pinterest
+┃
+┃ ✦ Estado: en progreso
+┃
+╰━━━〔 Espere un momento 〕━━━╯`);
 
   try {
     const results = await pinterestScraper(query, 10);
     if (!results.length) {
-      return conn.reply(m.chat, `☽ No se encontraron resultados para "${text}"`, m);
+      return conn.reply(m.chat, `╭━━━〔 SIN RESULTADOS 〕━━━╮
+┃
+┃ ✦ No se encontraron coincidencias
+┃   para: ${text}
+┃
+╰━━━〔 Intenta otra búsqueda 〕━━━╯`, m);
     }
 
     let cards = [];
@@ -61,7 +78,12 @@ let handler = async (m, { conn, text }) => {
       const { imageMessage } = await generateWAMessageContent({ image: { url: item.image_large_url } }, { upload: conn.waUploadToServer });
       cards.push({
         body: proto.Message.InteractiveMessage.Body.fromObject({ text: `☽ Imagen sombría ${counter++}` }),
-        footer: proto.Message.InteractiveMessage.Footer.fromObject({ text: "✦ *Las sombras te entregan este hallazgo*" }),
+        footer: proto.Message.InteractiveMessage.Footer.fromObject({ text: `╭━━━〔 RESULTADO 〕━━━╮
+┃
+┃ ✦ Se encontró un resultado
+┃   disponible
+┃
+╰━━━〔 Listo 〕━━━╯` }),
         header: proto.Message.InteractiveMessage.Header.fromObject({ title: item.title, hasMediaAttachment: true, imageMessage }),
         nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
           buttons: [{
