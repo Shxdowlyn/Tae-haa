@@ -131,7 +131,20 @@ const handler = async (m, { conn, args, text, command, usedPrefix }) => {
     }
   } catch (e) {
     await m.react('✖️')
-    m.reply(`⚠️ El ritual falló...\n> Usa *${usedPrefix}report* para informarlo.\n\n${e.message}`)
+    m.reply(`╭━━━〔 TAE-HAA // ERROR 〕━━━╮
+┃
+┃ Fallo detectado.
+┃ El proceso no se completó.
+┃
+┣━━━〔 ACCIÓN 〕━━━┫
+┃ ✦ Reporta :: ${usedPrefix}report
+┃ ✦ Detalle :: ${e.message}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Registro :: Guardado
+┃ ✦ Revisión :: Pendiente
+┃
+╰━━━〔 Tae-Haa no tolera errores 〕━━━╯`)
   }
 }
 
