@@ -37,21 +37,22 @@ END:VCARD`
     { quoted: m }
   )
 
-  let txt = `┏━━━━━━━━━━━━━━━━━━━┓
-🌑⚔️ *I N F O  D E L  C R E A D O R* ⚔️🌑
-┗━━━━━━━━━━━━━━━━━━━┛
-
-> ⚔️ 𝗦𝗛𝗔𝗗𝗢𝗪 𝗠𝗔𝗦𝗧𝗘𝗥 ⚔️  
-> 🌌 El estratega oculto tras las líneas del código
-
-📡 𝗖𝗔𝗡𝗔𝗟 𝗢𝗙𝗜𝗖𝗜𝗔𝗟:  
-https://whatsapp.com/channel/0029VbArz9fAO7RGy2915k3O
-
-📱 𝗖𝗢𝗡𝗧𝗔𝗖𝗧𝗢𝗦 𝗗𝗘 𝗟𝗔 𝗢𝗥𝗚𝗔𝗡𝗜𝗭𝗔𝗖𝗜𝗢́𝗡:  
-👑 Creador Principal: +58 424-2773183 (Yosue)  
-⚔️ Segundo creador: +504 9373-2693 (ado)
-
-✦ *SHADOW-BOT-MD* — El poder no se muestra... se oculta en las sombras ✦`
+  let txt = `╭━━━〔 INFO DEL CREADOR 〕━━━╮
+┃
+┃ ⚔️ SHADOW MASTER ⚔️
+┃ El estratega detrás del sistema
+┃
+┣━━━〔 CANAL OFICIAL 〕━━━┫
+┃ https://whatsapp.com/channel/0029VbArz9fAO7RGy2915k3O
+┃
+┣━━━〔 CONTACTOS 〕━━━┫
+┃ ✦ Creador principal
+┃   +58 424-2773183 (Yosue)
+┃
+┃ ✦ Segundo creador
+┃   +504 9373-2693 (Ado)
+┃
+╰━━━〔 Shadow-BOT-MD 〕━━━╯`
 
   await conn.sendMessage(
     m.chat,
