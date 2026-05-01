@@ -78,7 +78,11 @@ var handler = async (m, { conn, args }) => {
         await conn.relayMessage(m.chat, interactive.message, { messageId: interactive.key.id })
 
     } catch (e) {
-        console.error("Error al generar/enviar el enlace interactivo:", e);
+        console.error(`╭━━━〔 SHADOW // ERROR LOG 〕━━━╮
+┃ Sistema :: Enlace interactivo
+┃ Estado  :: FALLIDO
+┃ Detalle :: ${e?.stack || e}
+╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯`) e);
 
         let fallbackLink = 'https://chat.whatsapp.com/' + (await conn.groupInviteCode(group).catch(() => ''))
         let fallbackPP = await conn.profilePictureUrl(group, 'image').catch((_) => 'https://files.catbox.moe/xr2m6u.jpg')
