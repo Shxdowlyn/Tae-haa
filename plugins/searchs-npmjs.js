@@ -53,7 +53,15 @@ let handler = async (m, { text, usedPrefix, command }) => {
     await conn.reply(m.chat, txt, m, fake)
     await m.react('✔️')
   } catch {
-    await conn.reply(m.chat, `⚠️ El ritual falló...\n> Usa *${usedPrefix}report* para informarlo.`, m)
+    await conn.reply(m.chat, `╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ Ocurrió un fallo
+┃
+┣━━━〔 SOLUCIÓN 〕━━━┫
+┃ Usa ${usedPrefix}report
+┃ para informarlo
+┃
+╰━━━〔 Proceso interrumpido 〕━━━╯`, m)
     await m.react('✖️')
   }
 }
