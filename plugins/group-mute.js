@@ -25,7 +25,15 @@ const handler = async (m, { conn, command, text, isAdmin }) => {
     return conn.reply(
       m.chat,
       command === 'mute'
-        ? '🕯️ *Menciona al discípulo que deseas silenciar en las sombras*'
+        ? `╭━━━〔 TAE-HAA // OBJETIVO 〕━━━╮
+┃
+┃ Objetivo no definido.
+┃ La orden no puede ejecutarse.
+┃
+┣━━━〔 REQUISITO 〕━━━┫
+┃ Mencioná al usuario que será silenciado.
+┃
+╰━━━〔 Sin objetivo no hay sentencia 〕━━━╯`
         : '🕯️ *Menciona al discípulo que deseas liberar del silencio*',
       m
     );
