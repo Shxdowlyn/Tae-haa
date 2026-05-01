@@ -23,7 +23,18 @@ await conn.sendMessage(m.chat, { audio: buffer, mimetype: 'audio/ogg; codecs=opu
 await m.react('✔️')
 } catch (e) {
 await m.react('✖️')
-conn.reply(m.chat, `⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${e.message}`, m)
+conn.reply(m.chat, `╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ Se ha producido un problema
+┃
+┣━━━〔 SOLUCIÓN 〕━━━┫
+┃ Usa ${usedPrefix}report
+┃ para informarlo
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ${e.message}
+┃
+╰━━━〔 Proceso interrumpido 〕━━━╯`, m)
 }}
 
 handler.help = ['ver']
