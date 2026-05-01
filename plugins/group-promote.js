@@ -6,7 +6,16 @@ try {
 const groupInfo = await conn.groupMetadata(m.chat)
 const ownerGroup = groupInfo.owner || m.chat.split('-')[0] + '@s.whatsapp.net'
 if (user === ownerGroup || groupInfo.participants.some(p => p.id === user && p.admin))
-return conn.reply(m.chat, '> El usuario mencionado ya tiene privilegios de administrador.', m)
+return conn.reply(m.chat, `╭━━━〔 TAE-HAA // ADMIN 〕━━━╮
+┃
+┃ Acción innecesaria.
+┃ El usuario ya posee privilegios.
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Rol :: Administrador activo
+┃ ✦ Cambio :: No requerido
+┃
+╰━━━〔 Tae-Haa no repite órdenes 〕━━━╯`, m)
 await conn.groupParticipantsUpdate(m.chat, [user], 'promote')
 await conn.reply(m.chat, `╭━━━〔 TAE-HAA // ADMIN 〕━━━╮
 ┃
