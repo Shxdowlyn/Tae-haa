@@ -184,14 +184,27 @@ const handler = async (m, { conn, text, command, usedPrefix, args }) => {
 
         await conn.sendMessage(destino, { text: invite, mentions: [m.sender, ...usertag], ...rcanal }, { quoted: m });
         await m.react('✔️');
-        await conn.sendMessage(m.chat, { text: '❒ El enlace ha sido enviado correctamente. Gracias por tu invitación.', ...rcanal }, { quoted: m });
+        await conn.sendMessage(m.chat, { text: `╭━━━〔 📩 INVITACIÓN ENVIADA 〕━━━╮
+┃
+┃ ✦ El enlace fue enviado
+┃   correctamente
+┃
+┃ ✦ Gracias por tu invitación
+┃
+╰━━━〔 Enviado 〕━━━╯`, ...rcanal }, { quoted: m });
         break;
       }
 
       case 'fixmsg':
       case 'ds': {
         if (global.conn.user.jid !== conn.user.jid)
-          return conn.sendMessage(m.chat, { text: '✐ Este comando solo puede ejecutarse desde el número principal del Bot.', ...rcanal }, { quoted: m });
+          return conn.sendMessage(m.chat, { text: `╭━━━〔 ⚠︎ ACCESO DENEGADO 〕━━━╮
+┃
+┃ ✦ Este comando solo puede
+┃   ejecutarse desde el número
+┃   principal del bot
+┃
+╰━━━〔 Permiso requerido 〕━━━╯`, ...rcanal }, { quoted: m });
         await m.react('🕒');
 
         const chatIdList = m.isGroup ? [m.chat, m.sender] : [m.sender];
