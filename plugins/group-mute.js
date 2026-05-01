@@ -34,7 +34,15 @@ const handler = async (m, { conn, command, text, isAdmin }) => {
 ┃ Mencioná al usuario que será silenciado.
 ┃
 ╰━━━〔 Sin objetivo no hay sentencia 〕━━━╯`
-        : '🕯️ *Menciona al discípulo que deseas liberar del silencio*',
+        : `╭━━━〔 TTAE-HAA // OBJETIVO 〕━━━╮
+┃
+┃ Objetivo no definido.
+┃ La liberación no puede ejecutarse.
+┃
+┣━━━〔 REQUISITO 〕━━━┫
+┃ Mencioná al usuario que será liberado.
+┃
+╰━━━〔 Sin objetivo no hay absolución 〕━━━╯`,
       m
     );
   }
