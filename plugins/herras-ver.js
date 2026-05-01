@@ -2,7 +2,14 @@ let { downloadContentFromMessage } = (await import('@whiskeysockets/baileys'))
 
 let handler = async (m, { conn, usedPrefix }) => {
 let quoted = m.quoted
-if (!quoted) return conn.reply(m.chat, `> ❐ Por favor, responde a un mensaje de una sola vez "ViewOnce" para ver su contenido.`, m)
+if (!quoted) return conn.reply(m.chat, `╭━━━〔 ⚠︎ AVISO 〕━━━╮
+┃
+┃ ✦ Responde a un mensaje
+┃   tipo “ver una vez”
+┃
+┃ ✦ Para poder ver su contenido
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`, m)
 try {
 await m.react('🕒')
 let viewOnceMessage = quoted.viewOnce ? quoted : quoted.mediaMessage?.imageMessage || quoted.mediaMessage?.videoMessage || quoted.mediaMessage?.audioMessage
