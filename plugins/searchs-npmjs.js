@@ -1,7 +1,15 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { text, usedPrefix, command }) => {
-  if (!text) return conn.reply(m.chat, `🌌 *Discípulo de las Sombras* 🎄\nDebes entregar el nombre del *scraper* o paquete.\nEjemplo: ${usedPrefix + command} yt-search`, m)
+  if (!text) return conn.reply(m.chat, `╭━━━〔 ⚠︎ AVISO 〕━━━╮
+┃
+┃ ✦ Debes escribir el nombre
+┃   del scraper o paquete
+┃
+┣━━━〔 EJEMPLO 〕━━━┫
+┃ ${usedPrefix + command} yt-search
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`, m)
 
   try {
     await m.react('🎭') // reacción teatral inicial
@@ -13,13 +21,21 @@ let handler = async (m, { text, usedPrefix, command }) => {
     if (!objects.length) return conn.reply(m.chat, `🌌 *Discípulo de las Sombras* 🎄\nNo se encontró resultado para: *${text}*`, m)
 
     let txt = objects.map(({ package: pkg }) => {
-      return `《✧》 *Scraper Invocado – Edición Navideña* 《✧》
-
-❖ Nombre: ${pkg.name}
-❖ Versión: V${pkg.version}
-❖ Enlace: ${pkg.links.npm}
-❖ Descripción: ${pkg.description || 'Sin descripción'}
-\n───────────────`
+      return `╭━━━〔 SCRAPER INVOCADO 〕━━━╮
+┃
+┃ ✦ Nombre
+┃   ${pkg.name}
+┃
+┃ ✦ Versión
+┃   V${pkg.version}
+┃
+┃ ✦ Enlace
+┃   ${pkg.links.npm}
+┃
+┃ ✦ Descripción
+┃   ${pkg.description || 'Sin descripción'}
+┃
+╰━━━〔 FIN 〕━━━╯`
     }).join`\n\n`
 
     await conn.reply(m.chat, txt, m, fake)
