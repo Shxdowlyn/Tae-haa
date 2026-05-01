@@ -4,7 +4,12 @@ import fetch from 'node-fetch'
 var handler = async (m, { conn, usedPrefix, command, args }) => {
 try {
 let text = args.join(' ') || m.quoted?.text
-if (!text) return conn.reply(m.chat, '《✧》 Escribe o responde un texto para traducirlo.', m)
+if (!text) return conn.reply(m.chat, `╭━━━〔 ⚠︎ AVISO 〕━━━╮
+┃
+┃ ✦ Escribe o responde un texto
+┃   para traducirlo
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`, m)
 
 const iconUrl = "https://i.ibb.co/JWjZXhNX/b50eeb86ca86.jpg"
 const bigUrl = "https://i.ibb.co/JWjZXhNX/b50eeb86ca86.jpg"
