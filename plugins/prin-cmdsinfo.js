@@ -100,14 +100,32 @@ const handler = async (m, { conn, text, command, usedPrefix, args }) => {
         if (!code) return conn.sendMessage(m.chat, { text: 'ꕥ El enlace de invitación no es válido.', ...rcanal }, { quoted: m });
         await m.react('🕒');
 
-        const invite = `「✦」INVITACIÓN RECIBIDA
-
-✐ Usuario » *${nombre}*
-✩ Tag » *${tag}*
-✰ Chat » *${chatLabel}*
-🜸 Fecha » *${horario}*
-♤ InfoBot » *${botname} / ${vs}*
-❒ Link » ${text}`;
+        const invite = `╭━━━〔 📩 INVITACIÓN RECIBIDA 〕━━━╮
+┃
+┃ ┌─ USUARIO
+┃ │ ✦ Nombre
+┃ │   ${nombre}
+┃ │
+┃ │ ✦ Tag
+┃ │   ${tag}
+┃ │
+┃ └────────────────────────
+┃
+┣━━━〔 DETALLES 〕━━━┫
+┃ ✦ Chat
+┃   ${chatLabel}
+┃
+┃ ✦ Fecha
+┃   ${horario}
+┃
+┣━━━〔 INVITACIÓN 〕━━━┫
+┃ ${text}
+┃
+┣━━━〔 SISTEMA 〕━━━┫
+┃ ✦ Bot
+┃   ${botname} / ${vs}
+┃
+╰━━━〔 REGISTRO COMPLETO 〕━━━╯`
 
         const mainBotNumber = global.conn.user.jid.split('@')[0];
         const senderBotNumber = conn.user.jid.split('@')[0];
