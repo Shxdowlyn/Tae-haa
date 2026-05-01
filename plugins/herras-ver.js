@@ -8,7 +8,11 @@ await m.react('🕒')
 let viewOnceMessage = quoted.viewOnce ? quoted : quoted.mediaMessage?.imageMessage || quoted.mediaMessage?.videoMessage || quoted.mediaMessage?.audioMessage
 let messageType = viewOnceMessage.mimetype || quoted.mtype
 let stream = await downloadContentFromMessage(viewOnceMessage, messageType.split('/')[0])    
-if (!stream) return conn.reply(m.chat, `✦ 𝖫𝗈 𝗌𝖾𝗇𝗍𝗂𝗆𝗈𝗌, 𝗇𝗈 𝗌𝖾 𝗉𝗎𝖽𝗈 𝖼𝖺𝗋𝗀𝖺𝗋 𝖾𝗅 𝖼𝗈𝗇𝗍𝖾𝗇𝗂𝖽𝗈.`, m)  
+if (!stream) return conn.reply(m.chat, `╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ No se pudo cargar el contenido
+┃
+╰━━━〔 Intenta nuevamente 〕━━━╯`, m)
 let buffer = Buffer.from([])
 for await (const chunk of stream) {
 buffer = Buffer.concat([buffer, chunk])
