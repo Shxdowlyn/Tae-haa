@@ -68,7 +68,9 @@ const handler = async (m, { conn, command, text, isAdmin }) => {
     key: { participants: '0@s.whatsapp.net', fromMe: false, id: 'Halo' },
     message: {
       locationMessage: {
-        name: command === 'mute' ? 'Discípulo silenciado por las Sombras 🎄' : '✨ Discípulo liberado del silencio 🎁',
+        name: command === 'mute'
+  ? '╭━━━〔 SHADOW // SILENCIO 〕━━━╮\n┃ Discípulo sellado.\n╰━━━〔 Voz anulada 〕━━━╯'
+  : '╭━━━〔 SHADOW // LIBERACIÓN 〕━━━╮\n┃ Discípulo restaurado.\n╰━━━〔 Voz devuelta 〕━━━╯',
         jpegThumbnail: await (await fetch(
           command === 'mute'
             ? 'https://telegra.ph/file/f8324d9798fa2ed2317bc.png'
