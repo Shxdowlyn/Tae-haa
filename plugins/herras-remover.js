@@ -13,7 +13,14 @@ let handler = async (m, { conn, args }) => {
       const media = await q.download()
       imgUrl = await uploadToCatbox(media)
     } else {
-      return m.reply('🍎 Responde a una imagen o ingresa una URL válida (JPG/PNG).')
+      return m.reply(`╭━━━〔 ⚠︎ AVISO 〕━━━╮
+┃
+┃ ✦ Responde a una imagen
+┃   o ingresa una URL válida
+┃
+┃ ✦ Formato: JPG / PNG
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`)
     }
 
     const apiUrl = `https://api-killua.vercel.app/api/tools/ezremove?imgurl=${encodeURIComponent(imgUrl)}`
