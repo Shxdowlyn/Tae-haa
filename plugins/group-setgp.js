@@ -23,7 +23,19 @@ const handler = async (m, { conn, args, text, command, usedPrefix }) => {
 
         const img = await q.download()
         if (!img) 
-          return m.reply('🌌 *Discípulo de las Sombras* 🎄\nNo recibí la imagen para el estandarte del grupo.')
+          return m.reply(`╭━━━〔 TAE-HAA // ESTANDARTE 〕━━━╮
+┃
+┃ Entrada inválida.
+┃ No se detectó ninguna imagen.
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Requisito :: Imagen
+┃ ✦ Resultado :: Fallido
+┃
+┣━━━〔 NOTA 〕━━━┫
+┃ ✦ Envía una imagen para establecer el estandarte.
+┃
+╰━━━〔 Tae-Haa no repite instrucciones 〕━━━╯`)
 
         await m.react('🎭')
         await conn.updateProfilePicture(m.chat, img)
