@@ -168,7 +168,14 @@ const handler = async (msg, { conn, command, wa, usedPrefix }) => {
     await conn.sendMessage(
       chatId,
       {
-        text: `Falló la mejora de imagen:\n${err.message}`
+        text: `╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ Falló la mejora de imagen
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ${err.message}
+┃
+╰━━━〔 Proceso interrumpido 〕━━━╯`,
       },
       { quoted: msg }
     )
