@@ -1,7 +1,14 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn, command, args, usedPrefix }) => {
-  if (!args[0]) return conn.reply(m.chat, `❄️✨ *Discípulo de las Sombras*, entrega el *link* de la página para invocar su reflejo.`, m)
+  if (!args[0]) return conn.reply(m.chat, `╭━━━〔 ⚠︎ AVISO 〕━━━╮
+┃
+┃ ✦ Debes enviar un link
+┃   para continuar
+┃
+┃ ✦ Acción requerida
+┃
+╰━━━〔 En espera 〕━━━╯`, m)
   try {
     await m.react('🎭') // reacción teatral
 
