@@ -17,13 +17,28 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
     const { title, artists, album, genres, release_date } = metadata.music[0];
 
-    const txt = `「✦」Identificación musical
-
-✐ Título » *${title || 'No disponible'}*
-ⴵ Artista » *${artists?.map(v => v.name).join(', ') || 'Desconocido'}*
-✰ Álbum » *${album?.name || 'No disponible'}*
-❒ Género » *${genres?.map(v => v.name).join(', ') || 'No definido'}*
-🜸 Lanzamiento » *${release_date || 'No registrado'}*`;
+    const txt = `╭━━━〔 ✦ IDENTIFICACIÓN MUSICAL 〕━━━╮
+┃
+┃ ┌─ INFORMACIÓN
+┃ │
+┃ │ ✐ Título
+┃ │   ${title || 'No disponible'}
+┃ │
+┃ │ ⴵ Artista
+┃ │   ${artists?.map(v => v.name).join(', ') || 'Desconocido'}
+┃ │
+┃ │ ✰ Álbum
+┃ │   ${album?.name || 'No disponible'}
+┃ │
+┃ │ ❒ Género
+┃ │   ${genres?.map(v => v.name).join(', ') || 'No definido'}
+┃ │
+┃ │ 🜸 Lanzamiento
+┃ │   ${release_date || 'No registrado'}
+┃ │
+┃ └───────────────────────
+┃
+╰━━━〔 ✦ Resultado completado 〕━━━╯`
 
     conn.sendMessage(m.chat, { text: txt, ...rcanal }, { quoted: m });
   } else {
