@@ -52,7 +52,19 @@ ${lista}
     for (let p of matching) {
       await conn.groupParticipantsUpdate(m.chat, [p.id], 'remove').catch(_ => null)
     }
-    return m.reply(`✅ 🎄 *Shadow Garden ha expulsado ${matching.length} alma(s) con el prefijo ${prefix}.*\n\n🌌 Ja... así es como las sombras celebran la navidad: con disciplina y silencio.`)
+    return m.reply(`╭━━━〔 TAE-HAA // PURGA 〕━━━╮
+┃
+┃ Operación completada.
+┃ Prefijo objetivo :: ${prefix}
+┃
+┣━━━〔 RESULTADO 〕━━━┫
+┃ Almas removidas :: ${matching.length}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ Disciplina restaurada.
+┃ El dominio permanece en orden.
+┃
+╰━━━〔 Silencio impuesto 〕━━━╯`)
   }
 }
 
