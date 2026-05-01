@@ -23,7 +23,14 @@ let handler = async (m, { conn, text, usedPrefix }) => {
 
   let input = text.trim().split(/[x×]/i)
   if (input.length !== 2 || isNaN(input[0]) || isNaN(input[1])) {
-    return m.reply(`❌ Formato incorrecto.\nUsa: *${usedPrefix}reducir 300×300*`)
+    return m.reply(`╭━━━〔 ❌ FORMATO INCORRECTO 〕━━━╮
+┃
+┃ ✦ El formato no es válido
+┃
+┣━━━〔 USO CORRECTO 〕━━━┫
+┃ ${usedPrefix}reducir 300×300
+┃
+╰━━━〔 Intenta nuevamente 〕━━━╯`)
   }
 
   let width = parseInt(input[0])
