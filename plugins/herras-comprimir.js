@@ -61,7 +61,14 @@ const handler = async (m, { conn, text }) => {
   } catch (err) {
     console.error(err);
     m.react('❌');
-    m.reply(`✖️🌑🎄 *El ritual sombrío navideño falló al comprimir la imagen.*\n\n🪵 *Detalle sombrío:* ${err.message}`);
+    m.reply(`╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ Falló la compresión de la imagen
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ${err.message}
+┃
+╰━━━〔 Proceso interrumpido 〕━━━╯`)
   }
 };
 
