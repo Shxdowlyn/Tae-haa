@@ -100,7 +100,20 @@ const handler = async (m, { conn, usedPrefix }) => {
     console.error(e)
     conn.reply(
       m.chat,
-      `⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${e.message}`,
+      `╭━━━〔 TAE-HAA // ERROR 〕━━━╮
+┃
+┃ Fallo detectado.
+┃ El sistema no respondió como debía.
+┃
+┣━━━〔 ACCIÓN 〕━━━┫
+┃ ✦ Reporta :: ${usedPrefix}report
+┃ ✦ Detalle :: ${e.message}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Registro :: Guardado
+┃ ✦ Revisión :: Pendiente
+┃
+╰━━━〔 Tae-Haa no tolera errores 〕━━━╯`,
       m
     )
   }
