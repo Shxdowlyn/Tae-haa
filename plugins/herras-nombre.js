@@ -1,7 +1,12 @@
 let handler = async (m, { conn }) => {
   try {
     let userName = m.pushName || 'Sin nombre';
-    m.reply(`Nombre del usuario: ${userName}`);
+    m.reply(`╭━━━〔 INFO USUARIO 〕━━━╮
+┃
+┃ ✦ Nombre
+┃   ${userName}
+┃
+╰━━━〔 Fin de datos 〕━━━╯`);
   } catch (e) {
     m.reply(`Error: ${e.message}`);
   }
