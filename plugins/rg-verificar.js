@@ -10,7 +10,17 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
 
   if (user.registered) {
     return conn.sendMessage(m.chat, {
-      text: `『☽』 Ya has sellado un pacto, ${name2}-kun...\n\n¿Deseas romper el sello y renacer?\nUsa *${usedPrefix}unreg* para disolver el vínculo actual.`,
+      text: `╭━━━〔 ⚠︎ REGISTRO ACTIVO 〕━━━╮
+┃
+┃ ✦ Ya tienes un registro activo
+┃   ${name2}-kun
+┃
+┃ ✦ ¿Deseas eliminarlo?
+┃   Esto borrará tu vínculo actual
+┃
+┃ ✦ Uso: ${usedPrefix}unreg
+┃
+╰━━━〔 Confirmación requerida 〕━━━╯`,
       buttons: [
         { buttonId: `${usedPrefix}menu`, buttonText: { displayText: '⚔️ Volver al Menú' }, type: 1 },
         { buttonId: `${usedPrefix}unreg`, buttonText: { displayText: '🌌 Romper el Sello' }, type: 1 }
