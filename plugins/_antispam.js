@@ -33,20 +33,57 @@ handler.before = async function (m, { conn, isAdmin, isBotAdmin, isOwner, isROwn
         userData.antiBan++
 
         if (userData.antiBan === 1) {
-          await conn.reply(m.chat, `🎄 Primera advertencia @${sender.split('@')[0]}: no hagas spam.`, m, { mentions: [sender] })
+          await conn.reply(m.chat, `╭━━━〔 ⚠︎ ADVERTENCIA 〕━━━╮
+┃
+┃ ✦ Usuario: @${sender.split('@')[0]}
+┃ ✦ Primera advertencia
+┃ ✦ Motivo: Spam
+┃
+┃ 🚫 Evita repetir esta acción
+┃
+╰━━━〔 SISTEMA 〕━━━╯`, m, { mentions: [sender] })
         } else if (userData.antiBan === 2) {
-          await conn.reply(m.chat, `✨ Segunda advertencia @${sender.split('@')[0]}: insiste y serás expulsado.`, m, { mentions: [sender] })
+          await conn.reply(m.chat, `╭━━━〔 ⚠︎ ADVERTENCIA 2 〕━━━╮
+┃
+┃ ✦ Usuario: @${sender.split('@')[0]}
+┃ ✦ Segunda advertencia
+┃ ✦ Motivo: Reincidencia de spam
+┃
+┃ ⚠️ Si continúas serás expulsado
+┃
+╰━━━〔 SISTEMA 〕━━━╯`, m, { mentions: [sender] })
         } else if (userData.antiBan >= 3) {
           if (isBotAdmin) {
             try {
-              await conn.reply(m.chat, `❄️ Expulsado por spam: @${sender.split('@')[0]}`, m, { mentions: [sender] })
+              await conn.reply(m.chat, `╭━━━〔 ⛔ EXPULSIÓN 〕━━━╮
+┃
+┃ ✦ Usuario: @${sender.split('@')[0]}
+┃ ✦ Motivo: Spam
+┃
+┃ ✦ Acción: Expulsado del grupo
+┃
+╰━━━〔 SISTEMA 〕━━━╯`, m, { mentions: [sender] })
               await conn.groupParticipantsUpdate(m.chat, [sender], 'remove')
             } catch (err) {
               console.error('Error al expulsar:', err)
-              await conn.reply(m.chat, `⚠️ No pude expulsar a @${sender.split('@')[0]} aunque soy admin.`, m, { mentions: [sender] })
+              await conn.reply(m.chat, `╭━━━〔 ⚠︎ ERROR DE EXPULSIÓN 〕━━━╮
+┃
+┃ ✦ No se pudo expulsar a:
+┃   @${sender.split('@')[0]}
+┃
+┃ ✦ Estado: Fallo de ejecución
+┃
+╰━━━〔 SISTEMA 〕━━━╯`, m, { mentions: [sender] })
             }
           } else {
-            await conn.reply(m.chat, `⚠️ No puedo expulsar porque no soy admin, pero @${sender.split('@')[0]} está spameando.`, m, { mentions: [sender] })
+            await conn.reply(m.chat, `╭━━━〔 ⚠︎ PERMISO INSUFICIENTE 〕━━━╮
+┃
+┃ ✦ No puedo expulsar porque no soy admin
+┃
+┃ ✦ Usuario: @${sender.split('@')[0]}
+┃ ✦ Motivo: Spam detectado
+┃
+╰━━━〔 ACCIÓN REQUERIDA 〕━━━╯`, m, { mentions: [sender] })
           }
         }
 
