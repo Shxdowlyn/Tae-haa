@@ -23,7 +23,15 @@ const convertToWebp = (input, output) => {
 var handler = async (m, { conn, usedPrefix, command, text }) => {
 try {
 text = m.quoted?.text || text
-if (!text) return conn.reply(m.chat, '《✧》 Debes responder un mensaje o escribir un texto para generar el sticker.', m)
+if (!text) return conn.reply(m.chat, {
+  text: `╭━━━〔 TAE-HAA 〕━━━╮
+┃ ⚠️ Falta texto.
+┃
+┃ ✦ Necesitas responder o escribir
+┃   algo para generar el sticker.
+┃
+╰━━━〔 En espera 〕━━━╯`
+}, m)
 
 await m.react('🕒')
 
