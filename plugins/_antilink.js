@@ -29,7 +29,7 @@ export async function before(m, { conn, isAdmin, isBotAdmin, isMods, isROwner, p
 ┃ ✦ Acción:
 ┃   Eliminado del grupo
 ┃
-┃ 🌌 Sistema de moderación activo
+┃ Sistema de moderación activo
 ┃
 ╰━━━〔 FIN 〕━━━╯`, 
         null
