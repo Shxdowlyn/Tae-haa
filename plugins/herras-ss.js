@@ -20,7 +20,18 @@ let handler = async (m, { conn, command, args, usedPrefix }) => {
       m.chat,
       ss,
       'shadow_screenshot.png',
-      `🌌 *Reflejo invocado desde las Sombras – Edición Navideña* 🎅\n🔗 ${args[0]}`,
+      `╭━━━〔 🌌 REFLEJO INVOCADO 〕━━━╮
+┃
+┃ ✦ Estado
+┃   Reflejo generado correctamente
+┃
+┃ ✦ Enlace
+┃   ${args[0]}
+┃
+┃ ✦ Modo
+┃   Edición navideña
+┃
+╰━━━〔 Proceso completado 〕━━━╯`,
       m
     )
 
