@@ -25,7 +25,14 @@ const convertToWebp = (input, output) => {
 var handler = async (m, { conn, usedPrefix, command, text }) => {
 try {
 if (!text || !text.includes('+'))
-  return conn.reply(m.chat, `《✧》 Debes ingresar *2 emojis* para combinarlos.\n> Ejemplo: *${usedPrefix + command}* 😈+🔥`, m)
+  return conn.reply(m.chat, `╭━━━〔 ⚠︎ 〕━━━╮
+┃
+┃ ✦ Debes ingresar 2 emojis
+┃   para combinarlos
+┃
+┃ ✦ Ejemplo: ${usedPrefix + command} 😔+🔥
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`, m)
 
 let [emoji1, emoji2] = text.split`+`
 await m.react('🕒')
