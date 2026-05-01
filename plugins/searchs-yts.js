@@ -5,14 +5,24 @@ import baileys from "@whiskeysockets/baileys"
 const { generateWAMessageFromContent, proto, prepareWAMessageMedia } = baileys
 
 let handler = async (m, { conn, text, usedPrefix }) => {
-  if (!text) return m.reply("🌑✦ Ingresa una búsqueda de YouTube.")
+  if (!text) return m.reply(`╭━━━〔 ⚠︎ YOUTUBE 〕━━━╮
+┃
+┃ ✦ Ingresa una búsqueda
+┃   para continuar
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`)
 
   try {
     await m.react("🕸️")
 
     const results = await yts(text)
     const videos = results.all.filter(v => v.type === "video")
-    if (!videos.length) throw new Error("No se encontraron resultados.")
+    if (!videos.length) throw new Error(`╭━━━〔 SIN RESULTADOS 〕━━━╮
+┃
+┃ ✦ No se encontraron resultados
+┃   para la búsqueda
+┃
+╰━━━〔 Intenta otro término 〕━━━╯`)
 
     const first = videos[0]
     const smallThumb = await (await fetch("https://i.postimg.cc/rFfVL8Ps/image.jpg")).buffer()
@@ -41,7 +51,12 @@ let handler = async (m, { conn, text, usedPrefix }) => {
     }))
 
     const interactive = proto.Message.InteractiveMessage.fromObject({
-      body: { text: "🌑✦ Selecciona un video de la lista para descargarlo automáticamente." },
+      body: { text: `╭━━━〔 📥 DESCARGA 〕━━━╮
+┃
+┃ ✦ Selecciona un video de la lista
+┃   para descargarlo automáticamente
+┃
+╰━━━〔 En espera 〕━━━╯` },
       footer: { text: "Shadow Garden — YouTube Search" },
       header: {
         hasMediaAttachment: true,
@@ -84,7 +99,14 @@ let handler = async (m, { conn, text, usedPrefix }) => {
 
   } catch (e) {
     await m.react("✖️")
-    m.reply(`⚠️ Error:\n${e.message}`)
+    m.reply(`╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ Ocurrió un error
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ${e.message}
+┃
+╰━━━〔 Fin del error 〕━━━╯`)
   }
 }
 
