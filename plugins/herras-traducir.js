@@ -90,7 +90,14 @@ await conn.sendMessage(
 await m.react('✖️')
 conn.reply(
   m.chat,
-  `⚠︎ Ocurrió un error ejecutando *${usedPrefix + command}*.\n\n${e.message}`,
+  `╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ Comando: ${usedPrefix + command}
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ${e.message}
+┃
+╰━━━〔 Proceso fallido 〕━━━╯`
   m
 )
 }}
