@@ -129,7 +129,15 @@ const handler = async (m, { conn, text, command }) => {
 
   } catch (error) {
     console.error("Error en imgbb handler:", error)
-    await m.reply(`⚠️ La oscuridad encontró un error al procesar o subir la imagen:\n${error.message}`)
+    await m.reply(`╭━━━〔 ERROR 〕━━━╮
+┃
+┃ ✦ Falló el procesamiento/subida
+┃   de la imagen
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ${error.message}
+┃
+╰━━━〔 Acción interrumpida 〕━━━╯`)
     await m.react("❌")
   }
 }
