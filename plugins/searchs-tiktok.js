@@ -44,7 +44,12 @@ const handler = async (m, { conn, text, usedPrefix }) => {
       const data = res.data?.data
       if (!data?.play && !data?.images) {
         if (m.react) await m.react('✖️')
-        return conn.reply(m.chat, 'ꕥ Enlace inválido o sin contenido descargable.', m)
+        return conn.reply(m.chat, `╭━━━〔 ❌ ENLACE INVÁLIDO 〕━━━╮
+┃
+┃ ✦ El enlace no es válido
+┃   o no tiene contenido descargable
+┃
+╰━━━〔 Intenta otro enlace 〕━━━╯`, m)
       }
 
       const { title, duration, author, created_at, type, images, music, play } = data
