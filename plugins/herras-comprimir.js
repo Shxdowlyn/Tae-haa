@@ -14,7 +14,12 @@ const handler = async (m, { conn, text }) => {
     } else if (text && text.match(/^https?:\/\/.*\.(jpg|jpeg|png|gif)$/i)) {
 
       const res = await fetch(text);
-      if (!res.ok) throw new Error(`🌑🎄 Las Sombras festivas no pudieron descargar la imagen...`);
+      if (!res.ok) throw new Error(`╭━━━〔 ERROR 〕━━━╮
+┃
+┃ ✦ No se pudo descargar la imagen
+┃ ✦ Intenta nuevamente
+┃
+╰━━━〔 Proceso fallido 〕━━━╯`);
       buffer = await res.buffer();
     } else {
       return m.reply(`❌🌑🎄 *Responde a una imagen o envía un link directo válido con el comando* _.comprimir_ 🎅`);
