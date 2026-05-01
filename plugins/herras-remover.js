@@ -56,7 +56,12 @@ let handler = async (m, { conn, args }) => {
 
   } catch (e) {
     console.error(e)
-    await m.reply('🕷️ El ritual falló... No pude remover el fondo.')
+    await m.reply(`╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ Falló la eliminación de fondo
+┃ ✦ No se pudo procesar la imagen
+┃
+╰━━━〔 Intenta nuevamente 〕━━━╯`)
   }
 }
 
