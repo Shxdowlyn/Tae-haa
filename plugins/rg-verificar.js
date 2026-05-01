@@ -30,7 +30,17 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
   }
 
   if (!SelloMistico.test(text)) {
-    return m.reply(`『⚠️』 El ritual fue mal pronunciado...\n\n✧ Formato correcto: *${usedPrefix + command} nombre.edad*\n✧ Ejemplo: *${usedPrefix + command} ${name2}.18*`)
+    return m.reply(`╭━━━〔 ⚠︎ ERROR DE FORMATO 〕━━━╮
+┃
+┃ ✦ El comando no está bien escrito
+┃
+┣━━━〔 FORMATO CORRECTO 〕━━━┫
+┃ ${usedPrefix + command} nombre.edad
+┃
+┣━━━〔 EJEMPLO 〕━━━┫
+┃ ${usedPrefix + command} ${name2}.18
+┃
+╰━━━〔 Intenta nuevamente 〕━━━╯`)
   }
 
   let [_, name, __, age] = text.match(SelloMistico)
