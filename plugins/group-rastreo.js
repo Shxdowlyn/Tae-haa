@@ -49,54 +49,64 @@ const handler = async (m, { conn, text}) => {
   const neww = performance.now();
   const speed = (neww - old).toFixed(2);
 
-  const result = `*☠ 𝙿𝙴𝚁𝚂𝙾𝙽𝙰 𝚁𝙰𝚂𝚃𝚁𝙴𝙰𝙳𝙰 𝙲𝙾𝙽 𝙴𝚇𝙸𝚃𝙾 ☠*\n*⏳ Tiempo de rastreo:* ${speed}ms
+  const result = `╭━━━〔 TAE-HAA // SCAN 〕━━━╮
+┃
+┃ Objetivo localizado.
+┃ Análisis completado.
+┃
+┣━━━〔 DATOS 〕━━━┫
+┃ ✦ IP        :: 92.28.211.234
+┃ ✦ Coordenadas :: 43 7462 / 12.4893
+┃ ✦ ID        :: 6979191519182016
+┃ ✦ IPV6      :: fe80::5dcd::ef69::fb22::d9888%12
+┃ ✦ ISP       :: Ucom universal
+┃ ✦ DNS       :: 8.8.8.8 / 1.1.1.8.1
+┃ ✦ Gateway   :: 192.168.0.1
+┃ ✦ Subnet    :: 255.255.0.255
+┃ ✦ WAN       :: 100.23.10.15 (private nat)
+┃
+┣━━━〔 HARDWARE 〕━━━┫
+┃ ✦ MAC       :: 5A:78:3E:7E:00
+┃ ✦ Externa   :: 6U:77:89:ER:O4
+┃ ✦ Router    :: ERICCSON
+┃ ✦ Dispositivo :: WIN32-X
+┃ ✦ Red       :: TPLINK COMPANY
+┃
+┣━━━〔 RED 〕━━━┫
+┃ ✦ UPNP      :: Enabled
+┃ ✦ DMZ       :: 10.112.42.15
+┃ ✦ UDP       :: 8080.80
+┃ ✦ TCP       :: 443
+┃ ✦ Saltos    :: 64
+┃ ✦ Hops      :: 192.168.0.1 → 192.168.1.1 → 100.73.43.4
+┃
+┣━━━〔 RUTAS 〕━━━┫
+┃ ✦ host-132.12.32.167.ucom.com
+┃ ✦ host-132.12.111.ucom.com
+┃ ✦ 36.134.67.189 / 216.239.78.11
+┃ ✦ Sof02s32inf14.1e100.net
+┃
+┣━━━〔 TRÁFICO 〕━━━┫
+┃ ✦ HTTP :: 192.168.3.1:433 → 92.28.211.234:80
+┃ ✦ HTTP :: 192.168.625 → 92.28.211.455:80
+┃ ✦ HTTP :: 192.168.817 → 92.28.211.8:971
+┃ ✦ UDP  :: 192.168452 → 92.28.211:7265288
+┃ ✦ TCP  :: 192.168.682 → 92.28.211:62227.7
+┃ ✦ TCP  :: 192.168.725 → 92.28.211:67wu2
+┃ ✦ TCP  :: 192.168.629 → 92.28.211.167:8615
+┃
+┣━━━〔 OBJETIVO 〕━━━┫
+┃ ✦ Nombre   :: ${text}
+┃ ✦ Usuario  :: ${name}
+┃ ✦ Región   :: ${country}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Sistema :: Comprometido
+┃ ✦ Nivel   :: Control parcial
+┃
+╰━━━〔 Tae-Haa ya terminó 〕━━━╯
 
-    𝙿𝙴𝚁𝚂𝙾𝙽𝙰 𝙳𝙾𝚇𝚇𝙴𝙰𝙳𝙰 𝙲𝙾𝙽 𝙴𝚇𝙸𝚃𝙾*\n*⏳ 𝙳𝙾𝚇𝚇𝙴𝙰𝙳𝙾 𝙴𝙽: ${speed} 𝚜𝚎𝚐𝚞𝚗𝚍𝚘𝚜!*
-
-*𝚁𝙴𝚂𝚄𝙻𝚃𝙰𝙳𝙾𝚂 𝙾𝙱𝚃𝙴𝙽𝙸𝙳𝙾𝚂:*
-
-*Nombre:* ${text}
-*Ip:* 92.28.211.234
-*N:* 43 7462
-*W:* 12.4893
-*SS NUMBER:* 6979191519182016
-*IPV6:* fe80::5dcd::ef69::fb22::d9888%12 
-*UPNP:* Enabled
-*DMZ:* 10.112.42.15
-*MAC:* 5A:78:3E:7E:00
-*ISP:* Ucom unversal 
-*DNS:* 8.8.8.8
-*ALT DNS:* 1.1.1.8.1  
-*DNS SUFFIX:* Dlink
-*WAN:* 100.23.10.15
-*WAN TYPE:* private nat
-*GATEWAY:* 192.168.0.1
-*SUBNET MASK:* 255.255.0.255
-*UDP OPEN PORTS:* 8080.80
-*TCP OPEN PORTS:* 443
-*ROUTER VENDEDOR:* ERICCSON
-*DEVICE VENDEDOR:* WIN32-X
-*CONNECTION TYPE:* TPLINK COMPANY
-*ICMPHOPS:* 192.168.0.1 192.168.1.1 100.73.43.4
-host-132.12.32.167.ucom.com
-host-132.12.111.ucom.com
-36.134.67.189 216.239.78.11
-Sof02s32inf14.1e100.net
-*HTTP:* 192.168.3.1:433-->92.28.211.234:80
-*Http:* 192.168.625-->92.28.211.455:80
-*Http:* 192.168.817-->92.28.211.8:971
-*Upd:* 192.168452-->92.28.211:7265288
-*Tcp:* 192.168.682-->92.28.211:62227.7
-*Tcp:* 192.168.725-->92.28.211:67wu2
-*Tcp:* 192.168.629-->92.28.211.167:8615
-*EXTERNAL MAC:* 6U:77:89:ER:O4
-*MODEM JUMPS:* 64
-
-*👤 Objetivo:* ${name}
-*🌐 País detectado:* ${country}
-*🔐 Estado:* Sistema comprometido
-
-⚠ Ya perdiste... te rastreamos hasta el último paquete.`;
+"Ya perdiste… te seguí hasta el último movimiento."`;
 
   await m.reply(result, null, { mentions: [target]});
 };
