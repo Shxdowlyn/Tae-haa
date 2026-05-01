@@ -62,7 +62,12 @@ if (args[0] && args[0].length === 2) {
 await conn.sendMessage(
   m.chat,
   {
-    text: '✦ Selecciona el idioma al que deseas traducir:',
+    text: `╭━━━〔 🌐 TRADUCCIÓN 〕━━━╮
+┃
+┃ ✦ Selecciona el idioma
+┃   al que deseas traducir
+┃
+╰━━━〔 En espera 〕━━━╯',
     footer: 'Sʜᴀᴅᴏᴡ Gᴀʀᴅᴇɴ ⚜',
     buttons,
     headerType: 1,
