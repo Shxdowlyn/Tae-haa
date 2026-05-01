@@ -79,16 +79,24 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
   const sn = createHash('md5').update(m.sender).digest('hex').slice(0, 20)
 
   const certificadoPacto = `
-╭─「 ☽ Pacto Shadow ☽ 」─╮
-│ ✧ *Nombre:* ${name}
-│ ✧ *Edad:* ${age} años
-│ ✧ *Sello Único:* ${sn}
-│
-├─ Mensaje:
-│ ⚔️ Ahora puedes usar todos los comandos del bot.
-│ 🌌 Si deseas ver tu perfil, usa *.profile*
-│
-╰─「 Shadow Garden 」─╯
+╭━━━〔 REGISTRO COMPLETADO 〕━━━╮
+┃
+┃ ✦ Nombre
+┃   ${name}
+┃
+┃ ✦ Edad
+┃   ${age} años
+┃
+┃ ✦ Código de registro
+┃   ${sn}
+┃
+┣━━━〔 INFORMACIÓN 〕━━━┫
+┃ ✦ Ya puedes usar los comandos del bot
+┃
+┃ ✦ Para ver tu perfil:
+┃   .profile
+┃
+╰━━━〔 SISTEMA 〕━━━╯
 `.trim()
 
   await m.react('🌑')
