@@ -3,7 +3,12 @@ let handlerUnreg = async (m, { conn }) => {
   const pp = await conn.profilePictureUrl(m.sender, 'image').catch(() => 'https://files.catbox.moe/xr2m6u.jpg')
 
   if (!user.registered) {
-    return m.reply('『⚠️』 No tienes ningún pacto activo...')
+    return m.reply(`╭━━━〔 ⚠︎ AVISO 〕━━━╮
+┃
+┃ ✦ No tienes ningún
+┃   pacto activo
+┃
+╰━━━〔 Sin registros 〕━━━╯`)
   }
 
   user.registered = false
