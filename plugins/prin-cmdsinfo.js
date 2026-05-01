@@ -76,8 +76,18 @@ const handler = async (m, { conn, text, command, usedPrefix, args }) => {
 
       case 'report':
       case 'reportar': {
-        if (!text) return conn.sendMessage(m.chat, { text: '✐ Por favor, describe el error que deseas reportar.', ...rcanal }, { quoted: m });
-        if (text.length < 10) return conn.sendMessage(m.chat, { text: 'ꕥ El reporte debe contener al menos 10 caracteres.', ...rcanal }, { quoted: m });
+        if (!text) return conn.sendMessage(m.chat, { text: `╭━━━〔 🚨 AVISO 〕━━━╮
+┃
+┃ ✦ Describe el error
+┃   que deseas reportar
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`, ...rcanal }, { quoted: m });
+        if (text.length < 10) return conn.sendMessage(m.chat, { text: `╭━━━〔 ⚠︎ AVISO 〕━━━╮
+┃
+┃ ✦ El reporte debe contener
+┃   al menos 10 caracteres
+┃
+╰━━━〔 Intenta nuevamente 〕━━━╯`, ...rcanal }, { quoted: m });
         await m.react('🕒');
 
         const rep = `╭━━━〔 🚨 REPORTE RECIBIDO 〕━━━╮
