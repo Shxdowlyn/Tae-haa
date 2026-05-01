@@ -231,7 +231,18 @@ ie╰━━━〔 Intenta otro enlace 〕━━━╯`, m)
     if (m.react) await m.react('✖️')
     await conn.reply(
       m.chat,
-      `⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n🜸 Detalles: ${e.message}`,
+`╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ Se ha producido un problema
+┃
+┣━━━〔 SOLUCIÓN 〕━━━┫
+┃ Usa ${usedPrefix}report
+┃ para informarlo
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ${e.message}
+┃
+╰━━━〔 Proceso interrumpido 〕━━━╯`,
       m
     )
   }
