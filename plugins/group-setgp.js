@@ -7,7 +7,19 @@ const handler = async (m, { conn, args, text, command, usedPrefix }) => {
         const q = m.quoted || m
         const mime = (q.msg || q).mimetype || ''
         if (!/image\/(png|jpe?g)/.test(mime)) 
-          return m.reply('🌌 *Discípulo de las Sombras* 🎄\nTe faltó la imagen para invocar el nuevo estandarte del grupo.')
+          return m.reply(`╭━━━〔 TAE-HAA // ESTANDARTE 〕━━━╮
+┃
+┃ Invocación incompleta.
+┃ Falta el elemento requerido.
+┃
+┣━━━〔 REQUISITO 〕━━━┫
+┃ ✦ Tipo :: Imagen
+┃ ✦ Estado :: No detectada
+┃
+┣━━━〔 NOTA 〕━━━┫
+┃ ✦ Adjunta una imagen para continuar.
+┃
+╰━━━〔 Tae-Haa no procede sin pruebas 〕━━━╯`)
 
         const img = await q.download()
         if (!img) 
