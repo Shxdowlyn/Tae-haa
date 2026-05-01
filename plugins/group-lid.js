@@ -72,12 +72,15 @@ let handler = async (m, { conn, command, args, text, groupMetadata }) => {
   const md = 'https://github.com/dev-fedexyro'
 
   const caption = `
-════════════════════
-🌱 *LID (ID Vinculado):*
-\`${targetLID}\`
-════════════════════
-
-Toca el botón para copiar el LID o visitar el canal.
+╭━━━〔 TAE-HAA // LID 〕━━━╮
+┃
+┣━━━〔 IDENTIFICADOR VINCULADO 〕━━━┫
+┃ ✦ \`${targetLID}\`
+┃
+┣━━━〔 ACCIÓN 〕━━━┫
+┃ Copiá el código o accedé al canal.
+┃
+╰━━━〔 Registro preservado 〕━━━╯
 `.trim()
 
   let pp
