@@ -91,7 +91,11 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   }
 
   const listText =
-    `「✦」𝗟𝗶𝘀𝘁𝗮 𝗱𝗲 𝗲𝘀𝘁𝗶𝗹𝗼𝘀 (${usedPrefix + command} <estilo>)\n\n` +
+`╭━━━〔 🎨 LISTA DE ESTILOS 〕━━━╮
+┃
+┃ ✦ Uso: ${usedPrefix + command} <estilo>
+┃
+╰━━━〔 Selecciona un estilo 〕━━━╯`+
     Object.keys(styles).map(k => `• ${usedPrefix + command} ${k} — ${styles[k]}`).join('\n') +
     `\n\n• ${usedPrefix + command} list`
 
@@ -113,9 +117,18 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       from,
       {
         text:
-          '「✦」Responde a una *imagen* o *video* para crear el sticker.\n' +
-          `> ✐ Ejemplo » *${usedPrefix + command} circle*\n` +
-          `> ✐ Lista » *${usedPrefix + command} list*`,
+`╭━━━〔 ⚠︎ STICKER 〕━━━╮
+┃
+┃ ✦ Responde a una imagen o video
+┃   para crear el sticker
+┃
+┣━━━〔 EJEMPLO 〕━━━┫
+┃ ${usedPrefix + command} circle
+┃
+┣━━━〔 LISTA 〕━━━┫
+┃ ${usedPrefix + command} list
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`,
         contextInfo: {
           externalAdReply: {
             title: "sticker estilo Shadow-BOT-MD",
@@ -189,10 +202,18 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       from,
       {
         text:
-          '「✦」Error creando el sticker.\n\n' +
-          `> ✐ Estilo: *${style}*\n` +
-          `> ✐ ffmpeg: \`${ffmpegCmd}\`\n\n` +
-          `> ✐ Error:\n\`\`\`\n${err.slice(0, 3500)}\n\`\`\``
+`╭━━━〔 ❌ ERROR STICKER 〕━━━╮
+┃
+┃ ✦ Error al crear el sticker
+┃
+┣━━━〔 DETALLES 〕━━━┫
+┃ ✦ Estilo: ${style}
+┃ ✦ FFmpeg: ${ffmpegCmd}
+┃
+┣━━━〔 ERROR 〕━━━┫
+┃ ${err.slice(0, 3500)}
+┃
+╰━━━〔 Proceso fallido 〕━━━╯`
       },
       { quoted: m }
     )
