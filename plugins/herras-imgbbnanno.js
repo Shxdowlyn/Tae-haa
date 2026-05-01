@@ -117,7 +117,14 @@ const handler = async (m, { conn, text, command }) => {
 
       return sendCustomPedido(m, conn, replyText)
     } else {
-      throw new Error(`❌ Las Sombras fallaron al subir la imagen: ${data.error ? data.error.message : 'Error desconocido en la respuesta.'}`)
+      throw new Error(`╭━━━〔 ❌ ERROR DE SUBIDA 〕━━━╮
+┃
+┃ ✦ No se pudo subir la imagen
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ${data.error ? data.error.message : 'Error desconocido en la respuesta'}
+┃
+╰━━━〔 Proceso fallido 〕━━━╯`)
     }
 
   } catch (error) {
