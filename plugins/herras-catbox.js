@@ -21,7 +21,16 @@ let handler = async (m, { conn }) => {
     let media = await q.download();
     if (!media || !Buffer.isBuffer(media)) {
       await m.react(error);
-      return conn.reply(m.chat, `${emoji} *No se pudo descargar el archivo.*`, m);
+      if (!mime) return conn.reply(m.chat, {
+  text: `╭━━━〔 ⚠︎ SISTEMA 〕━━━╮
+┃
+┃ ✦ Archivo inválido o inexistente
+┃ ✦ Responde a una imagen / video
+┃
+┃ ⚠︎ Acción cancelada
+┃
+╰━━━〔 Requisito no cumplido 〕━━━╯`
+}, m)
     }
 
     let isImage = /image\/(png|jpe?g|gif)/.test(mime);
