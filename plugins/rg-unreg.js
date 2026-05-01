@@ -6,7 +6,7 @@ let handlerUnreg = async (m, { conn }) => {
     return m.reply(`╭━━━〔 ⚠︎ AVISO 〕━━━╮
 ┃
 ┃ ✦ No tienes ningún
-┃   pacto activo
+┃   registro activo
 ┃
 ╰━━━〔 Sin registros 〕━━━╯`)
   }
@@ -19,7 +19,7 @@ let handlerUnreg = async (m, { conn }) => {
   await conn.sendMessage(m.chat, {
     text: `╭━━━〔 💀 ESTADO 〕━━━╮
 ┃
-┃ ✦ El sello ha sido roto
+┃ ✦ El registro ha sido roto
 ┃
 ┃ ✦ El proceso ha finalizado
 ┃
