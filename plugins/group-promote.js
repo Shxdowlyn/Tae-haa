@@ -10,7 +10,20 @@ return conn.reply(m.chat, '> El usuario mencionado ya tiene privilegios de admin
 await conn.groupParticipantsUpdate(m.chat, [user], 'promote')
 await conn.reply(m.chat, `ꕥ Fue agregado como admin del grupo con exito.`, m)
 } catch (e) {
-conn.reply(m.chat, `⚠︎ Se ha producido un problema.\n> Usa *${usedPrefix}report* para informarlo.\n\n${e.message}`, m)
+conn.reply(m.chat, `╭━━━〔 TAE-HAA // ERROR 〕━━━╮
+┃
+┃ Fallo detectado.
+┃ El sistema no respondió como esperaba.
+┃
+┣━━━〔 ACCIÓN 〕━━━┫
+┃ ✦ Reporta :: ${usedPrefix}report
+┃ ✦ Mensaje :: ${e.message}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Registro :: Guardado
+┃ ✦ Revisión :: Pendiente
+┃
+╰━━━〔 Tae-Haa no tolera errores 〕━━━╯`, m)
 }}
 
 handler.help = ['promote']
