@@ -30,11 +30,33 @@ const enable = value === 'enable' || value === 'on'
 const disable = value === 'disable' || value === 'off'
 if (enable || disable) {
 if (isEnable === enable)
-return m.reply(`ꕥ El modo *${type}* ya estaba ${enable ? 'activado' : 'desactivado'}.`)
+return m.reply(`╭━━━〔 ⚠︎ ESTADO 〕━━━╮
+┃
+┃ ✦ El modo ${type}
+┃   ya estaba ${enable ? 'activado' : 'desactivado'}
+┃
+╰━━━〔 Sin cambios 〕━━━╯`)
 config[type] = enable
-return conn.reply(m.chat, `✎ Has *${enable ? 'activado' : 'desactivado'}* el modo *${type}* para el Socket.`, m)
+return conn.reply(m.chat, `╭━━━〔 ⚙︎ CONFIGURACIÓN 〕━━━╮
+┃
+┃ ✦ Has ${enable ? 'activado' : 'desactivado'}
+┃   el modo ${type}
+┃   para el socket
+┃
+╰━━━〔 Estado actualizado 〕━━━╯`, m)
 }
-conn.reply(m.chat, `✦ Puedes activar o desactivar el modo *${type}* utilizando:\n\n● Activar » ${usedPrefix}${command} enable\n● Desactivar » ${usedPrefix}${command} disable\n\n✧ Estado actual » *${isEnable ? '✓ Activado' : '✗ Desactivado'}*`, m)
+conn.reply(m.chat, `╭━━━〔 ⚙︎ CONFIGURACIÓN 〕━━━╮
+┃
+┃ ✦ Modo: ${type}
+┃
+┣━━━〔 USO 〕━━━┫
+┃ ✔ Activar: ${usedPrefix}${command} enable
+┃ ✖ Desactivar: ${usedPrefix}${command} disable
+┃
+┣━━━〔 ESTADO ACTUAL 〕━━━┫
+┃ ${isEnable ? '✓ Activado' : '✗ Desactivado'}
+┃
+╰━━━〔 SISTEMA 〕━━━╯`, m)
 break
 }
 case 'join': {
