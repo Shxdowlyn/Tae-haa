@@ -61,14 +61,32 @@ const handler = async (m, { conn, text, command, usedPrefix, args }) => {
         if (text.length < 10) return conn.sendMessage(m.chat, { text: 'ꕥ El reporte debe contener al menos 10 caracteres.', ...rcanal }, { quoted: m });
         await m.react('🕒');
 
-        const rep = `「✦」REPORTE RECIBIDO
-
-✐ Usuario » *${nombre}*
-✩ Tag » *${tag}*
-✿ Reporte » ${text}
-✰ Chat » *${chatLabel}*
-🜸 Fecha » *${horario}*
-♤ InfoBot » *${botname} / ${vs}*`;
+        const rep = `╭━━━〔 🚨 REPORTE RECIBIDO 〕━━━╮
+┃
+┃ ┌─ USUARIO
+┃ │ ✦ Nombre
+┃ │   ${nombre}
+┃ │
+┃ │ ✦ Tag
+┃ │   ${tag}
+┃ │
+┃ └────────────────────────
+┃
+┣━━━〔 REPORTE 〕━━━┫
+┃ ${text}
+┃
+┣━━━〔 CONTEXTO 〕━━━┫
+┃ ✦ Chat
+┃   ${chatLabel}
+┃
+┃ ✦ Fecha
+┃   ${horario}
+┃
+┣━━━〔 SISTEMA 〕━━━┫
+┃ ✦ Bot
+┃   ${botname} / ${vs}
+┃
+╰━━━〔 REGISTRO GUARDADO 〕━━━╯`;
 
         await conn.sendMessage(`${suittag}@s.whatsapp.net`, { text: rep, mentions: [m.sender, ...usertag], ...rcanal }, { quoted: m });
         await m.react('✔️');
