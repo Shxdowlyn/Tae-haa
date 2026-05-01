@@ -73,7 +73,18 @@ await m.react('✔️')
 await m.react('✖️')
 conn.reply(
   m.chat,
-  `⚠︎ Se produjo un error ejecutando *${usedPrefix + command}*.\n> Usa *${usedPrefix}report* para informarlo.\n\n${e.message}`,
+  `╭━━━〔 ⚠︎ ERROR 〕━━━╮
+┃
+┃ ✦ Comando :: ${usedPrefix + command}
+┃
+┣━━━〔 SOLUCIÓN 〕━━━┫
+┃ Usa ${usedPrefix}report
+┃ para informarlo
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ${e.message}
+┃
+╰━━━〔 Fallo detectado 〕━━━╯`,
   m
 )
 }}
