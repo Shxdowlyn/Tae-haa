@@ -79,7 +79,20 @@ const handler = async (m, { conn, usedPrefix }) => {
 
     conn.reply(
       m.chat,
-      `✏ Se ha establecido a @${who.split`@`[0]} como Bot primario de este grupo.\n> Ahora todos los comandos de este grupo serán ejecutados por @${who.split`@`[0]}.`,
+      `╭━━━〔 TAE-HAA // CONTROL 〕━━━╮
+┃
+┃ Configuración aplicada.
+┃ Nuevo bot primario asignado.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Usuario :: @${who.split`@`[0]}
+┃ ✦ Rol     :: Bot primario
+┃
+┣━━━〔 SISTEMA 〕━━━┫
+┃ ✦ Comandos :: Redirigidos
+┃ ✦ Control  :: Transferido
+┃
+╰━━━〔 Tae-Haa establece el orden 〕━━━╯`,
       m,
       { mentions: [who] }
     )
