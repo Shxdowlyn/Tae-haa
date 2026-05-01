@@ -77,7 +77,12 @@ let handler = async (m, { conn, text }) => {
     for (let item of results) {
       const { imageMessage } = await generateWAMessageContent({ image: { url: item.image_large_url } }, { upload: conn.waUploadToServer });
       cards.push({
-        body: proto.Message.InteractiveMessage.Body.fromObject({ text: `☽ Imagen sombría ${counter++}` }),
+        body: proto.Message.InteractiveMessage.Body.fromObject({ text: `╭━━━〔 IMAGEN GENERADA 〕━━━╮
+┃
+┃ ✦ Resultado #${counter++}
+┃   imagen procesada
+┃
+╰━━━〔 Listo 〕━━━╯` }),
         footer: proto.Message.InteractiveMessage.Footer.fromObject({ text: `╭━━━〔 RESULTADO 〕━━━╮
 ┃
 ┃ ✦ Se encontró un resultado
@@ -103,7 +108,12 @@ let handler = async (m, { conn, text }) => {
         message: {
           messageContextInfo: { deviceListMetadata: {}, deviceListMetadataVersion: 2 },
           interactiveMessage: proto.Message.InteractiveMessage.fromObject({
-            body: proto.Message.InteractiveMessage.Body.create({ text: `📎 *Sombras encontradas para:* ${query}` }),
+            body: proto.Message.InteractiveMessage.Body.create({ text: `╭━━━〔 RESULTADOS 〕━━━╮
+┃
+┃ ✦ Búsqueda: ${query}
+┃ ✦ Coincidencias encontradas
+┃
+╰━━━〔 Listo 〕━━━╯` }),
             footer: proto.Message.InteractiveMessage.Footer.create({ text: `╭━━━〔 IMÁGENES PROCESADAS 〕━━━╮
 ┃
 ┃ ✦ Proceso completado
@@ -121,7 +131,12 @@ let handler = async (m, { conn, text }) => {
     await conn.relayMessage(m.chat, messageContent.message, { messageId: messageContent.key.id });
   } catch (error) {
     console.error(error);
-    return conn.reply(m.chat, `⛔ *Las Sombras fallaron... inténtalo más tarde bajo la luna* 🌌`, m);
+    return conn.reply(m.chat, `╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ El sistema falló
+┃   intenta más tarde
+┃
+╰━━━〔 Inténtalo nuevamente 〕━━━╯`, m);
   }
 };
 
