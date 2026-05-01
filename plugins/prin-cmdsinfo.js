@@ -25,7 +25,12 @@ const handler = async (m, { conn, text, command, usedPrefix, args }) => {
 ┃   desarrollador
 ┃
 ╰━━━〔 Requisito necesario 〕━━━╯`, ...rcanal }, { quoted: m });
-        if (text.length < 10) return conn.sendMessage(m.chat, { text: 'ꕥ La sugerencia debe contener al menos 10 caracteres.', ...rcanal }, { quoted: m });
+        if (text.length < 10) return conn.sendMessage(m.chat, { text: `╭━━━〔 ⚠︎ AVISO 〕━━━╮
+┃
+┃ ✦ La sugerencia debe contener
+┃   al menos 10 caracteres
+┃
+╰━━━〔 Intenta nuevamente 〕━━━╯`, ...rcanal }, { quoted: m });
         await m.react('🕒');
 
         const sug = `╭━━━〔 💡 SUGERENCIA RECIBIDA 〕━━━╮
