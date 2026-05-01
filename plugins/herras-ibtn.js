@@ -13,7 +13,11 @@ function getJid(m) {
 
 let handler = async (m, { conn }) => {
   const jid = getJid(m)
-  if (!jid) throw "No se pudo detectar el chat/jid del mensaje."
+  if (!jid) throw `╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ No se pudo detectar el chat (jid)
+┃
+╰━━━〔 Acción cancelada 〕━━━╯`
 
   const text = "*[BTNS]* Botones Test"
   const footer = "-----"
