@@ -55,7 +55,18 @@ const handler = async (m, { conn, text, command }) => {
     return sendCustomPedido(
       m,
       conn,
-      `🌑 *Menú Shadow* 🌑\n\n🎄 Recuerden que este poder es para subir imágenes a las Sombras 🎄\n> Att: Shadow\n\n🚩 Adjunta o cita una *imagen* para invocar la subida.`
+      `╭━━━〔 TAE-HAA MENÚ 〕━━━╮
+┃
+┃ Este comando sirve para subir
+┃ imágenes al sistema
+┃
+┣━━━〔 INSTRUCCIÓN 〕━━━┫
+┃ Adjunta o responde una imagen
+┃ para continuar
+┃
+┃ Att: Tae-Haa
+┃
+╰━━━〔 En espera 〕━━━╯`
     )
   }
 
