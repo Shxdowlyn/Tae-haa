@@ -70,8 +70,18 @@ async function sticker(img, url, packname, author) {
 
 const handler = async (m, { conn, args }) => {
   let texto = args.length >= 1 ? args.join(' ') : m.quoted?.text
-  if (!texto) return m.reply('𖣣⌗ Por favor escribe o responde a un texto para generar la cita')
-  if (texto.length > 100) return m.reply('⊹ᘏ El texto no puede superar los *100 caracteres*')
+  if (!texto) return m.reply(`╭━━━〔 ⚠︎ CITA 〕━━━╮
+┃
+┃ ✦ Escribe o responde a un texto
+┃   para generar la cita
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`)
+  if (texto.length > 100) return m.reply(`╭━━━〔 ⚠︎ LÍMITE EXCEDIDO 〕━━━╮
+┃
+┃ ✦ El texto no puede superar
+┃   los 100 caracteres
+┃
+╰━━━〔 Intenta acortar el texto 〕━━━╯`)
 
   let quien = m.quoted ? m.quoted.sender : m.sender
   let nombre = m.quoted ? m.quoted.name : m.name
@@ -86,7 +96,15 @@ const handler = async (m, { conn, args }) => {
       if (config.name) nombrePack = config.name
     }
   } catch (err) {
-    console.log('⚠️ No se pudo leer config del subbot:', err)
+    console.log(`╭━━━〔 ⚠︎ ERROR CONFIG 〕━━━╮
+┃
+┃ ✦ No se pudo leer la configuración
+┃   del subbot
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ${err}
+┃
+╰━━━〔 LOG REGISTRADO 〕━━━╯`)
   }
 
   await m.react('🕒')
@@ -125,7 +143,13 @@ const handler = async (m, { conn, args }) => {
     console.error(e)
     await m.react('❌')
     await conn.sendMessage(m.chat, {
-      text: `✎ *Error al generar la cita*\nIntenta nuevamente`,
+      text: `╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ Error al generar la cita
+┃
+┃ ✦ Intenta nuevamente
+┃
+╰━━━〔 Proceso fallido 〕━━━╯`
       ...global.rcanal
     }, { quoted: m })
   }
