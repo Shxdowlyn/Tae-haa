@@ -344,7 +344,14 @@ let handler = async (m, { conn }) => {
   } catch (e) {
     console.error('PING ERROR:', e)
     await conn.sendMessage(m.chat, {
-      text: `❌ Error en el sistema de ping.\n\n${e?.message || e}`
+         text: `╭━━━〔 ❌ ERROR PING 〕━━━╮
+┃
+┃ ✦ Fallo en el sistema de ping
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ${e?.message || e}
+┃
+╰━━━〔 Proceso interrumpido 〕━━━╯`
     }, { quoted: m })
   }
 }
