@@ -36,7 +36,20 @@ var handler = async (m, { conn, usedPrefix, command, text }) => {
         ]
 
         const interactive = proto.Message.InteractiveMessage.fromObject({
-            body: { text: `🌑✦ *Sʜᴀᴅᴏᴡ Gᴀʀᴅᴇɴ Cᴀᴛᴀʟᴏɢᴜᴇ*\n\nEsperando tu elección de color para:\n> *"${textoFinal.trim()}"*` },
+            body: { text: `╭━━━〔 TAE-HAA // CATÁLOGO 〕━━━╮
+┃
+┃ Selección pendiente.
+┃ Esperando tu decisión.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Elemento :: "${textoFinal.trim()}"
+┃ ✦ Parámetro :: Color
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Acción :: En espera
+┃ ✦ Control :: Disponible
+┃
+╰━━━〔 Tae-Haa aguarda tu elección 〕━━━╯` },
             footer: { text: "Shadow Garden — The Eminence in Shadow" },
             nativeFlowMessage: {
                 buttons: [{
