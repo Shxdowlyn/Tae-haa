@@ -18,7 +18,13 @@ const handler = async (m, { conn, text, command, usedPrefix, args }) => {
     switch (command) {
       case 'suggest':
       case 'sug': {
-        if (!text) return conn.sendMessage(m.chat, { text: '✐ Por favor, escribe la sugerencia que deseas enviar al desarrollador.', ...rcanal }, { quoted: m });
+        if (!text) return conn.sendMessage(m.chat, { text: `╭━━━〔 💡 AVISO 〕━━━╮
+┃
+┃ ✦ Escribe la sugerencia
+┃   que deseas enviar al
+┃   desarrollador
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`, ...rcanal }, { quoted: m });
         if (text.length < 10) return conn.sendMessage(m.chat, { text: 'ꕥ La sugerencia debe contener al menos 10 caracteres.', ...rcanal }, { quoted: m });
         await m.react('🕒');
 
