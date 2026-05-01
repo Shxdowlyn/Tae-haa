@@ -1,5 +1,5 @@
 const linkRegex = /(chat\.whatsapp\.com\/[0-9A-Za-z]{20,24})|(z?https:\/\/whatsapp\.com\/channel\/[0-9A-Za-z]{20,24})/i
-const allowedLinks = ['https://whatsapp.com/channel/0029Vb64nWqLo4hb8cuxe23n']
+const allowedLinks = ['https://whatsapp.com/channel/0029VbBvrmwC1Fu5SYpbBE2A']
 
 export async function before(m, { conn, isAdmin, isBotAdmin, isMods, isROwner, participants }) {
   if (!m.isGroup) return
