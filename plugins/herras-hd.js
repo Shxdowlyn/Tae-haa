@@ -71,7 +71,13 @@ const handler = async (msg, { conn, command, wa, usedPrefix }) => {
     return conn.sendMessage(
       chatId,
       {
-        text: `Envía o responde a una imagen con:\n${pref + command}`,
+        text: `╭━━━〔 ⚠︎ AVISO 〕━━━╮
+┃
+┃ ✦ Envía o responde una imagen
+┃
+┃ ✦ Uso: ${pref + command}
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`,
         ...global.rcanal
       },
       { quoted: msg }
