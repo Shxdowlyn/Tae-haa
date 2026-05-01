@@ -106,7 +106,12 @@ let handler = async (m, { conn}) => {
 
   } catch (e) {
     console.error(e);
-    return conn.reply(m.chat, '⛔ Error al invocar la información del bot...', m);
+    return conn.reply(m.chat, `╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ No se pudo obtener
+┃   la información del bot
+┃
+╰━━━〔 Intenta nuevamente 〕━━━╯`, m);
   }
 };
 
