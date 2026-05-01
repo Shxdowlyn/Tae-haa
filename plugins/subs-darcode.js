@@ -33,7 +33,15 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
     } else if (args[0] && args[0].match(/^\d+$/)) {
         who = args[0].replace(/[^0-9]/g, '') + '@s.whatsapp.net'
     } else {
-        return conn.reply(m.chat, `*❌ Falta el usuario.*\n\n> *Debe mencionar o ingresar el número de teléfono* del usuario al que se le enviará el código.`, m);
+        return conn.reply(m.chat, `╭━━━〔 ⚠︎ USUARIO FALTANTE 〕━━━╮
+┃
+┃ ✦ Debes mencionar o ingresar
+┃   el número del usuario
+┃
+┃ ✦ El código no puede enviarse
+┃   sin un destino válido
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`, m)
     }
 
     let id = `${who.split`@`[0]}`
@@ -104,14 +112,31 @@ export async function ShadowJadiBot(options) {
                     let rawCode = await sock.requestPairingCode(phoneNumber);
                     let formattedCode = rawCode.match(/.{1,4}/g)?.join("-");
 
-                    const pairingCodeMessage = `*🔑 Código de Vinculación de Sub-Bot*\n\n> *Hola, ${phoneNumber}.* El dueño del bot te ha generado un código para vincular tu Sub-Bot.\n\n*Código:* \`\`\`${formattedCode}\`\`\``;
+                    const pairingCodeMessage = `╭━━━〔 🔑 CÓDIGO SUB-BOT 〕━━━╮
+┃
+┃ ✦ Hola, ${phoneNumber}
+┃
+┃ ✦ Se ha generado un código
+┃   de vinculación para Sub-Bot
+┃
+┣━━━〔 CÓDIGO 〕━━━┫
+┃ ${formattedCode}
+┃
+╰━━━〔 SISTEMA 〕━━━╯`
 
                     await conn.sendMessage(userJid, { 
                         text: pairingCodeMessage.trim(),
                         contextInfo: { ...rcanal }
                     }, { ephemeralExpiration: 60 * 60 * 24 * 7 });
 
-                    await conn.reply(m.chat, `✅ *Código enviado exitosamente* al usuario: @${phoneNumber}.\n\n> *El código se envió al privado del usuario*`, m, { 
+                    await conn.reply(m.chat, `╭━━━〔 ✅ CÓDIGO ENVIADO 〕━━━╮
+┃
+┃ ✦ Usuario: @${phoneNumber}
+┃
+┃ ✦ El código fue enviado
+┃   correctamente al privado
+┃
+╰━━━〔 PROCESO COMPLETADO 〕━━━╯`, m, { 
                         mentions: [userJid],
                         contextInfo: { ...rcanal }
                     });
