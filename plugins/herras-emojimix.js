@@ -46,7 +46,12 @@ const url = `https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVAL
 const res = await fetchJson(url)
 
 if (!res.results || res.results.length === 0)
-  return conn.reply(m.chat, `《✧》 No existe una combinación para esos emojis.`, m)
+  return conn.reply(m.chat, `╭━━━〔 ⚠︎ 〕━━━╮
+┃
+┃ ✦ No existe una combinación
+┃   para esos emojis
+┃
+╰━━━〔 Intenta otra vez 〕━━━╯`, m)
 
 for (let result of res.results) {
   const png = `./tmp-${Date.now()}.png`
