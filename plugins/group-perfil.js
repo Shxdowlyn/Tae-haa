@@ -35,15 +35,20 @@ var handler = async (m, { conn }) => {
   const fraseElegida = frasesShadow[Math.floor(Math.random() * frasesShadow.length)]
 
   let animacion = `
-〘 *Shadow Bot — Sistema en Carga* 〙
+╭━━━〔 TAE-HAA // SYSTEM 〕━━━╮
 
-⚔️ Preparando archivos secretos...
-🌌 Sincronizando con el Reino Oculto...
-🕯 Activando protocolos de las sombras...
+┃ Inicializando sistema...
+┃ Sincronizando registros...
+┃ Ejecutando protocolos...
 
-✦✦✦ 𝙲𝙰𝚁𝙶𝙰 𝙲𝙾𝙼𝙿𝙻𝙴𝚃𝙰 ✦✦✦
+┣━━━〔 PROCESO 〕━━━┫
+┃ ✦ Acceso verificado
+┃ ✦ Datos alineados
+┃ ✦ Control establecido
 
-*El archivo de las sombras ha sido abierto...*
+╰━━━〔 STATUS: COMPLETE 〕━━━╯
+
+"Todo está bajo control."
 `.trim()
 
   await conn.sendMessage(m.chat, { text: animacion, ...rcanal }, { quoted: m })
