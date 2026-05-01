@@ -22,7 +22,14 @@ const handler = async (m, { conn, text }) => {
 ╰━━━〔 Proceso fallido 〕━━━╯`);
       buffer = await res.buffer();
     } else {
-      return m.reply(`❌🌑🎄 *Responde a una imagen o envía un link directo válido con el comando* _.comprimir_ 🎅`);
+      return m.reply(`╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ Debes responder una imagen
+┃   o enviar un link válido
+┃
+┃ ✦ Uso: .comprimir
+┃
+╰━━━〔 Acción requerida 〕━━━╯`);
     }
 
     m.react('🎄');
