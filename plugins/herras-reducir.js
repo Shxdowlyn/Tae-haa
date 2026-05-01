@@ -114,7 +114,12 @@ let handler = async (m, { conn, text, usedPrefix }) => {
 
   } catch (e) {
     console.error(e)
-    m.reply('⚠️ Error al procesar o subir la imagen.')
+    m.reply(`╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ Error al procesar o subir
+┃   la imagen
+┃
+╰━━━〔 Intenta nuevamente 〕━━━╯`)
   }
 }
 
