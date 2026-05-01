@@ -7,7 +7,15 @@ let handler = async (m, { conn, usedPrefix, args, command }) => {
   } else if (m.quoted && m.quoted.text) {
     text = m.quoted.text;
   } else {
-    throw `❒ Ingresa una frase o responde a un mensaje que quieras convertir en cita.\n\n✐ Ejemplo:\n${usedPrefix + command} El arte es la expresión más pura del alma.`;
+    throw `╭━━━〔 ⚠︎ AVISO 〕━━━╮
+┃
+┃ ✦ Debes ingresar una frase
+┃   o responder un mensaje
+┃
+┣━━━〔 EJEMPLO 〕━━━┫
+┃ ${usedPrefix + command} El arte es la expresión más pura del pensamiento.
+┃
+╰━━━〔 Requisito necesario 〕━━━╯`
   }
 
   const quote = await createQuote(m.name, text);
