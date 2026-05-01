@@ -1,7 +1,19 @@
 var handler = async (m, { conn, usedPrefix, command, text, groupMetadata, isAdmin }) => {
 let mentionedJid = await m.mentionedJid
 let user = mentionedJid && mentionedJid.length ? mentionedJid[0] : m.quoted && await m.quoted.sender ? await m.quoted.sender : null
-if (!user) return conn.reply(m.chat, `✎ Debes mencionar a un usuario para poder promoverlo a administrador.`, m)
+if (!user) return conn.reply(m.chat, `╭━━━〔 TAE-HAA // ADMIN 〕━━━╮
+┃
+┃ Orden incompleta.
+┃ No se ha definido un objetivo.
+┃
+┣━━━〔 REQUISITO 〕━━━┫
+┃ ✦ Acción :: Mencionar usuario
+┃ ✦ Estado :: Pendiente
+┃
+┣━━━〔 NOTA 〕━━━┫
+┃ ✦ Indica a quién deseas promover.
+┃
+╰━━━〔 Tae-Haa exige precisión 〕━━━╯`, m)
 try {
 const groupInfo = await conn.groupMetadata(m.chat)
 const ownerGroup = groupInfo.owner || m.chat.split('-')[0] + '@s.whatsapp.net'
