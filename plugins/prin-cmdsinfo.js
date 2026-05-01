@@ -243,7 +243,20 @@ const handler = async (m, { conn, text, command, usedPrefix, args }) => {
     }
   } catch (err) {
     await m.react('✖️');
-    await conn.sendMessage(m.chat, { text: `⚠︎ Ocurrió un error inesperado.\n> Usa *${usedPrefix}report* para informarlo.\n\n🜸 Detalles: ${err.message}`, ...rcanal }, { quoted: m });
+    await conn.sendMessage(m.chat, {
+  text: `╭━━━〔 ❌ ERROR INESPERADO 〕━━━╮
+┃
+┃ ✦ Ocurrió un problema
+┃   inesperado
+┃
+┣━━━〔 SOLUCIÓN 〕━━━┫
+┃ Usa ${usedPrefix}report
+┃ para informarlo
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ${err.message}
+┃
+╰━━━〔 Proceso detenido 〕━━━╯`, ...rcanal }, { quoted: m });
   }
 };
 
