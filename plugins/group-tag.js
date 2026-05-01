@@ -48,7 +48,19 @@ const handler = async (m, { conn, args }) => {
     }
 
     if (!messageToForward) {
-      return await conn.sendMessage(chatId, { text: `Debes responder a un mensaje o escribir algo para etiquetar al grupo.`, quoted: m })
+      return await conn.sendMessage(chatId, { text: `╭━━━〔 TAE-HAA // MENCIÓN 〕━━━╮
+┃
+┃ Acción incompleta.
+┃ No se ha detectado contenido.
+┃
+┣━━━〔 REQUISITO 〕━━━┫
+┃ ✦ Responder :: Un mensaje
+┃ ✦ O escribir :: Contenido
+┃
+┣━━━〔 NOTA 〕━━━┫
+┃ ✦ Indica qué deseas enviar al grupo.
+┃
+╰━━━〔 Tae-Haa exige precisión 〕━━━╯`, quoted: m })
     }
 
     const getThumbnail = async () => {
