@@ -104,7 +104,12 @@ let handler = async (m, { conn, text }) => {
           messageContextInfo: { deviceListMetadata: {}, deviceListMetadataVersion: 2 },
           interactiveMessage: proto.Message.InteractiveMessage.fromObject({
             body: proto.Message.InteractiveMessage.Body.create({ text: `📎 *Sombras encontradas para:* ${query}` }),
-            footer: proto.Message.InteractiveMessage.Footer.create({ text: "☽ *Imágenes procesadas por el Reino de las Sombras*" }),
+            footer: proto.Message.InteractiveMessage.Footer.create({ text: `╭━━━〔 IMÁGENES PROCESADAS 〕━━━╮
+┃
+┃ ✦ Proceso completado
+┃   correctamente
+┃
+╰━━━〔 Sistema listo 〕━━━╯` }),
             header: proto.Message.InteractiveMessage.Header.create({ hasMediaAttachment: false }),
             carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({ cards })
           })
