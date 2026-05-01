@@ -9,16 +9,26 @@ let handler = async (m, { conn }) => {
     if (!res.ok) throw new Error('Error al obtener datos del repositorio Shadow-BOT-MD')
     let json = await res.json()
 
-    let txt = `*🌑⚔️  S H A D O W - B O T - M D  ⚔️🌑*\n\n`
-    txt += `⚔️  *Nombre del Proyecto* : ${json.name}\n`
-    txt += `👀  *Observadores en las Sombras* : ${json.watchers_count}\n`
-    txt += `📦  *Tamaño del Dominio* : ${(json.size / 1024).toFixed(2)} MB\n`
-    txt += `🕰️  *Última Invocación* : ${moment(json.updated_at).format('DD/MM/YY - HH:mm:ss')}\n`
-    txt += `🔗  *Portal Secreto* : ${json.html_url}\n`
-    txt += `🌌  *Clones en las Sombras* : ${json.forks_count}\n`
-    txt += `⭐  *Estrellas en la Oscuridad* : ${json.stargazers_count}\n\n`
-    txt += `『☽』 *En las sombras, el poder se oculta tras la calma...*\n\n`
-    txt += `👑  *Creador*: Yosue`
+    let txt = `╭━━━〔 SHADOW-BOT-MD 〕━━━╮
+┃
+┃ ⚔️ Proyecto: ${json.name}
+┃
+┣━━━〔 ESTADÍSTICAS 〕━━━┫
+┃ 👀 Watchers: ${json.watchers_count}
+┃ 🌟 Stars: ${json.stargazers_count}
+┃ 🌿 Forks: ${json.forks_count}
+┃ 📦 Tamaño: ${(json.size / 1024).toFixed(2)} MB
+┃
+┣━━━〔 ACTUALIZACIÓN 〕━━━┫
+┃ 🕰️ ${moment(json.updated_at).format('DD/MM/YY - HH:mm:ss')}
+┃
+┣━━━〔 ENLACE 〕━━━┫
+┃ 🔗 ${json.html_url}
+┃
+┣━━━〔 CREADOR〕━━━┫
+┃ 👑 Yosue
+┃
+╰━━━〔 SISTEMA ACTIVO 〕━━━╯`
 
     // 🔥 Imagen pequeña estilo WhatsApp Business
     const thumbBuffer = await (await fetch('https://i.postimg.cc/rFfVL8Ps/image.jpg')).buffer()
