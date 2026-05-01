@@ -45,8 +45,19 @@ const handler = async (m, { conn, command, usedPrefix }) => {
       const { imageMessage } = await generateWAMessageContent({ image: imageBuffer }, { upload: conn.waUploadToServer })
 
       cards.push({
-        body: proto.Message.InteractiveMessage.Body.fromObject({ text: `🪴 Sub-Bot ${counter}\n🌱 Nombre: ${botName}\n🍄 Uptime: ${uptime}` }),
-        footer: proto.Message.InteractiveMessage.Footer.fromObject({ text: "✨ Usa el botón para interactuar" }),
+        text: `╭━━━〔 🤖 SUB-BOT ${counter} 〕━━━╮
+┃
+┃ 🌱 Nombre
+┃   ${botName}
+┃
+┃ ⏱ Uptime
+┃   ${uptime}
+┃
+╰━━━〔 SISTEMA ACTIVO 〕━━━╯` }),
+
+footer: proto.Message.InteractiveMessage.Footer.fromObject({
+  text: "╭━━━〔 ✨ ACCIONES 〕━━━╮\n┃ Usa el botón para interactuar\n╰━━━〔 SISTEMA 〕━━━╯"
+}),
         header: proto.Message.InteractiveMessage.Header.fromObject({ title: `ID: wa.me/${botNumber}?text=.menu`, hasMediaAttachment: true, imageMessage }),
         nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
           buttons: [
@@ -75,8 +86,17 @@ const handler = async (m, { conn, command, usedPrefix }) => {
         message: {
           messageContextInfo: { deviceListMetadata: {}, deviceListMetadataVersion: 2 },
           interactiveMessage: proto.Message.InteractiveMessage.fromObject({
-            body: proto.Message.InteractiveMessage.Body.create({ text: `🌴 Subbots activos: ${subBotsActivos.length}/20` }),
-            footer: proto.Message.InteractiveMessage.Footer.create({ text: "Selecciona un Sub-Bot del carrusel 🌿" }),
+            body: proto.Message.InteractiveMessage.Body.create({ text: `╭━━━〔 🌴 SUB-BOTS 〕━━━╮
+┃
+┃ ✦ Activos: ${subBotsActivos.length}/20
+┃
+╰━━━〔 ESTADO DEL SISTEMA 〕━━━╯` }),
+            footer: proto.Message.InteractiveMessage.Footer.create({ text: `╭━━━〔 🌿 SUB-BOTS 〕━━━╮
+┃
+┃ ✦ Selecciona un Sub-Bot
+┃   del carrusel
+┃
+╰━━━〔 Interacción disponible 〕━━━╯` }),
             header: proto.Message.InteractiveMessage.Header.create({ hasMediaAttachment: false }),
             carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({ cards })
           })
@@ -87,7 +107,17 @@ const handler = async (m, { conn, command, usedPrefix }) => {
     await conn.relayMessage(m.chat, messageContent.message, { messageId: messageContent.key.id })
 
   } catch (error) {
-    m.reply(`⚠︎ ¡Ups! Algo falló.\n> Contacta al administrador si el problema persiste.\n\nDetalle técnico: ${error.message}`)
+    m.reply(`╭━━━〔 ❌ ERROR 〕━━━╮
+┃
+┃ ✦ ¡Ups! Algo falló
+┃
+┃ ✦ Contacta al administrador
+┃   si el problema persiste
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ${error.message}
+┃
+╰━━━〔 Sistema detenido 〕━━━╯`)
   }
 }
 
