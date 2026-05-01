@@ -24,7 +24,22 @@ let handler = async (m, { conn, usedPrefix, args, command }) => {
     m.chat,
     quote,
     '',
-    `「✦」Cita generada\n\n✐ Autor » *${m.name}*\nⴵ Estilo » *Quozio aleatorio*\n🜸 Fuente » *quozio.com*`,
+    `╭━━━〔 ✦ CITA GENERADA 〕━━━╮
+┃
+┃ ┌─ INFORMACIÓN
+┃ │
+┃ │ ✐ Autor
+┃ │   ${m.name}
+┃ │
+┃ │ ⴵ Estilo
+┃ │   Quozio aleatorio
+┃ │
+┃ │ 🜸 Fuente
+┃ │   quozio.com
+┃ │
+┃ └─────────────────────
+┃
+╰━━━〔 ✦ Proceso finalizado 〕━━━╯`,
     m,
     { ...rcanal }
   );
