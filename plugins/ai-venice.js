@@ -26,7 +26,19 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
         });
 
-        return conn.reply(m.chat, "❌ Ingresa una pregunta.\nEjemplo: .venice ¿Qué es la inteligencia artificial?", m, ctxWarn);
+        return conn.reply(m.chat, `╭━━━〔 TAE-HAA // INPUT 〕━━━╮
+┃
+┃ Orden incompleta.
+┃ No se recibió ninguna pregunta.
+┃
+┣━━━〔 REQUISITO 〕━━━┫
+┃ ✦ Acción :: Escribir consulta
+┃ ✦ Estado :: Vacío
+┃
+┣━━━〔 EJEMPLO 〕━━━┫
+┃ ✦ ${usedPrefix + command} ¿Qué es la inteligencia artificial?
+┃
+╰━━━〔 Tae-Haa exige precisión 〕━━━╯`, m, ctxWarn);
 
     }
 
@@ -167,7 +179,19 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
         });
 
-        await conn.reply(m.chat, `❌ Error: ${err.message}`, m, ctxErr);
+        await conn.reply(m.chat, `╭━━━〔 TAE-HAA // ERROR 〕━━━╮
+┃
+┃ Fallo detectado.
+┃ El proceso no se completó.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Error :: ${err.message}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Resultado :: Fallido
+┃ ✦ Revisión  :: Pendiente
+┃
+╰━━━〔 Tae-Haa no tolera fallos 〕━━━╯`, m, ctxErr);
 
     }
 
