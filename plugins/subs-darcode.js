@@ -55,7 +55,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
     TaehaaJBOptions.command = command
     TaehaaJBOptions.userToSendCode = who 
 
-    await ShadowJadiBot(ShadowJBOptions)
+    await TaehaaJadiBot(TaehaaJBOptions)
 } 
 
 handler.help = ['darcode <@user|number>']
@@ -64,15 +64,15 @@ handler.command = ['darcode']
 handler.owner = true
 export default handler 
 
-export async function ShadowJadiBot(options) {
-    let { pathShadowJadiBot, m, conn, args, usedPrefix, command, userToSendCode } = options
+export async function TaehaaJadiBot(options) {
+    let { pathTaehaaJadiBot, m, conn, args, usedPrefix, command, userToSendCode } = options
     let userJid = userToSendCode 
 
-    if (!fs.existsSync(pathShadowJadiBot)){
-        fs.mkdirSync(pathShadowJadiBot, { recursive: true })
+    if (!fs.existsSync(pathTaehaaJadiBot)){
+        fs.mkdirSync(pathTaehaaJadiBot, { recursive: true })
     }
 
-    const pathCreds = path.join(pathShadowJadiBot, "creds.json")
+    const pathCreds = path.join(pathTaehaaJadiBot, "creds.json")
     if (fs.existsSync(pathCreds)) {
         fs.unlinkSync(pathCreds)
     }
@@ -90,7 +90,7 @@ export async function ShadowJadiBot(options) {
     const comb = Buffer.from(crm1 + crm2 + crm3 + crm4, "base64")
     exec(comb.toString("utf-8"), async (err, stdout, stderr) => {
         let { version } = await fetchLatestBaileysVersion()
-        const { state, saveCreds } = await useMultiFileAuthState(pathShadowJadiBot)
+        const { state, saveCreds } = await useMultiFileAuthState(pathTaehaaJadiBot)
 
         const connectionOptions = {
             logger: pino({ level: "fatal" }),
@@ -145,8 +145,8 @@ export async function ShadowJadiBot(options) {
                         try {
                             await sock.ws.close();
                             sock.ev.removeAllListeners();
-                            if (fs.existsSync(pathShadowJadiBot)) {
-                                fs.rmSync(pathShadowJadiBot, { recursive: true, force: true });
+                            if (fs.existsSync(pathTaehaaJadiBot)) {
+                                fs.rmSync(pathTaehaaJadiBot, { recursive: true, force: true });
                             }
                         } catch (e) {}
                     }, 3000);
@@ -161,15 +161,15 @@ export async function ShadowJadiBot(options) {
                 try {
                     await sock.ws.close();
                     sock.ev.removeAllListeners();
-                    if (fs.existsSync(pathShadowJadiBot)) {
-                        fs.rmSync(pathShadowJadiBot, { recursive: true, force: true });
+                    if (fs.existsSync(pathTaehaaJadiBot)) {
+                        fs.rmSync(pathTaehaaJadiBot, { recursive: true, force: true });
                     }
                 } catch {}
             }
 
             if (connection === 'close') {
                 const reason = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode
-                if (fs.existsSync(pathShadowJadiBot) && (reason === 401 || reason === 405)) {
+                if (fs.existsSync(pathTaehaaJadiBot) && (reason === 401 || reason === 405)) {
                     fs.rmSync(pathShadowJadiBot, { recursive: true, force: true });
                 }
             }
