@@ -18,7 +18,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
           name: 'Registro requerido',
           jpegThumbnail: thumbBuffer,
           vcard:
-            'BEGIN:VCARD\nVERSION:3.0\nN:;Shadow;;;\nFN:Shadow\nORG:Shadow Garden\nitem1.TEL;waid=584242773183:+58 424 2773183\nitem1.X-ABLabel:Shadow\nEND:VCARD'
+            'BEGIN:VCARD\nVERSION:3.0\nN:;Taehaa;;;\nFN:Taehaa\nORG:Taehaa bot\nitem1.TEL;waid=5493863447787:+54 9 3863447787\nitem1.X-ABLabel:Taehaa\nEND:VCARD'
         }
       },
       participant: '0@s.whatsapp.net'
@@ -33,10 +33,10 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         currencyCode: 'USD',
         priceAmount1000: '0',
         retailerId: 1677,
-        url: `https://wa.me/584242773183`,
+        url: `https://wa.me/5493863447787`,
         productImageCount: 1
       },
-      businessOwnerJid: '584242773183@s.whatsapp.net',
+      businessOwnerJid: '5493863447787@s.whatsapp.net',
       caption: [
   `╭━━━〔 📌 REGISTRO 〕━━━╮`,
   `┃`,
@@ -53,20 +53,20 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   `┃`,
   `╰━━━〔 SISTEMA 〕━━━╯`
       ].join('\n'),
-      footer: '🌌 Shadow Bot',
+      footer: 'Tae-haa',
       interactiveButtons: [
-        { name: 'quick_reply', buttonParamsJson: JSON.stringify({ display_text: '📝 Registrarse', id: `${usedPrefix}reg` }) },
-        { name: 'cta_url', buttonParamsJson: JSON.stringify({ display_text: '👑 Creador', url: 'https://wa.me/584242773183' }) }
+        { name: 'quick_reply', buttonParamsJson: JSON.stringify({ display_text: 'Registrarse', id: `${usedPrefix}reg` }) },
+        { name: 'cta_url', buttonParamsJson: JSON.stringify({ display_text: 'Creadora', url: 'https://wa.me/5493863447787' }) }
       ],
       mentions: [m.sender],
       contextInfo: {
         externalAdReply: {
           showAdAttribution: true,
-          title: 'Shadow • Sistema de Registro',
+          title: 'Taehaa • Sistema de Registro',
           body: 'Registro uwu',
           mediaType: 1,
           thumbnailUrl: 'https://files.catbox.moe/n3bg2n.jpg',
-          sourceUrl: 'https://wa.me/584242773183'
+          sourceUrl: 'https://wa.me/5493863447787'
         }
       }
     }
@@ -131,8 +131,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 ╰━━━〔 Requisito necesario 〕━━━╯`,
         contextInfo: {
           externalAdReply: {
-            title: "sticker estilo Shadow-BOT-MD",
-            body: "uwu",
+            title: "sticker estilo Tae-haa",
+            body: "Bot",
             thumbnailUrl: "https://files.catbox.moe/zxjxhd.jpg", 
             mediaType: 1,
             renderLargerThumbnail: false,
