@@ -170,7 +170,7 @@ export async function TaehaaJadiBot(options) {
             if (connection === 'close') {
                 const reason = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode
                 if (fs.existsSync(pathTaehaaJadiBot) && (reason === 401 || reason === 405)) {
-                    fs.rmSync(pathShadowJadiBot, { recursive: true, force: true });
+                    fs.rmSync(pathTaehaaJadiBot, { recursive: true, force: true });
                 }
             }
         }
