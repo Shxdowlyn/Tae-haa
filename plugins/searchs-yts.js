@@ -28,12 +28,12 @@ let handler = async (m, { conn, text, usedPrefix }) => {
     const smallThumb = await (await fetch("https://i.postimg.cc/rFfVL8Ps/image.jpg")).buffer()
 
     const businessHeader = {
-      key: { participants: "0@s.whatsapp.net", fromMe: false, id: "ShadowYT" },
+      key: { participants: "0@s.whatsapp.net", fromMe: false, id: "TaehaaYT" },
       message: {
         locationMessage: {
           name: "🔍 YouTube Search",
           jpegThumbnail: smallThumb,
-          vcard: "BEGIN:VCARD\nVERSION:3.0\nN:;YouTube;;;\nFN:YouTube\nORG:Shadow Garden\nEND:VCARD"
+          vcard: "BEGIN:VCARD\nVERSION:3.0\nN:;YouTube;;;\nFN:YouTube\nORG:Tae Haa\nEND:VCARD"
         }
       },
       participant: "0@s.whatsapp.net"
@@ -57,7 +57,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
 ┃   para descargarlo automáticamente
 ┃
 ╰━━━〔 En espera 〕━━━╯` },
-      footer: { text: "Shadow Garden — YouTube Search" },
+      footer: { text: "Tae Haa — YouTube Search" },
       header: {
         hasMediaAttachment: true,
         imageMessage: media.imageMessage
@@ -67,7 +67,7 @@ let handler = async (m, { conn, text, usedPrefix }) => {
           {
             name: "single_select",
             buttonParamsJson: JSON.stringify({
-              title: "📜 Lista de Resultados",
+              title: "Lista de Resultados",
               sections: [
                 {
                   title: "RESULTADOS DE YOUTUBE",
