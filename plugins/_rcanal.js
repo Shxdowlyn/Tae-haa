@@ -17,7 +17,20 @@ export async function before(m, { conn }) {
         if (config.name) nombreBot = config.name
         if (config.banner) bannerFinal = config.banner
       } catch (err) {
-        console.log('⚠️ No se pudo leer config del subbot en rcanal:', err)
+        console.log(`╭━━━〔 TAE-HAA // LOG 〕━━━╮
+┃
+┃ Fallo detectado.
+┃ No se pudo leer la configuración.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Módulo :: rcanal
+┃ ✦ Error  :: ${err}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Registro :: Guardado
+┃ ✦ Acción   :: Revisión pendiente
+┃
+╰━━━〔 Tae-Haa registra el fallo 〕━━━╯`)
       }
     }
 
