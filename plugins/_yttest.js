@@ -3,7 +3,19 @@ import fetch from "node-fetch"
 const API_URL = "https://dl08.yt-dl.click/"
 
 let handler = async (m, { text }) => {
-  if (!text) return m.reply(`✎ Ingresa un link de YouTube\nEjemplo: *.test https://youtu.be/dQw4w9WgXcQ*`)
+  if (!text) return m.reply(`╭━━━〔 TAE-HAA // INPUT 〕━━━╮
+┃
+┃ Entrada inválida.
+┃ No se detectó un enlace.
+┃
+┣━━━〔 REQUISITO 〕━━━┫
+┃ ✦ Tipo :: URL de YouTube
+┃ ✦ Estado :: Vacío
+┃
+┣━━━〔 EJEMPLO 〕━━━┫
+┃ ✦ ${usedPrefix + command} https://youtu.be/dQw4w9WgXcQ
+┃
+╰━━━〔 Tae-Haa exige precisión 〕━━━╯`)
 
   try {
     let body = {
@@ -27,10 +39,23 @@ let handler = async (m, { text }) => {
     let data = await res.json().catch(() => null)
     if (!data) data = await res.text()
 
-    await m.reply("📩 Respuesta API:\n" + JSON.stringify(data, null, 2))
+    await m.reply("Respuesta API:\n" + JSON.stringify(data, null, 2))
   } catch (e) {
     console.error(e)
-    m.reply("⚠ Error al conectar con la API")
+    m.reply(`╭━━━〔 TAE-HAA // ERROR 〕━━━╮
+┃
+┃ Fallo de conexión.
+┃ La API no respondió.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Estado :: Error de red
+┃ ✦ Acción :: Reintentar
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Resultado :: Fallido
+┃ ✦ Revisión  :: Pendiente
+┃
+╰━━━〔 Tae-Haa no tolera fallos 〕━━━╯`)
   }
 }
 
