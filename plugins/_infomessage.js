@@ -15,22 +15,121 @@ const chat = global.db.data.chats[m.chat]
 const users = m.messageStubParameters[0]
 const usuario = await resolveLidToRealJid(m?.sender, conn, m?.chat)
 const groupAdmins = participants.filter(p => p.admin)
-const rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, serverMessageId: '', newsletterName: channelRD.name }, externalAdReply: { title: "𐔌 . ⋮ ᗩ ᐯ I Տ O .ᐟ ֹ ₊ ꒱", body: textbot, mediaUrl: null, description: null, previewType: "PHOTO", thumbnail: await (await fetch(icono)).buffer(), sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, mentionedJid: null }}
+const rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, serverMessageId: '', newsletterName: channelRD.name }, externalAdReply: { title: "╭━━━〔 TAE-HAA // AVISO 〕━━━╮", body: textbot, mediaUrl: null, description: null, previewType: "PHOTO", thumbnail: await (await fetch(icono)).buffer(), sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, mentionedJid: null }}
 const pp = await conn.profilePictureUrl(m.chat, 'image').catch(_ => null) || 'https://files.catbox.moe/83ehu1.jpg'
-const nombre = `> ❀ @${usuario.split('@')[0]} Ha cambiado el nombre del grupo.\n> ✦ Ahora el grupo se llama:\n> *${m.messageStubParameters[0]}*.`
-const foto = `> ❀ Se ha cambiado la imagen del grupo.\n> ✦ Acción hecha por:\n> » @${usuario.split('@')[0]}`
-const edit = `> ❀ @${usuario.split('@')[0]} Ha permitido que ${m.messageStubParameters[0] == 'on' ? 'solo admins' : 'todos'} puedan configurar el grupo.`
-const newlink = `> ❀ El enlace del grupo ha sido restablecido.\n> ✦ Acción hecha por:\n> » @${usuario.split('@')[0]}`
-const status = `> ❀ El grupo ha sido ${m.messageStubParameters[0] == 'on' ? '*cerrado*' : '*abierto*'} Por @${usuario.split('@')[0]}\n> ✦ Ahora ${m.messageStubParameters[0] == 'on' ? '*solo admins*' : '*todos*'} pueden enviar mensaje.`
-const admingp = `> ❀ @${users.split('@')[0]} Ahora es admin del grupo.\n> ✦ Acción hecha por:\n> » @${usuario.split('@')[0]}`
-const noadmingp = `> ❀ @${users.split('@')[0]} Deja de ser admin del grupo.\n> ✦ Acción hecha por:\n> » @${usuario.split('@')[0]}`
+const nombre = `╭━━━〔 TAE-HAA // GRUPO 〕━━━╮
+┃
+┃ Cambio detectado.
+┃ Nombre del grupo actualizado.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Usuario :: @${usuario.split('@')[0]}
+┃ ✦ Nuevo nombre :: ${m.messageStubParameters[0]}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Acción :: Completada
+┃ ✦ Registro :: Guardado
+┃
+╰━━━〔 Tae-Haa observa en silencio 〕━━━╯`
+
+const foto = `╭━━━〔 TAE-HAA // GRUPO 〕━━━╮
+┃
+┃ Cambio detectado.
+┃ Imagen del grupo actualizada.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Usuario :: @${usuario.split('@')[0]}
+┃ ✦ Acción  :: Cambio de imagen
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Resultado :: Éxito
+┃ ✦ Registro  :: Guardado
+┃
+╰━━━〔 Tae-Haa mantiene el control 〕━━━╯`
+const edit = `╭━━━〔 TAE-HAA // GRUPO 〕━━━╮
+┃
+┃ Configuración modificada.
+┃ Permisos actualizados.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Usuario :: @${usuario.split('@')[0]}
+┃ ✦ Acceso  :: ${m.messageStubParameters[0] == 'on' ? 'Solo administradores' : 'Todos'}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Resultado :: Aplicado
+┃ ✦ Control   :: Estable
+┃
+╰━━━〔 Tae-Haa ajusta el orden 〕━━━╯`
+
+const newlink = `╭━━━〔 TAE-HAA // GRUPO 〕━━━╮
+┃
+┃ Enlace restablecido.
+┃ Acceso regenerado.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Usuario :: @${usuario.split('@')[0]}
+┃ ✦ Acción  :: Reinicio de enlace
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Resultado :: Éxito
+┃ ✦ Registro  :: Guardado
+┃
+╰━━━〔 Tae-Haa mantiene el control 〕━━━╯`
+
+const status = `╭━━━〔 TAE-HAA // GRUPO 〕━━━╮
+┃
+┃ Estado actualizado.
+┃ Flujo de mensajes modificado.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Usuario :: @${usuario.split('@')[0]}
+┃ ✦ Estado  :: ${m.messageStubParameters[0] == 'on' ? 'Cerrado' : 'Abierto'}
+┃ ✦ Permiso :: ${m.messageStubParameters[0] == 'on' ? 'Solo administradores' : 'Todos'}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Resultado :: Aplicado
+┃ ✦ Control   :: Estable
+┃
+╰━━━〔 Tae-Haa decide quién habla 〕━━━╯`
+
+const admingp = `╭━━━〔 TAE-HAA // ADMIN 〕━━━╮
+┃
+┃ Permisos elevados.
+┃ Nuevo administrador asignado.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Usuario :: @${users.split('@')[0]}
+┃ ✦ Acción  :: Promoción
+┃ ✦ Ejecutado por :: @${usuario.split('@')[0]}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Resultado :: Éxito
+┃ ✦ Control   :: Estable
+┃
+╰━━━〔 Tae-Haa otorga autoridad 〕━━━╯`
+
+const noadmingp = `╭━━━〔 TAE-HAA // ADMIN 〕━━━╮
+┃
+┃ Permisos revocados.
+┃ Administrador degradado.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Usuario :: @${users.split('@')[0]}
+┃ ✦ Acción  :: Degradación
+┃ ✦ Ejecutado por :: @${usuario.split('@')[0]}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Resultado :: Aplicado
+┃ ✦ Control   :: Estable
+┃
+╰━━━〔 Tae-Haa retira el control 〕━━━╯`
 if (chat.detect && m.messageStubType == 2) {
 const uniqid = (m.isGroup ? m.chat : m.sender).split('@')[0]
 const sessionPath = `./${sessions}/`
 for (const file of await fs.promises.readdir(sessionPath)) {
 if (file.includes(uniqid)) {
 await fs.promises.unlink(path.join(sessionPath, file))
-console.log(`${chalk.yellow.bold('✎ Delete!')} ${chalk.greenBright(`'${file}'`)}\n${chalk.redBright('Que provoca el "undefined" en el chat.')}`)
+console.log(`${chalk.yellow.bold('Delete!')} ${chalk.greenBright(`'${file}'`)}\n${chalk.redBright('Que provoca el "undefined" en el chat.')}`)
 }}} if (chat.detect && m.messageStubType == 21) {
 rcanal.contextInfo.mentionedJid = [usuario, ...groupAdmins.map(v => v.id)]
 await this.sendMessage(m.chat, { text: nombre, ...rcanal }, { quoted: null })
