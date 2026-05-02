@@ -4,14 +4,21 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     if (!text) {
         let helpMsg =
-        `「 ${command} 」
-
-Haz tu pregunta después del comando.
-
-Ejemplos:
-${usedPrefix + command} Dame un plan para aprender inglés en 1 mes
-${usedPrefix + command} Escríbeme un código para una página web simple
-${usedPrefix + command} Cuéntame un chiste`
+        `╭━━━〔 TAE-HAA // INPUT 〕━━━╮
+┃
+┃ Orden incompleta.
+┃ No se ha recibido una consulta.
+┃
+┣━━━〔 USO 〕━━━┫
+┃ ✦ Comando :: ${command}
+┃ ✦ Acción  :: Escribe tu solicitud
+┃
+┣━━━〔 EJEMPLOS 〕━━━┫
+┃ ✦ ${usedPrefix + command} Dame un plan para aprender inglés en 1 mes
+┃ ✦ ${usedPrefix + command} Escríbeme un código para una página web simple
+┃ ✦ ${usedPrefix + command} Cuéntame un chiste
+┃
+╰━━━〔 Tae-Haa espera tu orden 〕━━━╯`
 
         return conn.sendMessage(m.chat, { text: helpMsg }, { quoted: m })
     }
@@ -83,7 +90,20 @@ Respondes solo lo necesario, pero con criterio.
             await conn.sendMessage(m.chat, { react: { text: '❌', key: m.key } })
         } catch (e) {}
 
-        await conn.sendMessage(m.chat, { text: '❌ *Ocurrió un error al conectar con el servidor.*' }, { quoted: m })
+        await conn.sendMessage(m.chat, { text: `╭━━━〔 TAE-HAA // ERROR 〕━━━╮
+┃
+┃ Fallo de conexión.
+┃ El servidor no respondió.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Estado :: Error de red
+┃ ✦ Acción :: Reintentar más tarde
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Resultado :: Fallido
+┃ ✦ Revisión  :: Pendiente
+┃
+╰━━━〔 Tae-Haa no tolera fallos 〕━━━╯` }, { quoted: m })
     }
 }
 
