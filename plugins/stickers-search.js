@@ -24,7 +24,7 @@ async function searchStickerPacks(searchTerm, limit = 1) {
       const linkTag = $(el).find("a");
       const packUrl = linkTag.attr("href");
       const title = $(el).find(".title").text().trim();
-      const author = $(el).find(".username").text().trim() || "Shadow Garden";
+      const author = $(el).find(".username").text().trim() || "Tae-haa";
       if (packUrl && title) {
         packs.push({
           title,
