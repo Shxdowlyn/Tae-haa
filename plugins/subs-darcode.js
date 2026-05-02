@@ -23,8 +23,8 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const ShadowJBOptions = {}
 
-const newsletterJid = '120363403739366547@newsletter'
-const newsletterName = '👑 SHADOW-BOT-MD| ᴄʜᴀɴɴᴇʟ-ʙᴏᴛ 🌌'
+const newsletterJid = '120363406529946290@newsletter'
+const newsletterName = 'Tae-haa channel bot'
 
 let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
     let who
@@ -45,15 +45,15 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
     }
 
     let id = `${who.split`@`[0]}`
-    let pathShadowJadiBot = path.join(`./jadibot-sessions/`, id)
+    let pathTaehaaJadiBot = path.join(`./jadibot-sessions/`, id)
 
-    ShadowJBOptions.pathShadowJadiBot = pathShadowJadiBot
-    ShadowJBOptions.m = m
-    ShadowJBOptions.conn = conn
-    ShadowJBOptions.args = args
-    ShadowJBOptions.usedPrefix = usedPrefix
-    ShadowJBOptions.command = command
-    ShadowJBOptions.userToSendCode = who 
+    TaehaaJBOptions.pathTaehaaJadiBot = pathTaehaaJadiBot
+    TaehaaJBOptions.m = m
+    TaehaaJBOptions.conn = conn
+    TaehaaJBOptions.args = args
+    TaehaaJBOptions.usedPrefix = usedPrefix
+    TaehaaJBOptions.command = command
+    TaehaaJBOptions.userToSendCode = who 
 
     await ShadowJadiBot(ShadowJBOptions)
 } 
