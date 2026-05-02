@@ -135,7 +135,7 @@ const handler = async (m, { conn, args }) => {
     })
 
     const imgBuffer = Buffer.from(res.data.result.image, 'base64')
-    const stiker = await sticker(imgBuffer, false, nombrePack, global.dev || '© Made with ☁︎ yosue,ado✧')
+    const stiker = await sticker(imgBuffer, false, nombrePack, global.dev || '© Made with Jade')
 
     await conn.sendMessage(m.chat, { sticker: stiker, ...global.rcanal }, { quoted: m })
     await m.react('✅')
