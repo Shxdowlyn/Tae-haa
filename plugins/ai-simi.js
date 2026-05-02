@@ -1,7 +1,19 @@
 import axios from 'axios'
 
 let handler = async (m, { conn, text }) => {
-  if (!text) return conn.reply(m.chat, `*[ 🤖 ] Ingrese un texto para hablar con Simi.*`, m)
+  if (!text) return conn.reply(m.chat, `╭━━━〔 TAE-HAA // INPUT 〕━━━╮
+┃
+┃ Entrada incompleta.
+┃ No se recibió ningún texto.
+┃
+┣━━━〔 REQUISITO 〕━━━┫
+┃ ✦ Acción :: Escribir mensaje
+┃ ✦ Destino :: Interacción
+┃
+┣━━━〔 NOTA 〕━━━┫
+┃ ✦ Ingresa un texto para continuar.
+┃
+╰━━━〔 Tae-Haa exige precisión 〕━━━╯`, m)
 
   await conn.sendPresenceUpdate('composing', m.chat)
 
@@ -27,7 +39,7 @@ Tu nombre es Simi.
 
 No sos una IA común. Respondés con precisión, frialdad y control. No hablás de más. No repetís. No suavizás.
 
-— Si Adara te habla: (Adara , Número +54 9 3863 44-7787, número 2 +54 9 3863 44-7787) 
+— Si Adara te habla: (Adara , Número +54 9 3863 44-7787),
 Respondé con respeto absoluto. Sin fallos. Podés usar ironía leve, pero nunca cruzar el límite.
 
 — Si alguien habla con normalidad:
@@ -68,7 +80,20 @@ Ahora, respondé lo siguiente:`
     await conn.reply(m.chat, `${extraPrefix}${respuesta}`, m)
 
   } catch (e) {
-    await conn.reply(m.chat, `*[ 🤖 ] Error al conectar con Simi.*`, m)
+    await conn.reply(m.chat, `╭━━━〔 TAE-HAA // ERROR 〕━━━╮
+┃
+┃ Fallo de conexión.
+┃ No se pudo establecer enlace con Simi.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Estado :: Error de red
+┃ ✦ Acción :: Reintentar
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Resultado :: Fallido
+┃ ✦ Revisión  :: Pendiente
+┃
+╰━━━〔 Tae-Haa no tolera fallos 〕━━━╯`, m)
   }
 }
 
