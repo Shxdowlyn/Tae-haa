@@ -342,7 +342,7 @@ export async function MichiJadiBot(options) {
 ┃
 ┃ ✦ Usuario: @${m.sender.split('@')[0]}
 ┃
-┃ ✦ Nuevo shadow Sub-Bot creado
+┃ ✦ Nuevo Tae-haa sub bot creado
 ┃
 ╰━━━〔 Sistema activo 〕━━━╯` mentions: [m.sender] }, { quoted: m }) : ''
       }
