@@ -12,7 +12,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     const thumbBuffer = await (await fetch('https://iili.io/fXp3swb.jpg')).buffer()
 
     const fkontak = {
-      key: { participants: '0@s.whatsapp.net', fromMe: false, id: 'Shadow' },
+      key: { participants: '0@s.whatsapp.net', fromMe: false, id: 'Tae-haa' },
       message: {
         locationMessage: {
           name: 'Registro requerido',
