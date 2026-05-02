@@ -132,7 +132,19 @@ for (let k of Object.keys(conn.chats)) allJids.push(k)
 
 } catch (err) {
     console.error(err)
-    m.reply('💥 La oscuridad ha fallado: ' + err.message)
+    m.reply(`╭━━━〔 TAE-HAA // ERROR 〕━━━╮
+┃
+┃ Fallo detectado.
+┃ El proceso no se completó.
+┃
+┣━━━〔 DETALLE 〕━━━┫
+┃ ✦ Error :: ${err.message}
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Resultado :: Fallido
+┃ ✦ Revisión  :: Pendiente
+┃
+╰━━━〔 Tae-Haa no tolera fallos 〕━━━╯`)
 }
 }
 
