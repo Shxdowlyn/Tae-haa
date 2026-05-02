@@ -47,14 +47,23 @@ let handler = async (m, { conn, usedPrefix, command, participants, isOwner}) => 
     let latency = '⏳ N/A'
     try {
       const start = Date.now()
-      const sent = await conn.sendMessage(m.chat, { text: '🧭 Invocando la esencia...'})
+      const sent = await conn.sendMessage(m.chat, { text: `╭━━━〔 TAE-HAA // PROCESO 〕━━━╮
+┃
+┃ Inicializando ejecución...
+┃ Preparando sistema.
+┃
+┣━━━〔 ESTADO 〕━━━┫
+┃ ✦ Fase :: Inicio
+┃ ✦ Acción :: En curso
+┃
+╰━━━〔 Tae-Haa toma el control 〕━━━╯` })
       const elapsed = Date.now() - start
       latency = `⚡ ${elapsed} ms`
       try {
         await conn.deleteMessage(m.chat, { id: sent.key.id, remoteJid: m.chat, fromMe: true})
 } catch (err) {}
 } catch (err) {
-      latency = '❌ No disponible (la sombra falló al manifestarse)'
+      latency = 'No disponible (fallo en la medición)'
 }
 
     let pkgInfo = {}
